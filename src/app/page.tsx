@@ -1,13 +1,12 @@
-'use client'
+"use client";
 
-import dynamic from 'next/dynamic'
-import { Hero3D } from '@/src/components/Hero3D'
-import { Services } from '@/src/components/Services'
-import { Stats } from '@/src/components/Stats'
-import { Difference } from '@/src/components/Difference'
-import { FAQ } from '@/src/components/FAQ'
-import { CTA } from '@/src/components/CTA'
-import { Footer } from '@/src/components/Footer'
+import { CTA } from "@/components/CTA";
+import { Difference } from "@/components/Difference";
+import { FAQ } from "@/components/FAQ";
+import { Footer } from "@/components/Footer";
+import { Hero3D } from "@/components/Hero3D";
+import { Services } from "@/components/Services";
+import { Stats } from "@/components/Stats";
 
 export default function Home() {
   return (
@@ -20,5 +19,5 @@ export default function Home() {
       <CTA />
       <Footer />
     </main>
-  )
+  );
 }
