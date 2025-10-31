@@ -1,6 +1,7 @@
 "use client";
 
 import ContactSection from "@/components/about/ContactSection";
+import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
 const FAQ = () => {
@@ -35,6 +36,7 @@ const FAQ = () => {
 
   return (
     <>
+      <Navbar />
       <section className="bg-white py-20 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">

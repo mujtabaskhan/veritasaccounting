@@ -31,7 +31,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-white pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0">
+    <section className="bg-white pt-20 px-4 max-lg:pt-16 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0">
       <div className="max-w-7xl mx-auto">
         <div className="mb-[74px] max-sm:mb-[59px]">
           <h1 className="block max-sm:hidden text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
