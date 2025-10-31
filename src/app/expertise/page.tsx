@@ -1,14 +1,18 @@
-import ExpertiseSection from '@/components/expertise';
+import ContactSection from "@/components/about/ContactSection";
+import ExpertiseSection from "@/components/expertise/Expertise";
+import Hero from "@/components/expertise/Hero";
 
 export const metadata = {
-  title: 'Expertise - Tennis Training',
-  description: 'Comprehensive tennis training programs for everyone',
+  title: "Expertise - Tennis Training",
+  description: "Comprehensive tennis training programs for everyone",
 };
 
 export default function ExpertisePage() {
   return (
-    <main className="w-full">
+    <>
+      <Hero />
       <ExpertiseSection />
-    </main>
+      <ContactSection hideHeading={false} />
+    </>
   );
 }

@@ -2,7 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function ContactSection() {
+export default function ContactSection({
+  hideHeading = true,
+}: {
+  hideHeading?: boolean;
+}) {
   const [selectedService, setSelectedService] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -39,19 +43,20 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section className="bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10">
+    <section className="bg-white py-20 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-16">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-[35px] max-sm:!mb-[81px]">
-          <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:!text-xl max-sm:!leading-[20px] max-sm:!text-center">
-            Curious about what we <br />
-            can do for you?
-          </h2>
-        </div>
-
+        {hideHeading && (
+          <div className="text-center mb-[35px] max-sm:!mb-[81px]">
+            <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:!text-xl max-sm:!leading-[20px] max-sm:!text-center">
+              Curious about what we <br />
+              can do for you?
+            </h2>
+          </div>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-lg:gap-10 max-sm:!gap-[96px]">
           <div>
             <div className="pb-[51px]">
-              <h3 className="text-4xl font-medium text-[#232061] max-sm:text-2xl">
+              <h3 className="text-4xl font-semibold text-[#232061] max-sm:text-2xl">
                 Let&apos;s Connect!
               </h3>
               <p className="text-xl text-[#232061] font-roboto max-sm:!text-xs">
@@ -224,7 +229,7 @@ export default function ContactSection() {
                     <div className="h-2 w-2 bg-[#232061] rounded-full"></div>
                   </div>
 
-                  <div className="flex flex-col gap-5 absolute top-[170px] left-2">
+                  <div className="flex flex-col gap-5 absolute top-[205px] left-2">
                     <div className="h-[3px] w-[3px] bg-[#232061]"></div>
                     <div className="h-[3px] w-[3px] bg-[#232061]"></div>
                     <div className="h-[3px] w-[3px] bg-[#232061]"></div>
