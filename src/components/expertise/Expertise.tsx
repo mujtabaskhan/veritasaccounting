@@ -103,9 +103,7 @@ export default function ExpertiseSection() {
     }
   };
 
-  // Mouse drag handlers
   const handleMouseDown = (e: React.MouseEvent) => {
-    // Don't start dragging if clicking on buttons or interactive elements
     const target = e.target as HTMLElement;
     if (
       target.closest("button") ||
@@ -136,7 +134,6 @@ export default function ExpertiseSection() {
     setIsDragging(false);
   };
 
-  // Touch handlers for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     const target = e.target as HTMLElement;
     if (
