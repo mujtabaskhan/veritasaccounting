@@ -11,18 +11,24 @@ const Footer = () => {
         height={100}
         className="w-full h-full object-cover absolute top-0 left-0 z-0 max-sm:blur-[0.3px]"
       />
-      <div className="flex items-end justify-start h-full relative z-10 pb-40 max-sm:pb-26">
+      <Link
+        href="/expertise"
+        className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#232061] hover:bg-[#232061]/90 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105 absolute right-20 top-72 z-20 max-lg:bottom-32 max-lg:top-auto max-lg:right-20 h-max w-max max-lg:bg-white max-lg:text-[#232061] max-sm:px-4 max-sm:py-2 max-sm:right-10"
+      >
+        <span>Home</span>
+      </Link>
+      <div className="flex items-end justify-start h-full relative z-10 pb-40 max-sm:pb-26 max-lg:pb-32">
         <div
-          className="grid max-w-7xl mx-auto max-sm:!grid-cols-1 max-sm:flex max-sm:flex-col"
+          className="grid max-w-7xl mx-auto max-sm:!grid-cols-1 max-lg:flex max-lg:flex-col"
           style={{ gridTemplateColumns: "2fr 2.5fr" }}
         >
-          <div className="flex flex-col gap-10 mr-20 max-sm:mr-0 max-sm:items-center max-sm:justify-center">
+          <div className="flex flex-col gap-10 mr-20 max-sm:mr-0 max-sm:items-center max-sm:justify-center max-lg:px-4">
             <Image
               src="/logo-white.png"
               alt="logo"
               width={200}
               height={200}
-              className="h-max w-[300px]"
+              className="h-max w-[300px] max-lg:backdrop-blur-sm"
             />
             <p className="font-roboto text-white text-xs max-w-[350px] max-sm:text-center">
               We provide bookkeeping, corporate and personal tax filing, payroll
@@ -31,7 +37,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 items-center gap-10 max-sm:mt-10">
+          <div className="grid grid-cols-3 gap-10 max-sm:mt-10 max-lg:px-4">
             <div className="flex flex-col gap-4">
               <h3
                 className="text-white text-[30px] max-sm:text-xs font-bold pr-3 border-1 border-none"
@@ -72,7 +78,10 @@ const Footer = () => {
                 <Link href="/payroll-services" className="underline">
                   Payroll Services
                 </Link>
-                <Link href="/audit-and-compliance-support" className="underline">
+                <Link
+                  href="/audit-and-compliance-support"
+                  className="underline"
+                >
                   Audit & Compliance Support
                 </Link>
                 <Link href="/cfo-services" className="underline">
@@ -101,7 +110,6 @@ const Footer = () => {
                 <Link href="/careers" className="underline">
                   Linkedin
                 </Link>
-               
               </div>
             </div>
           </div>

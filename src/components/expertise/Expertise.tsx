@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import Link from 'next/link';
+import Link from "next/link";
 
 interface ServiceCard {
   id: number;
@@ -16,57 +16,68 @@ interface ServiceCard {
 }
 
 export default function ExpertiseSection() {
-  const expertiseCards: ServiceCard[] = [
-    {
-      id: 1,
-      title: "Accounting",
-      badges: ["Virtual Bookkeeping", "Financial Reporting & Analysis", "Dedicated Accounting Teams"],
-      image: "/expertise-1.jpg",
-      url: "/accounting",
-    },
-    {
-      id: 2,
-      title: "Tax Services",
-      badges: ["Personal Tax Preparation", "GST/HST Returns & Filing", "Tax Planning & Strategy"],
-      image: "/expertise-2.jpg",
-      url: "/tax-services",
-    },
-    {
-      id: 3,
-      title: "Payroll Services",
-      badges: ["Payroll Management", "Payroll Processing Guidance"],
-      image: "/expertise-3.jpg",
-      url: "/payroll-services",
-    },
-    {
-      id: 4,
-      title: "Audit & Compliance Support",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/audit-and-compliance-support",
-    },
-    {
-      id: 5,
-      title: "CFO Services",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/cfo-services",
-    },
-    {
-      id: 6,
-      title: "Business Advisory",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/business-advisory",
-    },
-    {
-      id: 7,
-      title: "Business Administration",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/business-administration",
-    },
-  ];
+  const expertiseCards: ServiceCard[] = useMemo(
+    () => [
+      {
+        id: 1,
+        title: "Accounting",
+        badges: [
+          "Virtual Bookkeeping",
+          "Financial Reporting & Analysis",
+          "Dedicated Accounting Teams",
+        ],
+        image: "/expertise-1.jpg",
+        url: "/accounting",
+      },
+      {
+        id: 2,
+        title: "Tax Services",
+        badges: [
+          "Personal Tax Preparation",
+          "GST/HST Returns & Filing",
+          "Tax Planning & Strategy",
+        ],
+        image: "/expertise-2.jpg",
+        url: "/tax-services",
+      },
+      {
+        id: 3,
+        title: "Payroll Services",
+        badges: ["Payroll Management", "Payroll Processing Guidance"],
+        image: "/expertise-3.jpg",
+        url: "/payroll-services",
+      },
+      {
+        id: 4,
+        title: "Audit & Compliance Support",
+        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        image: "/expertise-3.jpg",
+        url: "/audit-and-compliance-support",
+      },
+      {
+        id: 5,
+        title: "CFO Services",
+        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        image: "/expertise-3.jpg",
+        url: "/cfo-services",
+      },
+      {
+        id: 6,
+        title: "Business Advisory",
+        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        image: "/expertise-3.jpg",
+        url: "/business-advisory",
+      },
+      {
+        id: 7,
+        title: "Business Administration",
+        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        image: "/expertise-3.jpg",
+        url: "/business-administration",
+      },
+    ],
+    [],
+  );
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -75,6 +86,8 @@ export default function ExpertiseSection() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [cardHeight, setCardHeight] = useState<number | null>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -118,10 +131,43 @@ export default function ExpertiseSection() {
     };
   }, []);
 
+  useEffect(() => {
+    // Calculate max height of all cards
+    const calculateMaxHeight = () => {
+      // Use setTimeout to ensure DOM is fully rendered
+      setTimeout(() => {
+        const heights = cardRefs.current
+          .filter((ref) => ref !== null)
+          .map((ref) => {
+            // Temporarily remove fixed height to get natural height
+            if (ref) {
+              const originalHeight = ref.style.height;
+              ref.style.height = "auto";
+              const naturalHeight = ref.offsetHeight;
+              ref.style.height = originalHeight;
+              return naturalHeight;
+            }
+            return 0;
+          });
+        if (heights.length > 0) {
+          const maxHeight = Math.max(...heights);
+          setCardHeight(maxHeight);
+        }
+      }, 100);
+    };
+
+    // Calculate height after initial render
+    calculateMaxHeight();
+
+    // Recalculate on window resize
+    window.addEventListener("resize", calculateMaxHeight);
+    return () => window.removeEventListener("resize", calculateMaxHeight);
+  }, [expertiseCards]);
+
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       const cardWidth =
-        scrollContainerRef.current.children[0]?.clientWidth || 400;
+        scrollContainerRef.current.children[0]?.clientWidth || 480;
       const gap = 30;
       const scrollAmount = cardWidth + gap;
       scrollContainerRef.current.scrollBy({
@@ -215,10 +261,11 @@ export default function ExpertiseSection() {
               disabled={!canScrollLeft}
               whileHover={canScrollLeft ? { scale: 1.1 } : {}}
               whileTap={canScrollLeft ? { scale: 0.95 } : {}}
-              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${canScrollLeft
+              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
+                canScrollLeft
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
-                }`}
+              }`}
               style={
                 canScrollLeft
                   ? { backgroundColor: "#232061" }
@@ -237,10 +284,11 @@ export default function ExpertiseSection() {
               disabled={!canScrollRight}
               whileHover={canScrollRight ? { scale: 1.1 } : {}}
               whileTap={canScrollRight ? { scale: 0.95 } : {}}
-              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${canScrollRight
+              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
+                canScrollRight
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
-                }`}
+              }`}
               style={
                 canScrollRight
                   ? { backgroundColor: "#232061" }
@@ -268,16 +316,20 @@ export default function ExpertiseSection() {
             scrollPaddingRight: "2rem",
           }}
         >
-          {expertiseCards.map((card) => (
+          {expertiseCards.map((card, index) => (
             <div
               key={card.id}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
               onMouseEnter={() => setHoveredCard(card.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              className="bg-[#027C990D] rounded-[50px] pt-6 h-max flex flex-col relative flex-shrink-0 w-full max-w-[380px] min-w-[360px] transition-all duration-300 ease-in-out"
+              className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] transition-all duration-300 ease-in-out"
               style={{
                 scrollSnapAlign: "start",
                 transform: hoveredCard === card.id ? "scale(1.05)" : "scale(1)",
                 zIndex: hoveredCard === card.id ? 10 : 1,
+                height: cardHeight ? `${cardHeight}px` : "auto",
               }}
             >
               <AnimateOnScroll delay={0}>
@@ -303,7 +355,7 @@ export default function ExpertiseSection() {
                 </span>
               </div>
 
-              <div className="w-full h-[397px] max-sm:h-[313px] mt-7 rounded-[50px] bg-[#7f6244d8]">
+              <div className="w-full h-[397px] max-sm:h-[313px] mt-7 rounded-[50px] bg-[#7f6244d8] overflow-hidden absolute bottom-0">
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -313,7 +365,10 @@ export default function ExpertiseSection() {
                 />
               </div>
 
-              <Link href={card.url} className="cursor-pointer z-[60] text-[#232061] flex items-center gap-3 bg-[#FFFFFFCC] px-4 py-3 rounded-[50px] text-2xl font-semibold absolute bottom-8 left-8 max-sm:text-[15px] max-sm:py-2">
+              <Link
+                href={card.url}
+                className="cursor-pointer z-[60] text-[#232061] flex items-center gap-3 bg-[#FFFFFFCC] px-4 py-3 rounded-[50px] text-2xl font-semibold absolute bottom-8 left-8 max-sm:text-[15px] max-sm:py-2"
+              >
                 Read More
                 <svg
                   width="36"
@@ -345,7 +400,10 @@ export default function ExpertiseSection() {
         </div>
 
         <div className="flex items-center justify-center gap-3 mt-6">
-          <Link href={'/faq'} className="cursor-pointer z-[60] text-white flex items-center gap-3 bg-[#232061] px-4 py-2.5 rounded-[50px] text-2xl font-semibold max-sm:text-[15px] max-sm:py-1">
+          <Link
+            href={"/faq"}
+            className="cursor-pointer z-[60] text-white flex items-center gap-3 bg-[#232061] px-4 py-2.5 rounded-[50px] text-2xl font-semibold max-sm:text-[15px] max-sm:py-1"
+          >
             Talk to an Expert
           </Link>
 
