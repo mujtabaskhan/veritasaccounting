@@ -576,7 +576,7 @@ function ModernHero() {
 
               <div className="flex items-center gap-3">
                 <Link
-                  href="/contact"
+                  href="/faq"
                   className="px-10 py-4 rounded-full font-bold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-lg"
                   style={{
                     backgroundColor: "#232061",
