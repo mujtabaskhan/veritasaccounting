@@ -1,3 +1,5 @@
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+
 export default function MeetTeam() {
   const teamMembers = [
     {
@@ -24,10 +26,12 @@ export default function MeetTeam() {
     <section className="bg-white pb-[122px] px-4 max-xl:pb-24 max-lg:pb-20 max-md:pb-16 max-sm:!pb-[105px]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-[90px] max-sm:!mb-9">
-          <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[40px] max-sm:!text-xl">
-            Meet our <br className="max-sm:hidden" />
-            <span className="font-semibold">Team</span>
-          </h2>
+          <AnimateOnScroll delay={0}>
+            <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[40px] max-sm:!text-xl">
+              Meet our <br className="max-sm:hidden" />
+              <span className="font-semibold">Team</span>
+            </h2>
+          </AnimateOnScroll>
         </div>
 
         <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-8 max-lg:gap-6 max-md:gap-5 max-sm:!gap-[59px]">

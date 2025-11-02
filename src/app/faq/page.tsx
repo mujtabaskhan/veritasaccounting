@@ -3,6 +3,7 @@
 import ContactSection from "@/components/about/ContactSection";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -48,10 +49,12 @@ const FAQ = () => {
           </div>
 
           <div className="mb-[129px] max-sm:mb-[95px]">
-            <h1 className="text-[#232061] font-semibold mb-9 text-[70px] max-sm:text-[30px] max-lg:text-[50px]">
-              Frequently Asked Questions <br className="max-sm:hidden" />{" "}
-              <span className="font-light">by our Clients</span>
-            </h1>
+            <AnimateOnScroll delay={0}>
+              <h1 className="text-[#232061] font-semibold mb-9 text-[70px] max-sm:text-[30px] max-lg:text-[50px]">
+                Frequently Asked Questions <br className="max-sm:hidden" />{" "}
+                <span className="font-light">by our Clients</span>
+              </h1>
+            </AnimateOnScroll>
             <p className="text-[#232061] text-xl font-flex max-w-4xl max-sm:text-xs">
               We understand that choosing the right accounting partner can be
               confusing. That’s why we’ve answered some of the most common

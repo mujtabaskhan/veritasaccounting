@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function MeetFounder() {
   return (
@@ -15,12 +16,14 @@ export default function MeetFounder() {
 
           <div className="flex flex-col gap-[61px] max-xl:gap-12 max-lg:gap-10 max-sm:gap-6 max-sm:items-center">
             <div>
-              <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px]  max-sm:!text-xl max-sm:!text-left max-sm:!leading-[20px]">
-                Meet our{" "}
-                <span className="font-semibold italic max-sm:block max-sm:!not-italic">
-                  Founder
-                </span>
-              </h2>
+              <AnimateOnScroll delay={0}>
+                <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px]  max-sm:!text-xl max-sm:!text-left max-sm:!leading-[20px]">
+                  Meet our{" "}
+                  <span className="font-semibold italic max-sm:block max-sm:!not-italic">
+                    Founder
+                  </span>
+                </h2>
+              </AnimateOnScroll>
             </div>
 
             <div>

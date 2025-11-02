@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 import React from "react";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const ApplyNow = () => {
   const [selectedService, setSelectedService] = useState("");
@@ -44,7 +45,11 @@ const ApplyNow = () => {
   return (
     <section className="bg-white px-4 pb-[104pxpx] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-0">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-[#232061] font-semibold text-[30px]">Apply Now</h3>
+        <AnimateOnScroll delay={0}>
+          <h3 className="text-[#232061] font-semibold text-[30px]">
+            Apply Now
+          </h3>
+        </AnimateOnScroll>
         <p className="text-[#232061] text-xl font-roboto mb-[31px]">
           Find your Career with Veritas Accounting & Tax Consultants
         </p>
@@ -139,7 +144,9 @@ const ApplyNow = () => {
           <div className="grid grid-cols-2 gap-15 mt-[16px] mb-[27px] max-sm:grid-cols-1 max-sm:!mt-[30px] max-sm:!gap-4">
             <div className="flex flex-col gap-[25px] items-center justify-center py-[30px] rounded-[26px] bg-[#F2F8FA]">
               <Image src="/check.svg" width={36} height={33} alt="check" />
-              <h3>Upload Your CV/ Resume</h3>
+              <AnimateOnScroll delay={100}>
+                <h3>Upload Your CV/ Resume</h3>
+              </AnimateOnScroll>
 
               <div className="flex items-center gap-3">
                 <Image src="/pdf.png" width={26} height={26} alt="pdf" />
@@ -148,7 +155,9 @@ const ApplyNow = () => {
             </div>
             <div className="flex flex-col gap-[25px] items-center justify-center py-[30px] rounded-[26px] bg-[#F2F8FA] max-sm:!mb-3">
               <Image src="/check.svg" width={36} height={33} alt="check" />
-              <h3>Upload Your CV/ Resume</h3>
+              <AnimateOnScroll delay={200}>
+                <h3>Upload Your CV/ Resume</h3>
+              </AnimateOnScroll>
 
               <div className="flex items-center gap-3">
                 <Image src="/pdf.png" width={26} height={26} alt="pdf" />
@@ -180,9 +189,11 @@ const ApplyNow = () => {
 
         <div className="space-y-8 pt-[106px] max-lg:pt-10 max-sm:!pt-0 hidden max-sm:!block mt-[94px]">
           <div className="border-2 border-[#232061] rounded-3xl p-10 max-sm:p-6">
-            <h3 className="text-4xl font-bold text-[#232061] mb-2 text-center max-sm:text-2xl">
-              What Happens Next?
-            </h3>
+            <AnimateOnScroll delay={0}>
+              <h3 className="text-4xl font-bold text-[#232061] mb-2 text-center max-sm:text-2xl">
+                What Happens Next?
+              </h3>
+            </AnimateOnScroll>
             <p className="text-3xl text-[#232061] text-center mb-8 font-light italic max-sm:text-xl max-sm:mb-5">
               In 3 easy steps
             </p>

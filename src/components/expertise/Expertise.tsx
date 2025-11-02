@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 interface ServiceCard {
   id: number;
@@ -254,9 +255,11 @@ export default function ExpertiseSection() {
                 zIndex: hoveredCard === card.id ? 10 : 1,
               }}
             >
-              <h3 className="text-[#232061] font-bold text-[50px] mb-10 px-10 max-sm:px-6 max-sm:text-[30px] max-sm:mb-7">
-                {card.title}
-              </h3>
+              <AnimateOnScroll delay={0}>
+                <h3 className="text-[#232061] font-bold text-[50px] mb-10 px-10 max-sm:px-6 max-sm:text-[30px] max-sm:mb-7">
+                  {card.title}
+                </h3>
+              </AnimateOnScroll>
 
               <div className="flex flex-col gap-3 px-10 max-sm:px-6 mb-3 max-sm:mb-2">
                 {card.badges.map((badge) => (

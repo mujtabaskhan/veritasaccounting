@@ -1,5 +1,6 @@
 import ContactSection from "@/components/about/ContactSection";
 import Navbar from "@/components/Navbar";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const Services1 = () => {
   const servicesData = [
@@ -32,9 +33,11 @@ const Services1 = () => {
               <div key={index}>
                 <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                   <div className="flex flex-col gap-3 max-w-3xl">
-                    <h3 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
-                      {service.title}
-                    </h3>
+                    <AnimateOnScroll delay={0}>
+                      <h3 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                        {service.title}
+                      </h3>
+                    </AnimateOnScroll>
                     <p className="text-[#232061] text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
                       {service.description}
                     </p>
