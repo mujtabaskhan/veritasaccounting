@@ -92,9 +92,9 @@ const Navbar = () => {
   }, []);
 
   const expertiseItems = [
-    { label: "Web Development", href: "/expertise/web" },
-    { label: "Mobile Apps", href: "/expertise/mobile" },
-    { label: "Cloud Solutions", href: "/expertise/cloud" },
+    { label: "Accounting", href: "/accounting" },
+    { label: "Tax Services", href: "/tax-services" },
+    { label: "Payroll Services", href: "/payroll-services" },
   ];
 
   if (!isMounted) return null;
@@ -183,6 +183,8 @@ const Navbar = () => {
                 </span>
               </Link>
 
+               
+
               <div
                 className="relative"
                 onMouseEnter={handleExpertiseEnter}
@@ -225,23 +227,7 @@ const Navbar = () => {
                 </span>
               </Link>
 
-              <Link
-                href="/team"
-                className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
-                  isExpertiseOpen
-                    ? "hover:bg-white/20 hover:text-white"
-                    : "hover:bg-[#232061] hover:text-white"
-                }`}
-              >
-                <span className="relative inline-block">
-                  <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
-                    Team
-                  </span>
-                  <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                    Team
-                  </span>
-                </span>
-              </Link>
+             
 
               <Link
                 href="/faq"
@@ -261,8 +247,8 @@ const Navbar = () => {
                 </span>
               </Link>
 
-              <Link
-                href="/contact"
+             <Link
+                href="/team"
                 className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
                   isExpertiseOpen
                     ? "hover:bg-white/20 hover:text-white"
@@ -271,10 +257,10 @@ const Navbar = () => {
               >
                 <span className="relative inline-block">
                   <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
-                    Contact
+                    Team
                   </span>
                   <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                    Contact
+                    Team
                   </span>
                 </span>
               </Link>

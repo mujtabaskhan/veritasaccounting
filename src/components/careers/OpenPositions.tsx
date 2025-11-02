@@ -19,39 +19,79 @@ const OpenPositions = () => {
       about:
         "We're seeking a detail-oriented Junior Accountant to assist with bookkeeping, reconciliations, and tax preparation. You'll support our senior accountants in managing client accounts and ensuring accurate, timely financial reporting",
       responsibilities: [
-        "Assist in preparing financial statements and reports",
-        "Maintain accurate financial records and ledgers",
-        "Perform bank reconciliations and manage accounts payable/receivable",
-        "Support tax preparation and filing processes",
+        "Record daily financial transactions and reconcile accounts",
+        "Assist with corporate and personal tax filings",
+        "Support payroll processing and financial reporting",
+        "Maintain organized client documentation and records",
       ],
       qualifications: [
-        "Bachelor's degree in Accounting or Finance",
-        "1-3 years of relevant experience",
+        "Diploma or degree in Accounting, Finance, or related field",
+        "1-2 years of experience or internship in accounting/bookkeeping",
+        "Proficiency in QuickBooks, Xero, or similar software",
+        "Excellent attention to detail and organizational skills",
       ],
       benefits: [
-        "Competitive salary and performance bonuses",
-        "Health, dental, and vision insurance",
+        "Competitive salary and performance-based incentives",
+        "Flexible work options (hybrid or remote)",
+        "Paid time off and statutory holidays",
+        "Professional development and CPA support",
+        "Collaborative, inclusive, and growth-focused work culture",
+        "Access to modern accounting tools and secure digital workflows",
       ],
     },
     {
       id: 2,
-      title: "Junior Accountant",
-      badges: ["3 Years Experience", "Full-Time", "On-Site"],
+      title: "Senior Tax Consultant",
+      badges: ["5+ Years Experience", "Part-Time/ Contract", "Remote"],
       about:
-        "We're seeking a detail-oriented Junior Accountant to assist with bookkeeping, reconciliations, and tax preparation. You'll support our senior accountants in managing client accounts and ensuring accurate, timely financial reporting",
+        "We're looking for a Senior Tax Consultant with strong experience in corporate and personal taxation. You'll provide expert advisory services, ensure compliance, and assist clients with complex tax matters.",
       responsibilities: [
-        "Assist in preparing financial statements and reports",
-        "Maintain accurate financial records and ledgers",
-        "Perform bank reconciliations and manage accounts payable/receivable",
-        "Support tax preparation and filing processes",
+        "Prepare and review corporate and personal tax returns",
+        "Develop tax-efficient strategies and advise clients",
+        "Manage CRA correspondence and audit support",
+        "Stay updated with current tax laws and compliance standards",
       ],
       qualifications: [
-        "Bachelor's degree in Accounting or Finance",
-        "1-3 years of relevant experience",
+        "CPA designation (or in progress) preferred",
+        "3-5 years of experience in public accounting or tax advisory",
+        "In-depth knowledge of Canadian tax regulations",
+        "Strong communication and analytical skills",
       ],
       benefits: [
-        "Competitive salary and performance bonuses",
-        "Health, dental, and vision insurance",
+        "Competitive salary and performance-based incentives",
+        "Flexible work options (hybrid or remote)",
+        "Paid time off and statutory holidays",
+        "Professional development and CPA support",
+        "Collaborative, inclusive, and growth-focused work culture",
+        "Access to modern accounting tools and secure digital workflows",
+      ],
+    },
+    {
+      id: 3,
+      title: "Client Success Coordinator",
+      badges: ["2-3 Years Experience", "Part-Time/ Contract", "Remote"],
+      about:
+        "We're seeking a proactive Client Success Coordinator to ensure a smooth and positive experience for our clients. You'll manage onboarding, coordinate communication, and maintain client relationships throughout their engagement with Veritas.",
+      responsibilities: [
+        "Coordinate client onboarding and document collection",
+        "Schedule meetings and track service progress",
+        "Maintain CRM records and ensure timely communication",
+        "Support client satisfaction initiatives and identify improvements",
+      ],
+      qualifications: [
+        "1-3 years of experience in client relations, administration, or accounting support",
+        "Diploma or degree in Business Administration, Accounting, or related field",
+        "Strong interpersonal and organizational skills",
+        "Experience using CRM or project management tools",
+        "Customer-focused, solution-oriented attitude",
+      ],
+      benefits: [
+        "Competitive salary and performance-based incentives",
+        "Flexible work options (hybrid or remote)",
+        "Paid time off and statutory holidays",
+        "Professional development and CPA support",
+        "Collaborative, inclusive, and growth-focused work culture",
+        "Access to modern accounting tools and secure digital workflows",
       ],
     },
   ];
@@ -69,9 +109,8 @@ const OpenPositions = () => {
           {openPositions.map((position, index) => (
             <div
               key={index}
-              className={`flex flex-col ${
-                expandedId === position.id ? "gap-10 max-sm:!gap-5" : "gap-0"
-              }`}
+              className={`flex flex-col ${expandedId === position.id ? "gap-10 max-sm:!gap-5" : "gap-0"
+                }`}
             >
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div className="flex flex-col gap-[19px] max-sm:!gap-1.5">
@@ -99,18 +138,16 @@ const OpenPositions = () => {
                     alt="arrow"
                     width={35}
                     height={35}
-                    className={`transition-transform duration-300 max-md:h-5 max-md:w-5 max-sm:h-3 max-sm:w-3 ${
-                      expandedId === position.id ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-300 max-md:h-5 max-md:w-5 max-sm:h-3 max-sm:w-3 ${expandedId === position.id ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
               </div>
               <div
-                className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  expandedId === position.id
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${expandedId === position.id
                     ? "max-h-[2000px] opacity-100 mt-5"
                     : "max-h-0 opacity-0"
-                }`}
+                  }`}
               >
                 <div className="bg-[#F2F8FA] py-10 px-20 rounded-[50px] flex flex-col gap-8 max-sm:!p-8 max-sm:!gap-4">
                   <div className="text-xl text-[#232061] font-flex max-w-4xl max-sm:!text-sm">

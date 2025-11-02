@@ -1,34 +1,39 @@
 import ContactSection from "@/components/about/ContactSection";
-import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import Navbar from "@/components/Navbar";
 import Link from 'next/link';
+
 
 const Services1 = () => {
   const servicesData = [
     {
-      title: "Payroll Services",
+      title: "Business Advisory",
       description:
-        "Managing payroll can be time-consuming and complex — we make it simple. At Veritas Accounting, we handle every aspect of payroll processing with accuracy and compliance, ensuring your employees are paid on time and your business meets all government regulations. Here's some of our payroll services mentioned below:",
+        "At Veritas Accounting, we go beyond numbers to help you make strategic business decisions that drive growth and sustainability. Our advisory services provide the insights, planning, and guidance you need to navigate challenges, seize opportunities, and strengthen your financial performance. Here's some of our business advisory services mentioned below:",
       services: [
         {
-          title: "Payroll Management",
+          title: "Business Consulting & Advisory",
           description:
-            "Complete payroll administration including salary and wage calculations, paystub generation, and year-end slips (T4s, T5s, etc.), ensuring accuracy and compliance.",
+            "Strategic guidance to improve operations, control costs, and scale sustainably, tailored to your unique business challenges.",
         },
         {
-          title: "WSIB & Employer Obligations",
+          title: "Cash Flow Management",
           description:
-            "Assistance with Workplace Safety and Insurance Board (WSIB) reporting and compliance, helping you meet statutory requirements with confidence.",
+            "Clear insights into cash inflows and outflows, helping you maintain liquidity and keep your operations running smoothly.",
         },
         {
-          title: "Payroll Processing Guidance",
+          title: "Budgeting & Forecasting",
           description:
-            "Advisory support to help you determine the most efficient payroll system or service for your business, streamlining operations while staying compliant.",
+            "Practical tools and forward-looking strategies to plan ahead, manage expenses, and set realistic growth targets.",
+        },
+        {
+          title: "Succession & Exit Planning",
+          description:
+            "Customized strategies to transition ownership or exit your business successfully, protecting your legacy and financial future.",
         },
       ],
     },
   ];
-
   return (
     <>
       <Navbar />
@@ -40,7 +45,7 @@ const Services1 = () => {
                 <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                   <div className="flex flex-col gap-3 max-w-3xl">
                     <AnimateOnScroll delay={0}>
-                      <h3 className="text-[90px] font-semibold text-[#232061] mt-9 mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                      <h3 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
                         {service.title}
                       </h3>
                     </AnimateOnScroll>
@@ -49,7 +54,7 @@ const Services1 = () => {
                     </p>
                   </div>
 
-                  <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
+                 <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
                       Let&apos;s Talk
                       <svg
                         width="32"

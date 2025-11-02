@@ -40,7 +40,7 @@ export default function TheDifference() {
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={200}>
               <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-10">
-                Precision You Can Count On
+                Strategic Insight, Not Just Numbers
               </h3>
             </AnimateOnScroll>
             <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061]">
@@ -50,7 +50,7 @@ export default function TheDifference() {
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={300}>
               <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-10">
-                Precision You Can Count On
+                Trusted Partners for Your Success
               </h3>
             </AnimateOnScroll>
             <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061]">

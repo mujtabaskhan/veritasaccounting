@@ -1,8 +1,10 @@
 import ContactSection from "@/components/about/ContactSection";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import Navbar from "@/components/Navbar";
 import Link from 'next/link';
 
-const Services2 = () => {
+
+const Services1 = () => {
   const servicesData = [
     {
       title: "Tax Services",
@@ -32,7 +34,6 @@ const Services2 = () => {
       ],
     },
   ];
-
   return (
     <>
       <Navbar />
@@ -43,15 +44,17 @@ const Services2 = () => {
               <div key={index}>
                 <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                   <div className="flex flex-col gap-3 max-w-3xl">
-                    <h3 className="text-[90px] font-semibold text-[#232061] mt-9 mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
-                      {service.title}
-                    </h3>
-                    <p className="text-[#232061] mb-0 text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
+                    <AnimateOnScroll delay={0}>
+                      <h3 className="text-[90px] font-semibold text-[#232061] mt-9 mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                        {service.title}
+                      </h3>
+                    </AnimateOnScroll>
+                    <p className="text-[#232061] text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
                       {service.description}
                     </p>
                   </div>
-                  
-                    <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
+
+                 <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
                       Let&apos;s Talk
                       <svg
                         width="32"
@@ -70,8 +73,6 @@ const Services2 = () => {
                         />
                       </svg>
                     </Link>
-                  
-
                 </div>
 
                 <div className="bg-[#F2F8FA] px-14 py-10 max-sm:px-6 max-sm:py-8 rounded-[50px] mt-[81px] max-sm:mt-[38px] grid grid-cols-2 gap-8 max-md:grid-cols-1 max-sm:gap-4">
@@ -96,4 +97,4 @@ const Services2 = () => {
   );
 };
 
-export default Services2;
+export default Services1;

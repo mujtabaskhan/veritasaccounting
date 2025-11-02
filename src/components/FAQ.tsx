@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import Link from'next/link';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -99,7 +100,7 @@ export default function FAQ() {
         </div>
 
         <div className="flex justify-end mt-[74px] max-sm:mt-[38px] pb-[83px] max-sm:pb-[86px]">
-          <button className="px-5 py-1 rounded-full text-[25px] max-sm:text-[15px] max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#232061] text-white">
+          <Link href={"/faq"} className="px-5 py-1 rounded-full text-[25px] max-sm:text-[15px] max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#232061] text-white">
             Learn More
             <svg
               width="35"
@@ -116,7 +117,7 @@ export default function FAQ() {
                 stroke-linejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

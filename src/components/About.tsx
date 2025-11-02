@@ -1,8 +1,10 @@
 "use client";
+import Link from 'next/link';
 
 function ServicesSection() {
   const servicesRow1 = ["Accounting", "Tax", "Payroll", "Compliance"];
   const servicesRow2 = ["Advisory", "CFO Services", "Learn More"];
+
 
   return (
     <div className="bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10">
@@ -20,19 +22,20 @@ function ServicesSection() {
 
         <div className="flex flex-wrap justify-center gap-4 mb-[119px] max-sm:mb-[94px]">
           {servicesRow2.map((service) => (
-            <button
+            <Link
+              href={"/expertise"}
               key={service}
               className="px-5 py-1 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#E1EDF2] text-[#232061]"
               style={
                 service === "Learn More"
                   ? {
-                      backgroundColor: "#232061",
-                      color: "white",
-                    }
+                    backgroundColor: "#232061",
+                    color: "white",
+                  }
                   : {
-                      backgroundColor: "#E1EDF2",
-                      color: "#232061",
-                    }
+                    backgroundColor: "#E1EDF2",
+                    color: "#232061",
+                  }
               }
             >
               {service}
@@ -54,7 +57,7 @@ function ServicesSection() {
                   />
                 </svg>
               )}
-            </button>
+            </Link>
           ))}
         </div>
 

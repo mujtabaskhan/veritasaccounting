@@ -64,19 +64,25 @@ const Footer = () => {
               </h3>
               <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
                 <Link href="/" className="underline">
-                  Home
+                  Accounting
                 </Link>
-                <Link href="/expertise" className="underline">
-                  Expertise
+                <Link href="/tax-services" className="underline">
+                  Tax Services
                 </Link>
-                <Link href="/careers" className="underline">
-                  We’re Hiring
+                <Link href="/payroll-services" className="underline">
+                  Payroll Services
                 </Link>
-                <Link href="/faq" className="underline">
-                  FAQ
+                <Link href="/audit-and-compliance-support" className="underline">
+                  Audit & Compliance Support
                 </Link>
-                <Link href="/contact-us" className="underline">
-                  Contact Us
+                <Link href="/cfo-services" className="underline">
+                  CFO Services
+                </Link>
+                <Link href="/business-advisory" className="underline">
+                  Business Advisory
+                </Link>
+                <Link href="/business-administration" className="underline">
+                  Business Administration
                 </Link>
               </div>
             </div>
@@ -87,20 +93,15 @@ const Footer = () => {
               </h3>
               <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
                 <Link href="/" className="underline">
-                  Home
+                  Instagram
                 </Link>
                 <Link href="/expertise" className="underline">
-                  Expertise
+                  X
                 </Link>
                 <Link href="/careers" className="underline">
-                  We’re Hiring
+                  Linkedin
                 </Link>
-                <Link href="/faq" className="underline">
-                  FAQ
-                </Link>
-                <Link href="/contact-us" className="underline">
-                  Contact Us
-                </Link>
+               
               </div>
             </div>
           </div>

@@ -1,34 +1,39 @@
 import ContactSection from "@/components/about/ContactSection";
-import Navbar from "@/components/Navbar";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import Navbar from "@/components/Navbar";
 import Link from 'next/link';
+
 
 const Services1 = () => {
   const servicesData = [
     {
-      title: "Payroll Services",
+      title: "CFO Services",
       description:
-        "Managing payroll can be time-consuming and complex — we make it simple. At Veritas Accounting, we handle every aspect of payroll processing with accuracy and compliance, ensuring your employees are paid on time and your business meets all government regulations. Here's some of our payroll services mentioned below:",
+        "Our CFO services are designed to bring strategic financial leadership to your business, without the full-time cost. At Veritas Accounting, we provide expert financial insight, planning, and management to help you make informed decisions, improve cash flow, and drive sustainable growth. Here's some of our CFO services mentioned below:",
       services: [
         {
-          title: "Payroll Management",
+          title: "Virtual CFO Support",
           description:
-            "Complete payroll administration including salary and wage calculations, paystub generation, and year-end slips (T4s, T5s, etc.), ensuring accuracy and compliance.",
+            "Executive-level financial leadership tailored to your business needs. We act as your outsourced CFO, providing strategic insights, financial planning, and decision support without the cost of a full-time executive.",
         },
         {
-          title: "WSIB & Employer Obligations",
+          title: "Growth & Funding Strategy",
           description:
-            "Assistance with Workplace Safety and Insurance Board (WSIB) reporting and compliance, helping you meet statutory requirements with confidence.",
+            "Guidance on capital planning, financing, and scaling strategies, ensuring your business has the resources and structure to grow sustainably.",
         },
         {
-          title: "Payroll Processing Guidance",
+          title: "Performance Monitoring & Reporting",
           description:
-            "Advisory support to help you determine the most efficient payroll system or service for your business, streamlining operations while staying compliant.",
+            "Ongoing analysis of key financial metrics to help you track progress, identify risks, and make data-driven decisions.",
+        },
+        {
+          title: "Long-Term Financial Planning",
+          description:
+            "Big-picture financial oversight, including corporate tax planning, cash flow forecasting, and risk management, to secure your company's future.",
         },
       ],
     },
   ];
-
   return (
     <>
       <Navbar />
@@ -40,7 +45,7 @@ const Services1 = () => {
                 <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                   <div className="flex flex-col gap-3 max-w-3xl">
                     <AnimateOnScroll delay={0}>
-                      <h3 className="text-[90px] font-semibold text-[#232061] mt-9 mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                      <h3 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
                         {service.title}
                       </h3>
                     </AnimateOnScroll>
@@ -49,7 +54,7 @@ const Services1 = () => {
                     </p>
                   </div>
 
-                  <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
+                 <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
                       Let&apos;s Talk
                       <svg
                         width="32"

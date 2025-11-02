@@ -7,7 +7,7 @@ export default function MeetFounder() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center gap-14 max-xl:gap-10 max-lg:text-center  max-sm:!gap-6 max-[420px]:flex-col max-[420px]:!items-center">
           <Image
-            src="/founder.jpg"
+            src="/omair.jpeg"
             alt="Founder"
             width={500}
             height={500}
@@ -28,7 +28,7 @@ export default function MeetFounder() {
 
             <div>
               <h3 className="text-[50px] text-[#232061] leading-[50px] max-xl:text-[44px] max-xl:leading-[48px] max-lg:text-[38px] max-lg:leading-[42px] max-md:text-[32px] max-md:leading-9 max-sm:text-[28px] max-sm:!text-left max-sm:!text-xl max-sm:!leading-[20px] max-[420px]:!text-center">
-                Omair Hassan{" "}
+                Omair Ahsan{" "}
                 <span className="text-xl italic font-semibold max-sm:!text-base max-[420px]:!block">
                   CEO/Founder
                 </span>

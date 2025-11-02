@@ -12,13 +12,10 @@ const ApplyNow = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const services = [
-    { value: "accounting", label: "Accounting" },
-    { value: "tax", label: "Tax Services" },
-    { value: "payroll", label: "Payroll Services" },
-    { value: "audit", label: "Audit & Compliance Support" },
-    { value: "cfo", label: "CFO Services" },
-    { value: "advisory", label: "Business Advisory" },
-    { value: "admin", label: "Business Administration" },
+    { value: "accounting", label: "Junior Accountant" },
+    { value: "tax", label: "Senior Tax Consultant" },
+    { value: "payroll", label: "Client Success Coordinator" },
+    
   ];
 
   const handleServiceSelect = (service: { value: string; label: string }) => {
