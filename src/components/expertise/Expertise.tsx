@@ -5,15 +5,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import Link from 'next/link';
-
 
 interface ServiceCard {
   id: number;
   title: string;
   badges: string[];
   image: string;
-  url: string;
 }
 
 export default function ExpertiseSection() {
@@ -21,51 +18,26 @@ export default function ExpertiseSection() {
     {
       id: 1,
       title: "Accounting",
-      badges: ["Virtual Bookkeeping", "Financial Reporting & Analysis", "Dedicated Accounting Teams"],
+      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
       image: "/expertise-1.jpg",
-      url: "/accounting"
     },
     {
       id: 2,
-      title: "Tax Services",
-      badges: ["Personal Tax Preperation", "GST/HST Returns Filling", "Tax Planning & Strategy"],
+      title: "Accounting",
+      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
       image: "/expertise-2.jpg",
-      url: "/accounting"
     },
     {
       id: 3,
-      title: "Payroll Services",
-      badges: ["Payroll Management", "Payroll Processing Guidance"],
+      title: "Accounting",
+      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
       image: "/expertise-3.jpg",
-      url: "/accounting"
     },
     {
       id: 4,
-      title: "Audit & Compliance Support",
+      title: "Accounting",
       badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
       image: "/expertise-3.jpg",
-      url: "/accounting"
-    },
-    {
-      id: 5,
-      title: "CFO Services",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/accounting"
-    },
-    {
-      id: 6,
-      title: "Business Administration",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/accounting"
-    },
-    {
-      id: 7,
-      title: "Business Advisory",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-      image: "/expertise-3.jpg",
-      url: "/accounting"
     },
   ];
 
@@ -216,10 +188,11 @@ export default function ExpertiseSection() {
               disabled={!canScrollLeft}
               whileHover={canScrollLeft ? { scale: 1.1 } : {}}
               whileTap={canScrollLeft ? { scale: 0.95 } : {}}
-              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${canScrollLeft
+              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
+                canScrollLeft
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
-                }`}
+              }`}
               style={
                 canScrollLeft
                   ? { backgroundColor: "#232061" }
@@ -238,10 +211,11 @@ export default function ExpertiseSection() {
               disabled={!canScrollRight}
               whileHover={canScrollRight ? { scale: 1.1 } : {}}
               whileTap={canScrollRight ? { scale: 0.95 } : {}}
-              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${canScrollRight
+              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
+                canScrollRight
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
-                }`}
+              }`}
               style={
                 canScrollRight
                   ? { backgroundColor: "#232061" }
@@ -315,10 +289,7 @@ export default function ExpertiseSection() {
               </div>
 
               <button className="cursor-pointer z-[60] text-[#232061] flex items-center gap-3 bg-[#FFFFFFCC] px-4 py-3 rounded-[50px] text-2xl font-semibold absolute bottom-8 left-8 max-sm:text-[15px] max-sm:py-2">
-                <Link href={card.url}>
-                  Read More
-                </Link>
-
+                Read More
                 <svg
                   width="36"
                   height="36"
