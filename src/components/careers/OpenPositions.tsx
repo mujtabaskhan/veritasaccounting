@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const OpenPositions = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
@@ -16,7 +17,7 @@ const OpenPositions = () => {
       title: "Junior Accountant",
       badges: ["3 Years Experience", "Full-Time", "On-Site"],
       about:
-        "We’re seeking a detail-oriented Junior Accountant to assist with bookkeeping, reconciliations, and tax preparation. You’ll support our senior accountants in managing client accounts and ensuring accurate, timely financial reporting",
+        "We're seeking a detail-oriented Junior Accountant to assist with bookkeeping, reconciliations, and tax preparation. You'll support our senior accountants in managing client accounts and ensuring accurate, timely financial reporting",
       responsibilities: [
         "Assist in preparing financial statements and reports",
         "Maintain accurate financial records and ledgers",
@@ -24,7 +25,7 @@ const OpenPositions = () => {
         "Support tax preparation and filing processes",
       ],
       qualifications: [
-        "Bachelor’s degree in Accounting or Finance",
+        "Bachelor's degree in Accounting or Finance",
         "1-3 years of relevant experience",
       ],
       benefits: [
@@ -37,7 +38,7 @@ const OpenPositions = () => {
       title: "Junior Accountant",
       badges: ["3 Years Experience", "Full-Time", "On-Site"],
       about:
-        "We’re seeking a detail-oriented Junior Accountant to assist with bookkeeping, reconciliations, and tax preparation. You’ll support our senior accountants in managing client accounts and ensuring accurate, timely financial reporting",
+        "We're seeking a detail-oriented Junior Accountant to assist with bookkeeping, reconciliations, and tax preparation. You'll support our senior accountants in managing client accounts and ensuring accurate, timely financial reporting",
       responsibilities: [
         "Assist in preparing financial statements and reports",
         "Maintain accurate financial records and ledgers",
@@ -45,7 +46,7 @@ const OpenPositions = () => {
         "Support tax preparation and filing processes",
       ],
       qualifications: [
-        "Bachelor’s degree in Accounting or Finance",
+        "Bachelor's degree in Accounting or Finance",
         "1-3 years of relevant experience",
       ],
       benefits: [
@@ -58,9 +59,11 @@ const OpenPositions = () => {
   return (
     <section className="bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[81px]">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-[#232061] font-bold text-[30px] max-sm:!text-xl text-center mb-[47px] max-sm:!mb-[110px]">
-          Open Positions
-        </h3>
+        <AnimateOnScroll delay={0}>
+          <h3 className="text-[#232061] font-bold text-[30px] max-sm:!text-xl text-center mb-[47px] max-sm:!mb-[110px]">
+            Open Positions
+          </h3>
+        </AnimateOnScroll>
 
         <div className="flex flex-col gap-[98px] max-sm:!gap-12">
           {openPositions.map((position, index) => (

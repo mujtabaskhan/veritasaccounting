@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function ContactSection({
   hideHeading = true,
@@ -47,10 +48,12 @@ export default function ContactSection({
       <div className="max-w-7xl mx-auto">
         {hideHeading && (
           <div className="text-center mb-[35px] max-sm:!mb-[81px]">
-            <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:!text-xl max-sm:!leading-[20px] max-sm:!text-center">
-              Curious about what we <br />
-              can do for you?
-            </h2>
+            <AnimateOnScroll delay={0}>
+              <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:!text-xl max-sm:!leading-[20px] max-sm:!text-center">
+                Curious about what we <br />
+                can do for you?
+              </h2>
+            </AnimateOnScroll>
           </div>
         )}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-lg:gap-10 max-sm:!gap-[96px]">

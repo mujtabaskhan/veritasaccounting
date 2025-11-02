@@ -1,7 +1,8 @@
 import ContactSection from "@/components/about/ContactSection";
 import Navbar from "@/components/Navbar";
+import Link from 'next/link';
 
-const Services1 = () => {
+const Services2 = () => {
   const servicesData = [
     {
       title: "Tax Services",
@@ -9,14 +10,24 @@ const Services1 = () => {
         "At Veritas Accounting and Tax Consultants, we provide more than just numbers — we deliver clarity, confidence, and strategies to help your business grow. Whether you’re a small business owner, entrepreneur, or corporate client, our dedicated team offers tailored services designed to simplify your finances and maximize results. Explore our full range of services below:",
       services: [
         {
-          title: "CRA Audit Representation",
+          title: "Corporate Tax Preparation & Filing",
           description:
-            "Professional representation to communicate directly with the CRA on your behalf, ensuring compliance while protecting your business interests.",
+            "Ensure your corporation remains compliant while maximizing available deductions and credits.",
         },
         {
-          title: "CRA Audit Representation",
+          title: "GST/HST Returns & Filing",
           description:
-            "Professional representation to communicate directly with the CRA on your behalf, ensuring compliance while protecting your business interests.",
+            "Preparation and filing of monthly, quarterly, and annual GST/HST returns, ensuring your business stays compliant and penalty-free.",
+        },
+        {
+          title: "Personal Tax Preparation",
+          description:
+            "Accurate, stress-free filing for individuals and families, designed to minimize liabilities and maximize refunds.",
+        },
+        {
+          title: "Tax Planning & Strategy",
+          description:
+            "Proactive, year-round planning to reduce tax burdens, create long-term savings, and support financial growth.",
         },
       ],
     },
@@ -32,33 +43,35 @@ const Services1 = () => {
               <div key={index}>
                 <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                   <div className="flex flex-col gap-3 max-w-3xl">
-                    <h3 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                    <h3 className="text-[90px] font-semibold text-[#232061] mt-9 mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
                       {service.title}
                     </h3>
-                    <p className="text-[#232061] text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
+                    <p className="text-[#232061] mb-0 text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
                       {service.description}
                     </p>
                   </div>
+                  
+                    <Link href={'/contact'} className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
+                      Let&apos;s Talk
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="max-sm:w-4 max-sm:h-4"
+                      >
+                        <path
+                          d="M15.5833 21.4167L21.4167 15.5833M21.4167 15.5833L15.5833 9.75M21.4167 15.5833H9.75M30.1667 15.5833C30.1667 23.6375 23.6375 30.1667 15.5833 30.1667C7.52918 30.1667 1 23.6375 1 15.5833C1 7.52918 7.52918 1 15.5833 1C23.6375 1 30.1667 7.52918 30.1667 15.5833Z"
+                          stroke="#F3F3F3"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  
 
-                  <button className="flex items-center gap-3 bg-[#232061] text-white px-4 py-2 rounded-full max-sm:text-sm ml-auto">
-                    Let&apos;s Talk
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="max-sm:w-4 max-sm:h-4"
-                    >
-                      <path
-                        d="M15.5833 21.4167L21.4167 15.5833M21.4167 15.5833L15.5833 9.75M21.4167 15.5833H9.75M30.1667 15.5833C30.1667 23.6375 23.6375 30.1667 15.5833 30.1667C7.52918 30.1667 1 23.6375 1 15.5833C1 7.52918 7.52918 1 15.5833 1C23.6375 1 30.1667 7.52918 30.1667 15.5833Z"
-                        stroke="#F3F3F3"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
                 </div>
 
                 <div className="bg-[#F2F8FA] px-14 py-10 max-sm:px-6 max-sm:py-8 rounded-[50px] mt-[81px] max-sm:mt-[38px] grid grid-cols-2 gap-8 max-md:grid-cols-1 max-sm:gap-4">
@@ -83,4 +96,4 @@ const Services1 = () => {
   );
 };
 
-export default Services1;
+export default Services2;

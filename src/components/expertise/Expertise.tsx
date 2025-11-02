@@ -4,12 +4,16 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+import Link from 'next/link';
+
 
 interface ServiceCard {
   id: number;
   title: string;
   badges: string[];
   image: string;
+  url: string;
 }
 
 export default function ExpertiseSection() {
@@ -17,26 +21,51 @@ export default function ExpertiseSection() {
     {
       id: 1,
       title: "Accounting",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+      badges: ["Virtual Bookkeeping", "Financial Reporting & Analysis", "Dedicated Accounting Teams"],
       image: "/expertise-1.jpg",
+      url: "/accounting"
     },
     {
       id: 2,
-      title: "Accounting",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+      title: "Tax Services",
+      badges: ["Personal Tax Preperation", "GST/HST Returns Filling", "Tax Planning & Strategy"],
       image: "/expertise-2.jpg",
+      url: "/accounting"
     },
     {
       id: 3,
-      title: "Accounting",
-      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+      title: "Payroll Services",
+      badges: ["Payroll Management", "Payroll Processing Guidance"],
       image: "/expertise-3.jpg",
+      url: "/accounting"
     },
     {
       id: 4,
-      title: "Accounting",
+      title: "Audit & Compliance Support",
       badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
       image: "/expertise-3.jpg",
+      url: "/accounting"
+    },
+    {
+      id: 5,
+      title: "CFO Services",
+      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+      image: "/expertise-3.jpg",
+      url: "/accounting"
+    },
+    {
+      id: 6,
+      title: "Business Administration",
+      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+      image: "/expertise-3.jpg",
+      url: "/accounting"
+    },
+    {
+      id: 7,
+      title: "Business Advisory",
+      badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+      image: "/expertise-3.jpg",
+      url: "/accounting"
     },
   ];
 
@@ -187,11 +216,10 @@ export default function ExpertiseSection() {
               disabled={!canScrollLeft}
               whileHover={canScrollLeft ? { scale: 1.1 } : {}}
               whileTap={canScrollLeft ? { scale: 0.95 } : {}}
-              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
-                canScrollLeft
+              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${canScrollLeft
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
-              }`}
+                }`}
               style={
                 canScrollLeft
                   ? { backgroundColor: "#232061" }
@@ -210,11 +238,10 @@ export default function ExpertiseSection() {
               disabled={!canScrollRight}
               whileHover={canScrollRight ? { scale: 1.1 } : {}}
               whileTap={canScrollRight ? { scale: 0.95 } : {}}
-              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
-                canScrollRight
+              className={`w-12 h-12 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${canScrollRight
                   ? "cursor-pointer"
                   : "opacity-50 cursor-not-allowed"
-              }`}
+                }`}
               style={
                 canScrollRight
                   ? { backgroundColor: "#232061" }
@@ -254,9 +281,11 @@ export default function ExpertiseSection() {
                 zIndex: hoveredCard === card.id ? 10 : 1,
               }}
             >
-              <h3 className="text-[#232061] font-bold text-[50px] mb-10 px-10 max-sm:px-6 max-sm:text-[30px] max-sm:mb-7">
-                {card.title}
-              </h3>
+              <AnimateOnScroll delay={0}>
+                <h3 className="text-[#232061] font-bold text-[50px] mb-10 px-10 max-sm:px-6 max-sm:text-[30px] max-sm:mb-7">
+                  {card.title}
+                </h3>
+              </AnimateOnScroll>
 
               <div className="flex flex-col gap-3 px-10 max-sm:px-6 mb-3 max-sm:mb-2">
                 {card.badges.map((badge) => (
@@ -286,7 +315,10 @@ export default function ExpertiseSection() {
               </div>
 
               <button className="cursor-pointer z-[60] text-[#232061] flex items-center gap-3 bg-[#FFFFFFCC] px-4 py-3 rounded-[50px] text-2xl font-semibold absolute bottom-8 left-8 max-sm:text-[15px] max-sm:py-2">
-                Read More
+                <Link href={card.url}>
+                  Read More
+                </Link>
+
                 <svg
                   width="36"
                   height="36"
