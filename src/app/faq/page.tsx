@@ -27,7 +27,37 @@ const FAQ = () => {
     {
       question: "Do you offer virtual or remote services?",
       answer:
-        "Yes, we offer comprehensive virtual and remote services to clients across Canada. All our services can be delivered remotely, including bookkeeping, tax preparation, payroll management, and financial advisory services.",
+        "Yes, we offer fully remote accounting and tax services, allowing you to collaborate with us from anywhere in Canada.",
+    },
+    {
+      question: "How much do your services cost?",
+      answer:
+        "Pricing depends on the scope and complexity of your needs. We provide customized quotes after your consultation.",
+    },
+    {
+      question: "Are my financial records secure with you?",
+      answer:
+        "Absolutely. We use encrypted systems and secure portals to ensure your data and documents remain fully protected here with us at Veritas Accounting.",
+    },
+    {
+      question: "Do you handle CRA audits or correspondence?",
+      answer:
+        "Yes, we can assist with CRA communication, audit support, and tax compliance to ensure your business stays on track.",
+    },
+    {
+      question: "Can you help with business incorporation or registration?",
+      answer:
+        "Yes, we assist clients with business setup, incorporation, and choosing the right structure for tax efficiency.",
+    },
+    {
+      question: "What's the turnaround time for tax filings?",
+      answer:
+        "Turnaround time varies by complexity, but most returns are completed within 1-2 weeks once all documents are received.",
+    },
+    {
+      question: "How can I contact your team?",
+      answer:
+        "You can reach us via our website contact form, email, or by phone during business hours.",
     },
   ];
 
