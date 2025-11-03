@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-f652253d-c8ac-47a7-bb22-87f67c73fb53" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 6506">
+  <defs>
+    <style>
+      .uuid-15a9aa89-7e5f-49b3-8564-fd3a0d644348 {
+        opacity: .05;
+      }
+
+      .uuid-43c1a633-00f4-433e-80a6-4b5cf209df92 {
+        fill: url(#uuid-24778eb7-5be7-447d-8446-28c3165ce518);
+      }
+
+      .uuid-387b9a09-bfd3-4f89-9419-668d8ffed8a3 {
+        fill: #232061;
+      }
+    </style>
+    <linearGradient id="uuid-24778eb7-5be7-447d-8446-28c3165ce518" x1="2350.33" y1="3079.78" x2="675.52" y2="4046.74" gradientTransform="translate(-2293.17 1693.17) rotate(90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#027c99"/>
+      <stop offset=".23" stop-color="#027f9c"/>
+      <stop offset=".46" stop-color="#0288a8"/>
+      <stop offset=".68" stop-color="#0298bb"/>
+      <stop offset=".9" stop-color="#02add6"/>
+      <stop offset="1" stop-color="#03bae6"/>
+    </linearGradient>
+  </defs>
+  <g class="uuid-15a9aa89-7e5f-49b3-8564-fd3a0d644348">
+    <polygon class="uuid-43c1a633-00f4-433e-80a6-4b5cf209df92" points="1021.24 4178.96 1867.01 2839.08 1464.8 2201.96 1021.24 4178.96"/>
+    <polygon class="uuid-387b9a09-bfd3-4f89-9419-668d8ffed8a3" points="1861.64 1691.77 227.64 138.65 1471.43 2109.02 1861.64 2727.19 1861.64 1691.77"/>
+  </g>
+</svg>

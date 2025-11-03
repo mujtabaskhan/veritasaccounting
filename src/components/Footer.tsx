@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
   return (
-    <footer className="bg-white sticky bottom-0 left-0 right-0 h-[800px] z-10">
+    <footer
+      className={`bg-white sticky bottom-0 left-0 right-0 h-[800px] z-10 ${className}`}
+    >
       <Image
         src="/footer-bg.png"
         alt="footer-bg"

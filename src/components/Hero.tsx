@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 function ModernHero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
+  const [isMobileExpertiseOpen, setIsMobileExpertiseOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -18,6 +19,11 @@ function ModernHero() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setIsMobileExpertiseOpen(false);
+  };
+
+  const toggleMobileExpertise = () => {
+    setIsMobileExpertiseOpen(!isMobileExpertiseOpen);
   };
 
   const handleExpertiseEnter = () => {
@@ -203,8 +209,6 @@ function ModernHero() {
                       </span>
                     </Link>
 
-                   
-
                     <div
                       className="relative"
                       onMouseEnter={handleExpertiseEnter}
@@ -247,8 +251,6 @@ function ModernHero() {
                       </span>
                     </Link>
 
-                    
-
                     <Link
                       href="/faq"
                       className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
@@ -267,7 +269,7 @@ function ModernHero() {
                       </span>
                     </Link>
 
-                     <Link
+                    <Link
                       href="/team"
                       className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
                         isExpertiseOpen
@@ -284,8 +286,6 @@ function ModernHero() {
                         </span>
                       </span>
                     </Link>
-
-                   
                   </div>
 
                   <div className="max-lg:hidden flex gap-10 items-center">
@@ -378,7 +378,7 @@ function ModernHero() {
                     </button>
 
                     <div
-                      className={`absolute right-0 top-full mt-2 bg-white rounded-3xl p-6 w-[280px] shadow-2xl z-50 transition-all duration-300 ${
+                      className={`absolute right-0 top-full mt-2 bg-white rounded-3xl p-6 w-[280px] shadow-2xl z-50 transition-all duration-300 max-h-[420px] overflow-y-auto ${
                         isMenuOpen
                           ? "opacity-100 translate-y-0 pointer-events-auto"
                           : "opacity-0 -translate-y-2 pointer-events-none"
@@ -392,13 +392,56 @@ function ModernHero() {
                         >
                           Home
                         </Link>
-                        <Link
-                          href="/expertise"
-                          onClick={closeMenu}
-                          className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
-                        >
-                          Expertise
-                        </Link>
+                        <div className="flex flex-col gap-2">
+                          <button
+                            onClick={toggleMobileExpertise}
+                            className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base flex items-center justify-center gap-2"
+                          >
+                            Expertise
+                            <svg
+                              className={`w-4 h-4 transition-transform duration-300 ${
+                                isMobileExpertiseOpen ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </button>
+                          <div
+                            className={`transition-all duration-300 ${
+                              isMobileExpertiseOpen
+                                ? "max-h-96 opacity-100 overflow-y-auto mobile-expertise-dropdown"
+                                : "max-h-0 opacity-0 overflow-hidden"
+                            }`}
+                          >
+                            <div className="flex flex-col gap-2 pl-4 pt-2">
+                              {expertiseItems.map((item) => (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  onClick={closeMenu}
+                                  className="text-center text-[#232061] font-normal py-2 px-4 rounded-[25px] bg-[#E8E8E8] text-sm"
+                                >
+                                  {item.label}
+                                </Link>
+                              ))}
+                              <Link
+                                href="/expertise"
+                                onClick={closeMenu}
+                                className="text-center font-medium py-2 px-4 rounded-[25px] bg-[#232061] text-white text-sm"
+                              >
+                                View More Services
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
                         <Link
                           href="/careers"
                           onClick={closeMenu}
@@ -419,13 +462,6 @@ function ModernHero() {
                           className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
                         >
                           FAQ
-                        </Link>
-                        <Link
-                          href="/contact"
-                          onClick={closeMenu}
-                          className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
-                        >
-                          Contact
                         </Link>
                       </div>
 
@@ -956,6 +992,30 @@ function ModernHero() {
             pointer-events: none !important;
             transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
               visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          }
+
+          /* Mobile expertise dropdown scrollbar styling */
+          .mobile-expertise-dropdown {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(35, 32, 97, 0.3) transparent;
+          }
+
+          .mobile-expertise-dropdown::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          .mobile-expertise-dropdown::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+          }
+
+          .mobile-expertise-dropdown::-webkit-scrollbar-thumb {
+            background-color: rgba(35, 32, 97, 0.3);
+            border-radius: 10px;
+          }
+
+          .mobile-expertise-dropdown::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(35, 32, 97, 0.5);
           }
         `}</style>
       </div>
