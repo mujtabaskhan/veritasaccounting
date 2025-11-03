@@ -286,23 +286,7 @@ function Hero() {
                     </span>
                   </Link>
 
-                  <Link
-                    href="/contact"
-                    className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
-                      isExpertiseOpen
-                        ? "hover:bg-white/20 hover:text-white"
-                        : "hover:bg-[#232061] hover:text-white"
-                    }`}
-                  >
-                    <span className="relative inline-block">
-                      <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
-                        Contact
-                      </span>
-                      <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                        Contact
-                      </span>
-                    </span>
-                  </Link>
+
                 </div>
 
                 <div className="max-lg:hidden flex gap-10 items-center">
