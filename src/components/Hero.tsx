@@ -392,7 +392,7 @@ function ModernHero() {
                         >
                           Home
                         </Link>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col">
                           <button
                             onClick={toggleMobileExpertise}
                             className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base flex items-center justify-center gap-2"

@@ -409,7 +409,7 @@ function Hero() {
                       >
                         Home
                       </Link>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col">
                         <button
                           onClick={toggleMobileExpertise}
                           className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base flex items-center justify-center gap-2"
@@ -608,7 +608,7 @@ function Hero() {
         ></div>
 
         <div className="max-w-7xl max-autorelative z-20 relative flex flex-col h-full px-10 md:px-20 lg:px-32 pt-32">
-          <div className="mb-20 max-sm:mb-20 mt-10">
+          <div className="mb-20 max-sm:mb-10">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
               <span className="font-normal">Home</span>
               <span className="font-black mx-5">&gt;</span>
@@ -616,7 +616,7 @@ function Hero() {
             </nav>
           </div>
           <div className="w-full">
-            <p className="text-[70px] max-sm:text-[50px] text-[#232061] mb-14">
+            <p className="text-[70px] max-sm:text-[50px] text-[#232061] mb-14 max-sm:mb-6">
               Our <br /> <span className="font-semibold">Expertise</span>
             </p>
 
