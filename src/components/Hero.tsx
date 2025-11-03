@@ -574,8 +574,9 @@ function ModernHero() {
             <div className="w-full max-w-3xl text-[#232061] font-semibold">
               <p className="text-[32px] max-sm:text-xl mb-2">Welcome to</p>
 
-              <h1 className="text-[96px] max-sm:text-[48px] leading-[65px] mb-[61px] max-sm:mb-[124px]">
-                Veritas Accounting
+              <h1 className="text-[80px] max-lg:text-[70px] max-md:text-[50px] max-sm:text-[48px] leading-[65px] mb-[61px] max-sm:mb-[80px]">
+                Veritas <br />
+                Accounting
               </h1>
 
               <div className="flex items-center gap-8 mb-12">
