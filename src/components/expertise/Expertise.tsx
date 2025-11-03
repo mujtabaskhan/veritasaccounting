@@ -1,11 +1,11 @@
 "use client";
 
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
-import AnimateOnScroll from "@/components/AnimateOnScroll";
 import Link from "next/link";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface ServiceCard {
   id: number;
@@ -86,7 +86,6 @@ export default function ExpertiseSection() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [cardHeight, setCardHeight] = useState<number | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -130,39 +129,6 @@ export default function ExpertiseSection() {
       window.removeEventListener("resize", checkScroll);
     };
   }, []);
-
-  useEffect(() => {
-    // Calculate max height of all cards
-    const calculateMaxHeight = () => {
-      // Use setTimeout to ensure DOM is fully rendered
-      setTimeout(() => {
-        const heights = cardRefs.current
-          .filter((ref) => ref !== null)
-          .map((ref) => {
-            // Temporarily remove fixed height to get natural height
-            if (ref) {
-              const originalHeight = ref.style.height;
-              ref.style.height = "auto";
-              const naturalHeight = ref.offsetHeight;
-              ref.style.height = originalHeight;
-              return naturalHeight;
-            }
-            return 0;
-          });
-        if (heights.length > 0) {
-          const maxHeight = Math.max(...heights);
-          setCardHeight(maxHeight);
-        }
-      }, 100);
-    };
-
-    // Calculate height after initial render
-    calculateMaxHeight();
-
-    // Recalculate on window resize
-    window.addEventListener("resize", calculateMaxHeight);
-    return () => window.removeEventListener("resize", calculateMaxHeight);
-  }, [expertiseCards]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -324,12 +290,11 @@ export default function ExpertiseSection() {
               }}
               onMouseEnter={() => setHoveredCard(card.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] transition-all duration-300 ease-in-out"
+              className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] transition-all duration-300 ease-in-out h-[980px] max-sm:h-[600px]"
               style={{
                 scrollSnapAlign: "start",
                 transform: hoveredCard === card.id ? "scale(1.05)" : "scale(1)",
                 zIndex: hoveredCard === card.id ? 10 : 1,
-                height: cardHeight ? `${cardHeight}px` : "auto",
               }}
             >
               <AnimateOnScroll delay={0}>
