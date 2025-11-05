@@ -100,7 +100,7 @@ const OpenPositions = () => {
     <section className="bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[81px]">
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
-          <h3 className="text-[#232061] font-bold text-[30px] max-sm:!text-xl text-center mb-[47px] max-sm:!mb-[110px]">
+          <h3 className="text-[#232061] font-bold text-[30px] max-sm:!text-xl text-center mb-[47px]">
             Open Positions
           </h3>
         </AnimateOnScroll>
@@ -109,8 +109,9 @@ const OpenPositions = () => {
           {openPositions.map((position, index) => (
             <div
               key={index}
-              className={`flex flex-col ${expandedId === position.id ? "gap-10 max-sm:!gap-5" : "gap-0"
-                }`}
+              className={`flex flex-col ${
+                expandedId === position.id ? "gap-10 max-sm:!gap-5" : "gap-0"
+              }`}
             >
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div className="flex flex-col gap-[19px] max-sm:!gap-1.5">
@@ -138,16 +139,18 @@ const OpenPositions = () => {
                     alt="arrow"
                     width={35}
                     height={35}
-                    className={`transition-transform duration-300 max-md:h-5 max-md:w-5 max-sm:h-3 max-sm:w-3 ${expandedId === position.id ? "rotate-180" : ""
-                      }`}
+                    className={`transition-transform duration-300 max-md:h-5 max-md:w-5 max-sm:h-3 max-sm:w-3 ${
+                      expandedId === position.id ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
               </div>
               <div
-                className={`transition-all duration-500 ease-in-out overflow-hidden ${expandedId === position.id
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                  expandedId === position.id
                     ? "max-h-[2000px] opacity-100 mt-5"
                     : "max-h-0 opacity-0"
-                  }`}
+                }`}
               >
                 <div className="bg-[#F2F8FA] py-10 px-20 rounded-[50px] flex flex-col gap-8 max-sm:!p-8 max-sm:!gap-4">
                   <div className="text-xl text-[#232061] font-flex max-w-4xl max-sm:!text-sm">

@@ -6,7 +6,7 @@ const Terms = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0">
+      <section className="bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
@@ -50,10 +50,10 @@ const Terms = () => {
               <h3 className="font-bold">2. Services</h3>
               <p>
                 Veritas Accounting & Tax Consultants provides professional
-                accounting, bookkeeping, payroll, tax, and advisory
-                services. All services are subject to a written agreement or
-                engagement letter that outlines the specific scope, fees, and
-                timelines for your engagement.
+                accounting, bookkeeping, payroll, tax, and advisory services.All
+                services are subject to a written agreement or engagement letter
+                that outlines the specific scope, fees, and timelines for your
+                engagement.
               </p>
             </div>
 
@@ -61,7 +61,7 @@ const Terms = () => {
               <h3 className="font-bold">3. Client Responsibilities</h3>
               <p>
                 Clients are responsible for providing accurate, complete, and
-                timely information necessary for us to perform our services. We
+                timely information necessary for us to perform our services.We
                 are not liable for errors or delays resulting from incomplete,
                 inaccurate, or late submissions.
               </p>

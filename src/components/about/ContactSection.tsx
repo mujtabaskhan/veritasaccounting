@@ -44,10 +44,13 @@ export default function ContactSection({
   }, []);
 
   return (
-    <section className="bg-white py-20 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-16">
+    <section
+      id="contact-section"
+      className="bg-white py-32 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-16"
+    >
       <div className="max-w-7xl mx-auto">
         {hideHeading && (
-          <div className="text-center mb-[35px] max-sm:!mb-[81px]">
+          <div className="text-center mb-[65px] max-sm:!mb-[81px]">
             <AnimateOnScroll delay={0}>
               <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:!text-xl max-sm:!leading-[20px] max-sm:!text-center">
                 Curious about what we <br />
@@ -177,7 +180,7 @@ export default function ContactSection({
             </form>
           </div>
 
-          <div className="space-y-8 pt-[106px] max-lg:pt-10 max-sm:!pt-0">
+          <div className="space-y-8 pt-[106px] max-lg:pt-10 max-sm:!pt-0 pb-20">
             <div className="border-2 border-[#232061] rounded-3xl p-10 max-sm:p-6">
               <h3 className="text-4xl font-bold text-[#232061] mb-2 text-center max-sm:text-2xl">
                 What Happens Next?

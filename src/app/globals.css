@@ -31,7 +31,6 @@
 }
 
 body {
-  background: #ffffff;
   color: var(--foreground);
   font-family: "Roboto Serif", Arial, Helvetica, sans-serif;
 }

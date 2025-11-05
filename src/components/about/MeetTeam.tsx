@@ -62,7 +62,7 @@ export default function MeetTeam() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-[114px] max-md:gap-6 max-lg:mt-6 max-sm:!gap-0 max-sm:!mt-[59px]">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mt-[114px] max-md:gap-6 max-lg:mt-6 max-sm:!gap-0 max-sm:!mt-[59px]">
           <div></div>
           <div>
             {" "}

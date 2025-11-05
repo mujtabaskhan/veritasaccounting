@@ -9,8 +9,11 @@ const Navbar = () => {
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
   const [isMobileExpertiseOpen, setIsMobileExpertiseOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollPositionRef = useRef<number>(0);
+  const lastScrollYRef = useRef<number>(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -97,6 +100,57 @@ const Navbar = () => {
     setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Disable scroll animations on screens below 1024px (max-lg)
+      if (window.innerWidth < 1024) {
+        setIsNavbarVisible(true);
+        setIsCollapsed(false);
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - lastScrollYRef.current;
+
+      // If at top, show full navbar
+      if (currentScrollY < 50) {
+        setIsNavbarVisible(true);
+        setIsCollapsed(false);
+      } else {
+        // Scrolling down - hide navbar
+        if (scrollDifference > 5) {
+          setIsNavbarVisible(false);
+        }
+        // Scrolling up - show collapsed navbar
+        else if (scrollDifference < -5) {
+          setIsNavbarVisible(true);
+          setIsCollapsed(true);
+        }
+      }
+
+      lastScrollYRef.current = currentScrollY;
+    };
+
+    const handleResize = () => {
+      // Reset navbar state on resize
+      if (window.innerWidth < 1024) {
+        setIsNavbarVisible(true);
+        setIsCollapsed(false);
+      }
+      handleScroll();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
+    handleScroll(); // Check initial scroll position
+    lastScrollYRef.current = window.scrollY;
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const expertiseItems = [
     { label: "Accounting", href: "/accounting" },
     { label: "Tax Services", href: "/tax-services" },
@@ -106,7 +160,13 @@ const Navbar = () => {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div
+      className={`max-lg:relative max-lg:bg-white max-lg:top-auto fixed top-0 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
+        isNavbarVisible
+          ? "translate-y-0"
+          : "-translate-y-full max-lg:translate-y-0"
+      }`}
+    >
       <div
         className="backdrop-overlay"
         onClick={() => setIsExpertiseOpen(false)}
@@ -142,27 +202,39 @@ const Navbar = () => {
         }}
       />
       <div
-        className={`bg-white relative navbar-container ${
+        className={`relative navbar-container ${
           isExpertiseOpen ? "navbar-expanded" : ""
-        }`}
+        } ${isCollapsed ? "navbar-collapsed" : ""}`}
       >
         <div
           className={`expertise-bg ${
             isExpertiseOpen ? "expertise-bg-open" : "expertise-bg-closed"
           }`}
         />
-        <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-10 relative z-[200]">
-          <div className="flex items-center justify-between py-4">
-            <Image
-              src={isExpertiseOpen ? "/logo-white.png" : "/logo.png"}
-              alt="logo"
-              width={1000}
-              height={1000}
-              className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
-            />
+        <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-4 relative z-[200]">
+          <div
+            className={`flex items-center transition-all duration-300 max-lg:justify-between ${
+              isCollapsed ? "justify-center" : "justify-between"
+            }`}
+          >
+            <div
+              className={`transition-all duration-300 overflow-hidden ${
+                isCollapsed
+                  ? "w-0 opacity-0 max-lg:opacity-100 max-lg:w-auto"
+                  : "w-auto opacity-100"
+              }`}
+            >
+              <Image
+                src={isExpertiseOpen ? "/logo-white.png" : "/logo.png"}
+                alt="logo"
+                width={1000}
+                height={1000}
+                className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
+              />
+            </div>
 
             <div
-              className={`max-lg:hidden flex items-center gap-6 bg-[#FFFFFF4D] px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
+              className={`navbar-bg max-lg:hidden flex items-center gap-6 bg-[#FFFFFF4D] px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
                 isExpertiseOpen
                   ? "text-white border-white"
                   : "text-[#232061] border-[#232061]"
@@ -268,23 +340,11 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <div className="max-lg:hidden flex gap-10 items-center">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 29 29"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-colors duration-300 cursor-pointer"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M10.8639 14.7078L0 1.20825H8.60496L15.3111 9.55191L22.4756 1.24582H27.2148L17.6025 12.4028L29 26.5833H20.4207L13.1593 17.5601L5.407 26.5582H0.642161L10.8639 14.7078ZM21.6712 24.082L5.27627 3.70948H7.3535L23.7278 24.082H21.6712Z"
-                  fill={isExpertiseOpen ? "#FFFFFF" : "#232061"}
-                />
-              </svg>
-
+            <div
+              className={`max-lg:hidden flex gap-10 items-center transition-all duration-300 overflow-hidden ${
+                isCollapsed ? "w-0 opacity-0" : "w-auto opacity-100"
+              }`}
+            >
               <svg
                 width="18"
                 height="18"
@@ -447,13 +507,6 @@ const Navbar = () => {
 
                 <div className="flex gap-6 items-center justify-center">
                   <Image
-                    src="x.svg"
-                    alt="x"
-                    width={20}
-                    height={20}
-                    className="cursor-pointer"
-                  />
-                  <Image
                     src="linkedin.svg"
                     alt="linkedin"
                     width={20}
@@ -557,6 +610,10 @@ const Navbar = () => {
 
           .navbar-expanded {
             transform: translateZ(0);
+          }
+
+          .navbar-collapsed .navbar-bg {
+            background: white !important;
           }
 
           .expertise-bg {

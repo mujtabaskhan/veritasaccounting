@@ -15,7 +15,6 @@ const ApplyNow = () => {
     { value: "accounting", label: "Junior Accountant" },
     { value: "tax", label: "Senior Tax Consultant" },
     { value: "payroll", label: "Client Success Coordinator" },
-    
   ];
 
   const handleServiceSelect = (service: { value: string; label: string }) => {
@@ -40,7 +39,7 @@ const ApplyNow = () => {
   }, []);
 
   return (
-    <section className="bg-white px-4 pb-[104pxpx] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-0">
+    <section className="bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]">
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
           <h3 className="text-[#232061] font-semibold text-[30px]">
@@ -141,9 +140,7 @@ const ApplyNow = () => {
           <div className="grid grid-cols-2 gap-15 mt-[16px] mb-[27px] max-sm:grid-cols-1 max-sm:!mt-[30px] max-sm:!gap-4">
             <div className="flex flex-col gap-[25px] items-center justify-center py-[30px] rounded-[26px] bg-[#F2F8FA]">
               <Image src="/check.svg" width={36} height={33} alt="check" />
-              <AnimateOnScroll delay={100}>
-                <h3>Upload Your CV/ Resume</h3>
-              </AnimateOnScroll>
+              <h3>Upload Your CV/ Resume</h3>
 
               <div className="flex items-center gap-3">
                 <Image src="/pdf.png" width={26} height={26} alt="pdf" />
@@ -152,9 +149,7 @@ const ApplyNow = () => {
             </div>
             <div className="flex flex-col gap-[25px] items-center justify-center py-[30px] rounded-[26px] bg-[#F2F8FA] max-sm:!mb-3">
               <Image src="/check.svg" width={36} height={33} alt="check" />
-              <AnimateOnScroll delay={200}>
-                <h3>Upload Your CV/ Resume</h3>
-              </AnimateOnScroll>
+              <h3>Upload Your CV/ Resume</h3>
 
               <div className="flex items-center gap-3">
                 <Image src="/pdf.png" width={26} height={26} alt="pdf" />

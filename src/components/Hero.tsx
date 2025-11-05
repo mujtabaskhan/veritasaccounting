@@ -10,8 +10,11 @@ function ModernHero() {
   const [isMobileExpertiseOpen, setIsMobileExpertiseOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollPositionRef = useRef<number>(0);
+  const lastScrollYRef = useRef<number>(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -100,15 +103,55 @@ function ModernHero() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 50);
+      // Disable scroll animations on screens below 1024px (max-lg)
+      if (window.innerWidth < 1024) {
+        setIsNavbarVisible(true);
+        setIsCollapsed(false);
+        setIsScrolled(window.scrollY > 50);
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - lastScrollYRef.current;
+
+      setIsScrolled(currentScrollY > 50);
+
+      // If at top, show full navbar
+      if (currentScrollY < 50) {
+        setIsNavbarVisible(true);
+        setIsCollapsed(false);
+      } else {
+        // Scrolling down - hide navbar
+        if (scrollDifference > 5) {
+          setIsNavbarVisible(false);
+        }
+        // Scrolling up - show collapsed navbar
+        else if (scrollDifference < -5) {
+          setIsNavbarVisible(true);
+          setIsCollapsed(true);
+        }
+      }
+
+      lastScrollYRef.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleResize = () => {
+      // Reset navbar state on resize
+      if (window.innerWidth < 1024) {
+        setIsNavbarVisible(true);
+        setIsCollapsed(false);
+      }
+      handleScroll();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
     handleScroll(); // Check initial scroll position
+    lastScrollYRef.current = window.scrollY;
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -119,10 +162,16 @@ function ModernHero() {
   ];
 
   return (
-    <>
+    <div>
       <div className="h-max">
-        <div className="relative w-full h-screen overflow-hidden pb-[200px]">
-          <div className="fixed top-0 left-0 right-0 z-50">
+        <div className="relative w-full h-screen overflow-hidden pb-[200px] rounded-tl-[60px] rounded-tr-[60px]">
+          <div
+            className={`max-lg:relative max-lg:top-auto fixed top-5 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
+              isNavbarVisible
+                ? "translate-y-0"
+                : "-translate-y-full max-lg:translate-y-0"
+            }`}
+          >
             <div
               className="backdrop-overlay"
               onClick={() => setIsExpertiseOpen(false)}
@@ -160,25 +209,39 @@ function ModernHero() {
             <div
               className={`relative navbar-container ${
                 isExpertiseOpen ? "navbar-expanded" : ""
-              } ${isScrolled && !isExpertiseOpen ? "navbar-scrolled" : ""}`}
+              } ${isScrolled && !isExpertiseOpen ? "navbar-scrolled" : ""} ${
+                isCollapsed ? "navbar-collapsed" : ""
+              }`}
             >
               <div
                 className={`expertise-bg ${
                   isExpertiseOpen ? "expertise-bg-open" : "expertise-bg-closed"
                 }`}
               />
-              <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-10 relative z-[200]">
-                <div className="flex items-center justify-between py-4">
-                  <Image
-                    src={isExpertiseOpen ? "/logo-white.png" : "/logo.png"}
-                    alt="logo"
-                    width={1000}
-                    height={1000}
-                    className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
-                  />
+              <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-4 relative z-[200]">
+                <div
+                  className={`flex items-center transition-all duration-300 max-lg:justify-between ${
+                    isCollapsed ? "justify-center" : "justify-between"
+                  }`}
+                >
+                  <div
+                    className={`transition-all duration-300 overflow-hidden ${
+                      isCollapsed
+                        ? "w-0 opacity-0 max-lg:opacity-100 max-lg:w-auto"
+                        : "w-auto opacity-100"
+                    }`}
+                  >
+                    <Image
+                      src={isExpertiseOpen ? "/logo-white.png" : "/logo.png"}
+                      alt="logo"
+                      width={1000}
+                      height={1000}
+                      className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
+                    />
+                  </div>
 
                   <div
-                    className={`max-lg:hidden flex items-center gap-6 px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
+                    className={`navbar-bg max-lg:hidden flex items-center gap-6 px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
                       isExpertiseOpen
                         ? "text-white border-white bg-white/10"
                         : isScrolled
@@ -288,23 +351,11 @@ function ModernHero() {
                     </Link>
                   </div>
 
-                  <div className="max-lg:hidden flex gap-10 items-center">
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 29 29"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-colors duration-300 cursor-pointer"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M10.8639 14.7078L0 1.20825H8.60496L15.3111 9.55191L22.4756 1.24582H27.2148L17.6025 12.4028L29 26.5833H20.4207L13.1593 17.5601L5.407 26.5582H0.642161L10.8639 14.7078ZM21.6712 24.082L5.27627 3.70948H7.3535L23.7278 24.082H21.6712Z"
-                        fill={isExpertiseOpen ? "#FFFFFF" : "#232061"}
-                      />
-                    </svg>
-
+                  <div
+                    className={`max-lg:hidden flex gap-10 items-center transition-all duration-300 overflow-hidden ${
+                      isCollapsed ? "w-0 opacity-0" : "w-auto opacity-100"
+                    }`}
+                  >
                     <svg
                       width="18"
                       height="18"
@@ -467,13 +518,6 @@ function ModernHero() {
 
                       <div className="flex gap-6 items-center justify-center">
                         <Image
-                          src="x.svg"
-                          alt="x"
-                          width={20}
-                          height={20}
-                          className="cursor-pointer"
-                        />
-                        <Image
                           src="linkedin.svg"
                           alt="linkedin"
                           width={20}
@@ -572,7 +616,9 @@ function ModernHero() {
 
           <div className="relative z-10 flex items-center h-full px-4 max-sm:px-10 max-w-7xl mx-auto pt-52">
             <div className="w-full max-w-3xl text-[#232061] font-semibold">
-              <p className="text-[32px] max-sm:text-xl mb-2">Welcome to</p>
+              <p className="text-[32px] max-sm:text-xl mb-2 font-medium">
+                Welcome to
+              </p>
 
               <h1 className="text-[80px] max-lg:text-[70px] max-md:text-[50px] max-sm:text-[48px] leading-[65px] mb-[61px] max-sm:mb-[80px]">
                 Veritas <br />
@@ -587,7 +633,7 @@ function ModernHero() {
                   >
                     (
                   </span>
-                  <div className="mx-4 font-semibold">
+                  <div className="mx-4 font-medium">
                     <p className="text-[40px] max-sm:text-base leading-tight">
                       Simplifying
                     </p>
@@ -612,15 +658,24 @@ function ModernHero() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Link
-                  href="/faq"
+                <button
+                  onClick={() => {
+                    const contactSection =
+                      document.getElementById("contact-section");
+                    if (contactSection) {
+                      contactSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
                   className="px-10 py-4 rounded-full font-bold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-lg"
                   style={{
                     backgroundColor: "#232061",
                   }}
                 >
                   Talk to an Expert
-                </Link>
+                </button>
                 <svg
                   width="35"
                   height="35"
@@ -657,13 +712,12 @@ function ModernHero() {
             height: auto;
           }
 
-          .navbar-scrolled {
-            background-color: white;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-          }
-
           .navbar-expanded {
             transform: translateZ(0);
+          }
+
+          .navbar-collapsed .navbar-bg {
+            background: white;
           }
 
           .expertise-bg {
@@ -1020,7 +1074,7 @@ function ModernHero() {
           }
         `}</style>
       </div>
-    </>
+    </div>
   );
 }
 

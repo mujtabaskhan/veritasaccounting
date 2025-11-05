@@ -68,7 +68,7 @@ const FAQ = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white py-20 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10">
+      <section className="bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
@@ -105,7 +105,7 @@ const FAQ = () => {
                       openIndex === index ? "transparent" : "transparent",
                   }}
                 >
-                  <span className="text-left text-[30px] text-[#232061] font-roboto max-sm:text-xs">
+                  <span className="text-left text-[22px] text-[#232061] font-roboto max-sm:text-xs">
                     {item.question}
                   </span>
                   <svg

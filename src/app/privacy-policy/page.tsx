@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0">
+      <section className="bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
@@ -152,8 +152,8 @@ const PrivacyPolicy = () => {
               <h3 className="font-bold">7. Cookies and Website Tracking</h3>
               <div>
                 Our website uses cookies to improve your experience and collect
-                anonymous analytics data. You can manage your cookie preferences
-                at any time through your browser settings. For more details,
+                anonymous analytics data.You can manage your cookie preferences
+                at any time through your browser settings.For more details,
                 please review our{" "}
                 <Link href="/cookies" className="underline">
                   Cookies Policy

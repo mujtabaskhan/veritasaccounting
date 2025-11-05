@@ -6,7 +6,7 @@ function ServicesSection() {
   const servicesRow2 = ["Advisory", "CFO Services", "Learn More"];
 
   return (
-    <div className="bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10">
+    <div className="bg-white py-40 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-center gap-4 mb-4">
           {servicesRow1.map((service) => (
@@ -58,22 +58,15 @@ function ServicesSection() {
               )}
             </Link>
           ))}
-        </div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <p className="text-center text-2xl max-sm:text-[15px] leading-relaxed font-normal text-[#232061]">
-            Helping businesses grow with integrity, clarity, precision, and
-            proactive financial guidance.
-          </p>
           <a
             href="https://wa.me/1234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute -right-10 -top-10 -translate-y-1/2 max-lg:right-10"
           >
             <svg
-              width="60"
-              height="60"
+              width="50"
+              height="50"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +78,13 @@ function ServicesSection() {
               />
             </svg>
           </a>
+        </div>
+
+        <div className="relative max-w-3xl mx-auto">
+          <p className="text-center text-2xl max-sm:text-[15px] leading-relaxed font-normal text-[#232061]">
+            Helping businesses grow with integrity, clarity, precision, and
+            proactive financial guidance.
+          </p>
         </div>
       </div>
     </div>
