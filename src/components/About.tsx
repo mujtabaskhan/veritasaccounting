@@ -2,31 +2,41 @@
 import Link from "next/link";
 
 function ServicesSection() {
-  const servicesRow1 = ["Accounting", "Tax", "Payroll", "Compliance"];
-  const servicesRow2 = ["Advisory", "CFO Services", "Learn More"];
+  const servicesRow1 = [
+    { name: "Accounting", href: "/services#accounting" },
+    { name: "Taxation", href: "/services#tax" },
+    { name: "Payroll", href: "/services#payroll" },
+    { name: "Compliance", href: "/services#compliance" },
+  ];
+  const servicesRow2 = [
+    { name: "Advisory", href: "/services#advisory" },
+    { name: "CFO Services", href: "/services#cfo-services" },
+    { name: "Learn More", href: "/expertise" },
+  ];
 
   return (
     <div className="bg-white py-40 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-center gap-4 mb-4">
           {servicesRow1.map((service) => (
-            <button
-              key={service}
-              className="px-5 py-2 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold bg-[#E1EDF2] text-[#232061]"
+            <Link
+              key={service.name}
+              href={service.href}
+              className="px-5 py-2 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold bg-[#E1EDF2] text-[#232061] hover:bg-[#D0E3EA] transition-colors cursor-pointer"
             >
-              {service}
-            </button>
+              {service.name}
+            </Link>
           ))}
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-[119px] max-sm:mb-[94px]">
           {servicesRow2.map((service) => (
             <Link
-              href={"/expertise"}
-              key={service}
-              className="px-5 py-1 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#E1EDF2] text-[#232061]"
+              href={service.href}
+              key={service.name}
+              className="px-5 py-1 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#E1EDF2] text-[#232061] hover:bg-[#D0E3EA] transition-colors"
               style={
-                service === "Learn More"
+                service.name === "Learn More"
                   ? {
                       backgroundColor: "#232061",
                       color: "white",
@@ -37,8 +47,8 @@ function ServicesSection() {
                     }
               }
             >
-              {service}
-              {service === "Learn More" && (
+              {service.name}
+              {service.name === "Learn More" && (
                 <svg
                   width="35"
                   height="35"

@@ -10,9 +10,13 @@ const Terms = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
-              <span className="font-normal">Home</span>
+              <Link href="/" className="font-normal">
+                Home
+              </Link>{" "}
               <span className="font-black mx-5">&gt;</span>
-              <span className="font-normal">Terms & Conditions</span>
+              <Link href="/terms" className="font-normal">
+                Terms & Conditions
+              </Link>
               <span className="font-black mx-5">&gt;</span>
               <span className="font-normal underline">
                 Veritas Accounting & Tax Consultants

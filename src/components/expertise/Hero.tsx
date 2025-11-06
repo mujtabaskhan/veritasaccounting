@@ -162,8 +162,8 @@ function Hero() {
   ];
 
   return (
-    <div className="h-max">
-      <div className="relative w-full h-screen overflow-hidden pb-[200px]">
+    <>
+      <div className="w-full h-screen overflow-hidden pb-[200px] sticky top-0 z-[5]">
         <div
           className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
             isNavbarVisible
@@ -223,7 +223,8 @@ function Hero() {
                   isCollapsed ? "justify-center" : "justify-between"
                 }`}
               >
-                <div
+                <Link
+                  href="/"
                   className={`transition-all duration-300 overflow-hidden ${
                     isCollapsed
                       ? "w-0 opacity-0 max-lg:opacity-100 max-lg:w-auto"
@@ -237,7 +238,7 @@ function Hero() {
                     height={1000}
                     className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
                   />
-                </div>
+                </Link>
 
                 <div
                   className={`navbar-bg max-lg:hidden flex items-center gap-6 px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
@@ -610,11 +611,15 @@ function Hero() {
           alt="expertise-hero"
           width={1440}
           height={100}
-          className="w-full h-full object-cover absolute top-0 left-0 z-0"
+          className={`w-full h-full object-cover absolute top-0 left-0 z-0 ${
+            isScrolled ? "rounded-bl-[60px] rounded-br-[60px]" : ""
+          }`}
         />
 
         <div
-          className="absolute top-0 left-0 w-full h-full z-[1]"
+          className={`absolute top-0 left-0 w-full h-full z-[1] ${
+            isScrolled ? "rounded-bl-[60px] rounded-br-[60px]" : ""
+          }`}
           style={{
             background:
               "linear-gradient(90deg, rgba(217, 217, 217, 0.6) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)",
@@ -622,7 +627,9 @@ function Hero() {
         ></div>
 
         <div
-          className="absolute top-0 left-0 w-1/3 h-full z-[1]"
+          className={`absolute top-0 left-0 9w-1/3 h-full z-[1] ${
+            isScrolled ? "rounded-bl-[60px] rounded-br-[60px]" : ""
+          }`}
           style={{
             backdropFilter: "blur(12px)",
             WebkitBackdropFilter: "blur(12px)",
@@ -636,7 +643,9 @@ function Hero() {
         <div className="relative z-10 flex flex-col h-full px-4 max-sm:px-10 max-w-7xl mx-auto pt-52">
           <div className="mb-10">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
-              <span className="font-normal">Home</span>
+              <Link href="/" className="font-normal">
+                Home
+              </Link>
               <span className="font-black mx-5">&gt;</span>
               <span className="font-normal">Expertise</span>
             </nav>
@@ -1035,7 +1044,7 @@ function Hero() {
           background-color: rgba(35, 32, 97, 0.5);
         }
       `}</style>
-    </div>
+    </>
   );
 }
 

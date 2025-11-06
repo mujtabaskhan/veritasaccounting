@@ -28,7 +28,7 @@ export default function ExpertiseSection() {
           "Dedicated Accounting Teams",
         ],
         image: "/expertise-1.jpg",
-        url: "/accounting",
+        url: "/services#accounting",
       },
       {
         id: 2,
@@ -39,42 +39,42 @@ export default function ExpertiseSection() {
           "Tax Planning & Strategy",
         ],
         image: "/expertise-2.jpg",
-        url: "/tax-services",
+        url: "/services#tax",
       },
       {
         id: 3,
         title: "Payroll Services",
         badges: ["Payroll Management", "Payroll Processing Guidance"],
         image: "/expertise-3.jpg",
-        url: "/payroll-services",
+        url: "/services#payroll",
       },
       {
         id: 4,
         title: "Audit & Compliance Support",
         badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
         image: "/expertise-3.jpg",
-        url: "/audit-and-compliance-support",
+        url: "/services#compliance",
       },
       {
         id: 5,
         title: "CFO Services",
         badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
         image: "/expertise-3.jpg",
-        url: "/cfo-services",
+        url: "/services#cfo-services",
       },
       {
         id: 6,
         title: "Business Advisory",
         badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
         image: "/expertise-3.jpg",
-        url: "/business-advisory",
+        url: "/services#advisory",
       },
       {
         id: 7,
         title: "Business Administration",
         badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
         image: "/expertise-3.jpg",
-        url: "/business-administration",
+        url: "/services",
       },
     ],
     [],
@@ -143,7 +143,7 @@ export default function ExpertiseSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10"
+      className="bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-[15] max-sm:px-10"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-start justify-end mb-10 gap-8">

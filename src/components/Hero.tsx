@@ -224,7 +224,8 @@ function ModernHero() {
                     isCollapsed ? "justify-center" : "justify-between"
                   }`}
                 >
-                  <div
+                  <Link
+                    href="/"
                     className={`transition-all duration-300 overflow-hidden ${
                       isCollapsed
                         ? "w-0 opacity-0 max-lg:opacity-100 max-lg:w-auto"
@@ -238,7 +239,7 @@ function ModernHero() {
                       height={1000}
                       className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
                     />
-                  </div>
+                  </Link>
 
                   <div
                     className={`navbar-bg max-lg:hidden flex items-center gap-6 px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${

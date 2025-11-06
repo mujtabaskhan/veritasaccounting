@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
-      className={`bg-white sticky bottom-0 left-0 right-0 h-[800px] z-10 ${className}`}
+      className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-10 ${className}`}
     >
       <Image
         src="/footer-bg.png"
@@ -19,12 +19,16 @@ const Footer = ({ className }: { className?: string }) => {
       >
         <span>Home</span>
       </Link>
-      <div className="flex items-end justify-start h-full relative z-10 pb-40 max-sm:pb-26 max-lg:pb-32">
-        <div
+      <div className="flex items-end justify-start h-full relative z-10 pb-20 max-sm:pb-26 max-lg:pb-20">
+        <Link
+          href="/"
           className="grid max-w-7xl mx-auto max-sm:!grid-cols-1 max-lg:flex max-lg:flex-col"
           style={{ gridTemplateColumns: "2fr 2.5fr" }}
         >
-          <div className="flex flex-col gap-10 mr-20 max-sm:mr-0 max-sm:items-center max-sm:justify-center max-lg:px-4">
+          <Link
+            href="/"
+            className="flex flex-col gap-10 mr-20 max-sm:mr-0 max-sm:items-center max-sm:justify-center px-4"
+          >
             <Image
               src="/logo-white.png"
               alt="logo"
@@ -37,17 +41,17 @@ const Footer = ({ className }: { className?: string }) => {
               management, financial reporting, business advisory, and virtual
               CFO services.
             </p>
-          </div>
+          </Link>
 
           <div className="grid grid-cols-3 gap-10 max-sm:mt-10 max-lg:px-4">
             <div className="flex flex-col gap-4">
               <h3
-                className="text-white text-[30px] max-sm:text-xs font-bold pr-3 border-1 border-none"
+                className="text-white text-[24px] max-sm:text-xs font-bold pr-3 border-1 border-none"
                 style={{ borderRight: "3px solid white" }}
               >
                 Quick Links
               </h3>
-              <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
+              <div className="font-flex text-white text-[15px] flex flex-col gap-2 max-sm:text-[10px]">
                 <Link href="/" className="underline">
                   Home
                 </Link>
@@ -66,39 +70,36 @@ const Footer = ({ className }: { className?: string }) => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <h3 className="text-white text-[20px] max-sm:text-xs font-bold">
                 Services
               </h3>
               <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
-                <Link href="/" className="underline">
+                <Link href="/services#accounting" className="underline">
                   Accounting
                 </Link>
-                <Link href="/tax-services" className="underline">
+                <Link href="/services#tax" className="underline">
                   Tax Services
                 </Link>
-                <Link href="/payroll-services" className="underline">
+                <Link href="/services#payroll" className="underline">
                   Payroll Services
                 </Link>
-                <Link
-                  href="/audit-and-compliance-support"
-                  className="underline"
-                >
+                <Link href="/services#compliance" className="underline">
                   Audit & Compliance Support
                 </Link>
-                <Link href="/cfo-services" className="underline">
+                <Link href="/services#cfo-services" className="underline">
                   CFO Services
                 </Link>
-                <Link href="/business-advisory" className="underline">
+                <Link href="/services#advisory" className="underline">
                   Business Advisory
                 </Link>
-                <Link href="/business-administration" className="underline">
+                <Link href="/services" className="underline">
                   Business Administration
                 </Link>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <h3 className="text-white text-[20px] font-bold max-sm:text-xs">
                 Follow us
               </h3>
@@ -115,9 +116,9 @@ const Footer = ({ className }: { className?: string }) => {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
         <div
-          className="pt-10 absolute bottom-10 w-full max-sm:pt-4 max-sm:bottom-4"
+          className="pt-5 absolute bottom-5 w-full max-sm:pt-4 max-sm:bottom-4 px-4"
           style={{ borderTop: "1px solid white" }}
         >
           <div className="max-w-7xl mx-auto">

@@ -4,6 +4,7 @@ import ContactSection from "@/components/about/ContactSection";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import Link from "next/link";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -72,7 +73,9 @@ const FAQ = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
-              <span className="font-normal">Home</span>
+              <Link href="/" className="font-normal">
+                Home
+              </Link>{" "}
               <span className="font-black mx-5">&gt;</span>
               <span className="font-normal">FAQ</span>
             </nav>

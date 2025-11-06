@@ -1,10 +1,14 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="bg-white pt-40 px-4 pb-[87px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-[111px]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
-            <span className="font-normal">Home</span>
+            <Link href="/" className="font-normal">
+              Home
+            </Link>
             <span className="font-black mx-5">&gt;</span>
             <span className="font-normal">Careers</span>
           </nav>

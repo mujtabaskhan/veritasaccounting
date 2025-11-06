@@ -30,6 +30,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   font-family: "Roboto Serif", Arial, Helvetica, sans-serif;

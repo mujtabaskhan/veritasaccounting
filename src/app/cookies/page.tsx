@@ -10,9 +10,13 @@ const Cookie = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
-              <span className="font-normal">Home</span>
+              <Link href="/" className="font-normal">
+                Home
+              </Link>
               <span className="font-black mx-5">&gt;</span>
-              <span className="font-normal">Cookie Settings</span>
+              <Link href="/cookies" className="font-normal">
+                Cookie Settings
+              </Link>
               <span className="font-black mx-5">&gt;</span>
               <span className="font-normal underline">
                 Veritas Accounting & Tax Consultants
