@@ -2,7 +2,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function OurFocus() {
   return (
-    <section className="bg-white px-4 pb-[266px] max-xl:pb-56 max-lg:pb-44 max-md:pb-28 max-sm:pb-16">
+    <section className="w-full bg-white px-4 pb-[266px] max-xl:pb-56 max-lg:pb-44 max-md:pb-28 max-sm:pb-16" style={{ width: "100%" }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-lg:gap-10 max-sm:!gap-5">
           <div className="text-right max-lg:text-center">

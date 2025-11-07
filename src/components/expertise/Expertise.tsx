@@ -143,7 +143,8 @@ export default function ExpertiseSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-[15] max-sm:px-10"
+      className="w-full bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-[15] max-sm:px-10"
+      style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-start justify-end mb-10 gap-8">
@@ -206,7 +207,7 @@ export default function ExpertiseSection() {
                 }}
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] transition-all duration-300 ease-in-out h-[980px] max-sm:h-[600px]"
+                className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] transition-all duration-300 ease-in-out h-[600px] max-sm:h-[520px]"
                 style={{
                   scrollSnapAlign: "start",
                   transform:
@@ -215,7 +216,7 @@ export default function ExpertiseSection() {
                 }}
               >
                 <AnimateOnScroll delay={0}>
-                  <h3 className="text-[#232061] font-bold text-[50px] mb-10 px-10 max-sm:px-6 max-sm:text-[30px] max-sm:mb-7">
+                  <h3 className="text-[#232061] font-bold mb-4 px-10 max-sm:px-6 text-[24px]">
                     {card.title}
                   </h3>
                 </AnimateOnScroll>
@@ -224,7 +225,7 @@ export default function ExpertiseSection() {
                   {card.badges.map((badge) => (
                     <span
                       key={badge}
-                      className="w-max bg-[#E1EDF2] p-4 text-[#232061] font-semibold text-xl rounded-[50px] max-sm:text-xs max-sm:p-2"
+                      className="w-max bg-[#E1EDF2] p-3 text-[#232061] font-semibold text-sm rounded-[50px] max-sm:text-xs max-sm:p-2"
                     >
                       {badge}
                     </span>
@@ -237,7 +238,7 @@ export default function ExpertiseSection() {
                   </span>
                 </div>
 
-                <div className="w-full h-[397px] max-sm:h-[313px] mt-7 rounded-[50px] bg-[#7f6244d8] overflow-hidden absolute bottom-0">
+                <div className="w-full h-[280px] max-sm:h-[250px] mt-7 rounded-[50px] bg-[#7f6244d8] overflow-hidden absolute bottom-0">
                   <Image
                     src={card.image}
                     alt={card.title}

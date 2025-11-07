@@ -3,14 +3,18 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function TheDifference() {
   return (
-    <div
-      className="bg-white px-6 py-20"
-      style={{ fontFamily: "Roboto Serif, serif", minHeight: "auto" }}
+    <section
+      className="w-full bg-white px-6 py-20"
+      style={{
+        fontFamily: "Roboto Serif, serif",
+        width: "100%",
+        minHeight: "auto",
+      }}
     >
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
           <h3
-            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] font-normal mb-[133px] max-sm:mb-[91px]"
+            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-[133px] max-sm:mb-[91px] font-light"
             style={{
               background: "linear-gradient(90deg, #232061 0%, #1F89A3 100%)",
               backgroundClip: "text",
@@ -44,7 +48,9 @@ export default function TheDifference() {
               </h3>
             </AnimateOnScroll>
             <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061]">
-              We go beyond bookkeeping. Our team translates financial data into actionable strategies that help you make confident business decisions, improve cash flow, and plan for sustainable growth.
+              We go beyond bookkeeping. Our team translates financial data into
+              actionable strategies that help you make confident business
+              decisions, improve cash flow, and plan for sustainable growth.
             </p>
           </div>
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
@@ -54,11 +60,14 @@ export default function TheDifference() {
               </h3>
             </AnimateOnScroll>
             <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061]">
-              From startups to established enterprises, businesses across Canada trust us for dependable, transparent, and personalized service. We treat your business like our own, with honesty, clarity, and accountability.
+              From startups to established enterprises, businesses across Canada
+              trust us for dependable, transparent, and personalized service. We
+              treat your business like our own, with honesty, clarity, and
+              accountability.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

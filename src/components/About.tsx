@@ -15,7 +15,10 @@ function ServicesSection() {
   ];
 
   return (
-    <div className="bg-white py-40 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10">
+    <section
+      className="w-full bg-white py-40 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-20 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10"
+      style={{ width: "100%" }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-center gap-4 mb-4">
           {servicesRow1.map((service) => (
@@ -97,7 +100,7 @@ function ServicesSection() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -127,7 +127,10 @@ const ApplyNow = () => {
   };
 
   return (
-    <section className="bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]">
+    <section
+      className="pt-10 w-full bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
+      style={{ width: "100%" }}
+    >
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
           <h3 className="text-[#232061] font-semibold text-[30px]">

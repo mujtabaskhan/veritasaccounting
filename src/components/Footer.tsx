@@ -14,7 +14,7 @@ const Footer = ({ className }: { className?: string }) => {
         className="w-full h-full object-cover absolute top-0 left-0 z-0 max-sm:blur-[0.3px]"
       />
       <Link
-        href="/expertise"
+        href="/"
         className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#232061] hover:bg-[#232061]/90 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105 absolute right-20 top-72 z-20 max-lg:bottom-32 max-lg:top-auto max-lg:right-20 h-max w-max max-lg:bg-white max-lg:text-[#232061] max-sm:px-4 max-sm:py-2 max-sm:right-10"
       >
         <span>Home</span>
@@ -64,7 +64,7 @@ const Footer = ({ className }: { className?: string }) => {
                 <Link href="/faq" className="underline">
                   FAQ
                 </Link>
-                <Link href="/contact-us" className="underline">
+                <Link href="/contact" className="underline">
                   Contact Us
                 </Link>
               </div>

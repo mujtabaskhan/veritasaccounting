@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import Link from'next/link';
+import Link from "next/link";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -33,19 +33,22 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-white pt-20 px-4 max-lg:pt-16 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0">
+    <section
+      className="w-full bg-white pt-20 px-4 max-lg:pt-16 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0"
+      style={{ width: "100%" }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="mb-[74px] max-sm:mb-[59px]">
           <AnimateOnScroll delay={0}>
-            <h1 className="block max-sm:hidden text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
+            <h2 className="block max-sm:hidden text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
               Frequently Asked Questions
-            </h1>
+            </h2>
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={0}>
-            <h1 className="hidden max-sm:block text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
+            <h2 className="hidden max-sm:block text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
               FAQ
-            </h1>
+            </h2>
           </AnimateOnScroll>
           <p className="text-[#232061] text-xl font-flex max-sm:text-[15px]">
             Have questions about our bookkeeping services or bookkeeping
@@ -67,7 +70,7 @@ export default function FAQ() {
                     openIndex === index ? "transparent" : "transparent",
                 }}
               >
-                <span className="text-left text-[30px] text-[#232061] font-roboto max-sm:text-xs">
+                <span className="text-left text-[22px] text-[#232061] font-roboto max-sm:text-xs">
                   {item.question}
                 </span>
                 <svg
@@ -99,8 +102,11 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="flex justify-end mt-[74px] max-sm:mt-[38px] pb-[83px] max-sm:pb-[86px]">
-          <Link href={"/faq"} className="px-5 py-1 rounded-full text-[25px] max-sm:text-[15px] max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#232061] text-white">
+        <div className="flex justify-end mt-[74px] max-sm:mt-[38px] pb-[100px] max-sm:pb-[86px]">
+          <Link
+            href={"/faq"}
+            className="px-5 py-1 rounded-full text-[25px] max-sm:text-[15px] max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#232061] text-white"
+          >
             Learn More
             <svg
               width="35"

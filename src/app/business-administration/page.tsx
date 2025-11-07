@@ -31,7 +31,7 @@ const Services1 = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]">
+      <section className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%" }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-[225px] max-sm:gap-[87px] pb-[100px] max-sm:pb-[87px]">
             {servicesData.map((service, index) => (
@@ -39,9 +39,9 @@ const Services1 = () => {
                 <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                   <div className="flex flex-col gap-3 max-w-3xl">
                     <AnimateOnScroll delay={0}>
-                      <h3 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                      <h1 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
                         {service.title}
-                      </h3>
+                      </h1>
                     </AnimateOnScroll>
                     <p className="text-[#232061] text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
                       {service.description}

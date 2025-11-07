@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 
 export default function About() {
   return (
-    <main className="bg-white min-h-screen relative rounded-bl-[60px] rounded-br-[60px]">
+    <main className="w-full bg-white min-h-screen relative rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%", minHeight: "100vh" }}>
       <div className="relative z-10">
         <Navbar />
         <AboutHero />

@@ -3,7 +3,10 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function MeetFounder() {
   return (
-    <section className="bg-white pb-[220px] px-4 max-xl:pb-44 max-lg:pb-36 max-md:pb-28 max-sm:!pb-[127px]">
+    <section
+      className="w-full bg-white pb-[220px] px-4 max-xl:pb-44 max-lg:pb-36 max-md:pb-28 max-sm:!pb-[127px]"
+      style={{ width: "100%" }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center gap-14 max-xl:gap-10 max-lg:text-center  max-sm:!gap-6 max-[420px]:flex-col max-[420px]:!items-center">
           <Image
@@ -19,7 +22,17 @@ export default function MeetFounder() {
               <AnimateOnScroll delay={0}>
                 <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px]  max-sm:!text-xl max-sm:!text-left max-sm:!leading-[20px]">
                   Meet our{" "}
-                  <span className="font-semibold italic max-sm:block max-sm:!not-italic">
+                  <span
+                    className="font-semibold italic max-sm:block max-sm:!not-italic text-transparent"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, #232061 0%, #1F89A3 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      color: "transparent",
+                    }}
+                  >
                     Founder
                   </span>
                 </h2>

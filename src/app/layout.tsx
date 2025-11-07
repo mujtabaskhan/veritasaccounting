@@ -26,9 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative w-full`}
+        style={{ width: "100%", minHeight: "100vh" }}
       >
-        <main className="relative z-20">{children}</main>
+        <main className="relative z-20 w-full" style={{ width: "100%" }}>
+          {children}
+        </main>
         <ConditionalFooter />
       </body>
     </html>

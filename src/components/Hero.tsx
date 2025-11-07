@@ -156,15 +156,18 @@ function ModernHero() {
   }, []);
 
   const expertiseItems = [
-    { label: "Accounting", href: "/accounting" },
-    { label: "Tax Services", href: "/tax-services" },
-    { label: "Payroll Services", href: "/payroll-services" },
+    { label: "Accounting", href: "/services#accounting" },
+    { label: "Tax Services", href: "/services#tax" },
+    { label: "Payroll Services", href: "/services#payroll" },
   ];
 
   return (
-    <div>
-      <div className="h-max">
-        <div className="relative w-full h-screen overflow-hidden pb-[200px] rounded-tl-[60px] rounded-tr-[60px]">
+    <div className="w-full" style={{ width: "100%" }}>
+      <div className="h-max w-full" style={{ width: "100%" }}>
+        <div
+          className="relative w-full min-h-screen h-screen overflow-hidden pb-[200px] rounded-tl-[60px] rounded-tr-[60px]"
+          style={{ width: "100%", minHeight: "100vh", height: "100vh" }}
+        >
           <div
             className={`max-lg:relative max-lg:top-auto fixed top-5 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
               isNavbarVisible
@@ -181,7 +184,7 @@ function ModernHero() {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                width: "100vw",
+                width: "100%",
                 height: "100vh",
                 minHeight: "100vh",
                 zIndex: 999,
@@ -218,7 +221,7 @@ function ModernHero() {
                   isExpertiseOpen ? "expertise-bg-open" : "expertise-bg-closed"
                 }`}
               />
-              <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-4 relative z-[200]">
+              <div className="max-w-7xl mx-auto py-6 px-8 max-sm:px-4 relative z-[200]">
                 <div
                   className={`flex items-center transition-all duration-300 max-lg:justify-between ${
                     isCollapsed ? "justify-center" : "justify-between"
@@ -242,7 +245,7 @@ function ModernHero() {
                   </Link>
 
                   <div
-                    className={`navbar-bg max-lg:hidden flex items-center gap-6 px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
+                    className={`navbar-bg max-lg:hidden flex items-center gap-6 px-4 py-3 rounded-[50px] text-[15px] transition-all duration-300 ${
                       isExpertiseOpen
                         ? "text-white border-white bg-white/10"
                         : isScrolled
@@ -485,7 +488,7 @@ function ModernHero() {
                                 </Link>
                               ))}
                               <Link
-                                href="/expertise"
+                                href="/services"
                                 onClick={closeMenu}
                                 className="text-center font-medium py-2 px-4 rounded-[25px] bg-[#232061] text-white text-sm"
                               >
@@ -581,7 +584,7 @@ function ModernHero() {
                       </div>
                       <div className="flex justify-center pt-4 border-t border-white/10">
                         <Link
-                          href="/expertise"
+                          href="/services"
                           className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105"
                         >
                           <span>View More Services</span>
@@ -615,18 +618,18 @@ function ModernHero() {
             className="w-full h-full object-cover absolute top-0 left-0 z-0"
           />
 
-          <div className="relative z-10 flex items-center h-full px-4 max-sm:px-10 max-w-7xl mx-auto pt-52">
+          <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-24">
             <div className="w-full max-w-3xl text-[#232061] font-semibold">
-              <p className="text-[32px] max-sm:text-xl mb-2 font-medium">
+              <p className="text-[24px] max-sm:text-xl font-medium">
                 Welcome to
               </p>
 
-              <h1 className="text-[80px] max-lg:text-[70px] max-md:text-[50px] max-sm:text-[48px] leading-[65px] mb-[61px] max-sm:mb-[80px]">
+              <h1 className="text-[60px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[65px] mb-6">
                 Veritas <br />
                 Accounting
               </h1>
 
-              <div className="flex items-center gap-8 mb-12">
+              <div className="flex items-center gap-8 mb-6">
                 <div className="flex items-center">
                   <span
                     className="text-7xl md:text-8xl"
@@ -635,10 +638,10 @@ function ModernHero() {
                     (
                   </span>
                   <div className="mx-4 font-medium">
-                    <p className="text-[40px] max-sm:text-base leading-tight">
+                    <p className="text-2xl max-sm:text-base leading-tight">
                       Simplifying
                     </p>
-                    <p className="text-[40px] max-sm:text-base leading-tight">
+                    <p className="text-2xl max-sm:text-base leading-tight">
                       Numbers
                     </p>
                   </div>
@@ -650,11 +653,11 @@ function ModernHero() {
                   </span>
                 </div>
 
-                <div className="text-[40px] max-sm:text-base leading-tight">
-                  <p style={{ color: "#027C99", fontWeight: 600 }}>
+                <div className="text-2xl max-sm:text-base leading-tight">
+                  <p style={{ color: "#027C99", fontWeight: 500 }}>
                     Maximizing
                   </p>
-                  <p style={{ color: "#027C99", fontWeight: 400 }}>Results</p>
+                  <p style={{ color: "#027C99", fontWeight: 500 }}>Results</p>
                 </div>
               </div>
 
@@ -723,7 +726,7 @@ function ModernHero() {
 
           .expertise-bg {
             position: absolute;
-            top: 0;
+            top: -20px;
             left: 0;
             right: 0;
             background-color: #232061;
@@ -1012,7 +1015,8 @@ function ModernHero() {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            right: 0;
+            width: 100%;
             height: 100vh;
             background: linear-gradient(
               135deg,

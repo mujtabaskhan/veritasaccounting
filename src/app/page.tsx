@@ -9,7 +9,7 @@ import GoogleMap from "@/components/GoogleMap";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-[#232061] p-3 pb-0 rounded-bl-[90px] rounded-br-[90px]">
+    <main className="w-full bg-[#232061] px-3 pb-0 rounded-bl-[90px] rounded-br-[90px] overflow-x-hidden">
       <ModernHero />
       <CPAHero />
       <Difference />

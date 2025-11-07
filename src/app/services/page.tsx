@@ -194,7 +194,7 @@ const Services = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white pt-40 px-4 pb-[198px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]">
+      <section className="w-full bg-white pt-40 px-4 pb-[198px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%" }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
@@ -208,6 +208,11 @@ const Services = () => {
               <span className="font-black mx-5">&gt;</span>
               <span className="font-normal">Our Services</span>
             </nav>
+          </div>
+          <div className="mb-12 max-sm:mb-8">
+            <h1 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+              Our Services
+            </h1>
           </div>
           <div className="flex flex-col gap-[225px] max-sm:gap-[87px] pb-[225px] max-sm:pb-[87px]">
             {servicesData.map((service) => (

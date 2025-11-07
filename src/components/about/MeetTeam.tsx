@@ -23,7 +23,7 @@ export default function MeetTeam() {
   ];
 
   return (
-    <section className="bg-white pb-[122px] px-4 max-xl:pb-24 max-lg:pb-20 max-md:pb-16 max-sm:!pb-[105px]">
+    <section className="w-full bg-white pb-[122px] px-4 max-xl:pb-24 max-lg:pb-20 max-md:pb-16 max-sm:!pb-[105px]" style={{ width: "100%" }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-[90px] max-sm:!mb-9">
           <AnimateOnScroll delay={0}>

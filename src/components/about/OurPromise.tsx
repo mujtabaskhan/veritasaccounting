@@ -2,7 +2,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function OurPromise() {
   return (
-    <section className="bg-white pb-[316px] px-4 max-xl:pb-64 max-lg:pb-48 max-md:pb-32 max-sm:!pb-[159px]">
+    <section className="w-full bg-white pb-[316px] px-4 max-xl:pb-64 max-lg:pb-48 max-md:pb-32 max-sm:!pb-[159px]" style={{ width: "100%" }}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center">
           <AnimateOnScroll delay={0}>

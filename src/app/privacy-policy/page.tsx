@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]">
+      <section className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%" }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 max-sm:mb-20">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
@@ -25,9 +25,9 @@ const PrivacyPolicy = () => {
           </div>
 
           <div className="font-flex text-[#232061] text-xl mb-12 max-sm:text-sm max-sm:mb-6">
-            <h3 className="text-[30px] font-semibold mb-12 max-sm:mb-6 max-sm:text-xl">
+            <h1 className="text-[30px] font-semibold mb-12 max-sm:mb-6 max-sm:text-xl">
               Privacy Policy
-            </h3>
+            </h1>
             <p>Effective Date: 01/11/2025</p>
             <p>Last Updated: 01/11/2025</p>
 

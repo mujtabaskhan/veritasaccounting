@@ -46,7 +46,8 @@ export default function ContactSection({
   return (
     <section
       id="contact-section"
-      className="bg-white py-32 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-16 relative z-[100]"
+      className="w-full bg-white py-32 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-16 relative z-[100]"
+      style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto">
         {hideHeading && (

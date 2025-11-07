@@ -152,9 +152,9 @@ const Navbar = () => {
   }, []);
 
   const expertiseItems = [
-    { label: "Accounting", href: "/accounting" },
-    { label: "Tax Services", href: "/tax-services" },
-    { label: "Payroll Services", href: "/payroll-services" },
+    { label: "Accounting", href: "/services#accounting" },
+    { label: "Tax Services", href: "/services#tax" },
+    { label: "Payroll Services", href: "/services#payroll" },
   ];
 
   if (!isMounted) return null;
@@ -176,7 +176,7 @@ const Navbar = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          width: "100vw",
+          width: "100%",
           height: "100vh",
           minHeight: "100vh",
           zIndex: 999,
@@ -235,7 +235,7 @@ const Navbar = () => {
             </Link>
 
             <div
-              className={`navbar-bg max-lg:hidden flex items-center gap-6 bg-[#FFFFFF4D] px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
+              className={`navbar-bg max-lg:hidden flex items-center gap-6 bg-[#FFFFFF4D] px-4 py-3 rounded-[50px] text-[15px] transition-all duration-300 ${
                 isExpertiseOpen
                   ? "text-white border-white"
                   : "text-[#232061] border-[#232061]"
@@ -908,7 +908,8 @@ const Navbar = () => {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            right: 0;
+            width: 100%;
             height: 100vh;
             background: linear-gradient(
               135deg,

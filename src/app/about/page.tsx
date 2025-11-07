@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <main className="bg-white min-h-screen relative">
+    <main className="w-full bg-white min-h-screen relative" style={{ width: "100%", minHeight: "100vh" }}>
       <div className="relative z-[100]">
         <div className="fixed top-[300px] right-0 max-lg:-right-[150px] max-sm:right-0 bottom-0 z-[90] pointer-events-none h-screen w-full">
           <Image

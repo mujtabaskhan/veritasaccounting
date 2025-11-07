@@ -156,14 +156,17 @@ function Hero() {
   }, []);
 
   const expertiseItems = [
-    { label: "Web Development", href: "/expertise/web" },
-    { label: "Mobile Apps", href: "/expertise/mobile" },
-    { label: "Cloud Solutions", href: "/expertise/cloud" },
+    { label: "Accounting", href: "/services#accounting" },
+    { label: "Tax Services", href: "/services#tax" },
+    { label: "Payroll Services", href: "/services#payroll" },
   ];
 
   return (
     <>
-      <div className="w-full h-screen overflow-hidden pb-[200px] sticky top-0 z-[5]">
+      <div
+        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5]"
+        style={{ width: "100%", minHeight: "100vh", height: "100vh" }}
+      >
         <div
           className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
             isNavbarVisible
@@ -180,7 +183,7 @@ function Hero() {
               left: 0,
               right: 0,
               bottom: 0,
-              width: "100vw",
+              width: "100%",
               height: "100vh",
               minHeight: "100vh",
               zIndex: 999,
@@ -241,7 +244,7 @@ function Hero() {
                 </Link>
 
                 <div
-                  className={`navbar-bg max-lg:hidden flex items-center gap-6 px-3 py-2 rounded-[50px] text-[15px] transition-all duration-300 ${
+                  className={`navbar-bg max-lg:hidden flex items-center gap-6 px-4 py-3 rounded-[50px] text-[15px] transition-all duration-300 ${
                     isExpertiseOpen
                       ? "text-white border-white bg-white/10"
                       : isScrolled
@@ -484,7 +487,7 @@ function Hero() {
                               </Link>
                             ))}
                             <Link
-                              href="/expertise"
+                              href="/services"
                               onClick={closeMenu}
                               className="text-center font-medium py-2 px-4 rounded-[25px] bg-[#232061] text-white text-sm"
                             >
@@ -580,7 +583,7 @@ function Hero() {
                     </div>
                     <div className="flex justify-center pt-4 border-t border-white/10">
                       <Link
-                        href="/expertise"
+                        href="/services"
                         className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105"
                       >
                         <span>View More Services</span>
@@ -640,8 +643,8 @@ function Hero() {
           }}
         ></div>
 
-        <div className="relative z-10 flex flex-col h-full px-4 max-sm:px-10 max-w-7xl mx-auto pt-52">
-          <div className="mb-10">
+        <div className="relative z-10 flex flex-col h-full px-4 max-sm:px-10 max-w-7xl mx-auto pt-40 max-md:pt-14 max-lg:pt-20 max-sm:pt-4">
+          <div className="mb-6">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
               <Link href="/" className="font-normal">
                 Home
@@ -651,11 +654,11 @@ function Hero() {
             </nav>
           </div>
           <div className="w-full">
-            <p className="text-[70px] max-sm:text-[50px] text-[#232061] mb-14 max-sm:mb-6">
+            <h1 className="text-[50px] max-md:text-[40px] max-sm:text-[30px] leading-[60px] text-[#232061] mb-6 max-xl:mb-3 max-sm:leading-[50px]">
               Our <br /> <span className="font-semibold">Expertise</span>
-            </p>
+            </h1>
 
-            <p className="text-white text-xl max-w-5xl max-sm:text-[15px] max-sm:text-center">
+            <p className="text-white text-base max-w-5xl max-sm:text-xs">
               At Veritas Accounting and Tax Consultants, we provide more than
               just numbers, we deliver clarity, confidence, and strategies to
               help your business grow. Whether you’re a small business owner,
@@ -693,7 +696,7 @@ function Hero() {
 
         .expertise-bg {
           position: absolute;
-          top: 0;
+          top: -20px;
           left: 0;
           right: 0;
           background-color: #232061;
@@ -982,7 +985,8 @@ function Hero() {
           position: fixed;
           top: 0;
           left: 0;
-          width: 100vw;
+          right: 0;
+          width: 100%;
           height: 100vh;
           background: linear-gradient(
             135deg,

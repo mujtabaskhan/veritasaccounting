@@ -97,7 +97,7 @@ const OpenPositions = () => {
   ];
 
   return (
-    <section className="bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[81px]">
+    <section className="w-full bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[81px]" style={{ width: "100%" }}>
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
           <h3 className="text-[#232061] font-bold text-[30px] max-sm:!text-xl text-center mb-[47px]">
