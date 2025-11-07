@@ -211,7 +211,7 @@ const Navbar = () => {
             isExpertiseOpen ? "expertise-bg-open" : "expertise-bg-closed"
           }`}
         />
-        <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-4 relative z-[200]">
+        <div className="max-w-7xl mx-auto py-6 px-8 max-sm:px-4 relative z-[200]">
           <div
             className={`flex items-center transition-all duration-300 max-lg:justify-between ${
               isCollapsed ? "justify-center" : "justify-between"

@@ -32,7 +32,10 @@ const Services1 = () => {
   return (
     <>
       <Navbar />
-      <section className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%" }}>
+      <section
+        className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-14"
+        style={{ width: "100%" }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-[225px] max-sm:gap-[87px] pb-[100px] max-sm:pb-[87px]">
             {servicesData.map((service, index) => (

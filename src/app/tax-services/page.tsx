@@ -36,7 +36,10 @@ const Services1 = () => {
   return (
     <>
       <Navbar />
-      <section className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%" }}>
+      <section
+        className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px]"
+        style={{ width: "100%" }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-[225px] max-sm:gap-[87px] pb-[100px] max-sm:pb-[87px]">
             {servicesData.map((service, index) => (
@@ -69,7 +72,7 @@ const Services1 = () => {
                       <path
                         d="M15.5833 21.4167L21.4167 15.5833M21.4167 15.5833L15.5833 9.75M21.4167 15.5833H9.75M30.1667 15.5833C30.1667 23.6375 23.6375 30.1667 15.5833 30.1667C7.52918 30.1667 1 23.6375 1 15.5833C1 7.52918 7.52918 1 15.5833 1C23.6375 1 30.1667 7.52918 30.1667 15.5833Z"
                         stroke="#F3F3F3"
-                        stroke-width="2"
+                        stroke-Width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />

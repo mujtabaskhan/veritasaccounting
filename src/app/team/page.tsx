@@ -8,16 +8,21 @@ import Navbar from "@/components/Navbar";
 
 export default function About() {
   return (
-    <main className="w-full bg-white min-h-screen relative rounded-bl-[60px] rounded-br-[60px]" style={{ width: "100%", minHeight: "100vh" }}>
-      <div className="relative z-10">
-        <Navbar />
-        <AboutHero />
-        <OurFocus />
-        <OurPromise />
-        <MeetFounder />
-        <MeetTeam />
-        <ContactSection />
-      </div>
-    </main>
+    <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
+      <main
+        className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px] overflow-hidden"
+        style={{ width: "100%", minHeight: "100vh" }}
+      >
+        <div className="relative z-10">
+          <Navbar />
+          <AboutHero />
+          <OurFocus />
+          <OurPromise />
+          <MeetFounder />
+          <MeetTeam />
+          <ContactSection />
+        </div>
+      </main>
+    </div>
   );
 }

@@ -122,13 +122,21 @@ function Hero() {
         setIsCollapsed(false);
       } else {
         // Scrolling down - hide navbar
-        if (scrollDifference > 5) {
+        if (scrollDifference > 2) {
           setIsNavbarVisible(false);
         }
-        // Scrolling up - show collapsed navbar
-        else if (scrollDifference < -5) {
+        // Scrolling up - show collapsed navbar (more sensitive threshold)
+        else if (scrollDifference < -1) {
           setIsNavbarVisible(true);
           setIsCollapsed(true);
+        }
+        // If scroll difference is very small or zero but we're scrolled, maintain current state
+        else if (Math.abs(scrollDifference) <= 1 && currentScrollY > 50) {
+          // Keep navbar visible if already visible, or show it if it was hidden
+          if (!isNavbarVisible) {
+            setIsNavbarVisible(true);
+            setIsCollapsed(true);
+          }
         }
       }
 
@@ -164,11 +172,11 @@ function Hero() {
   return (
     <>
       <div
-        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5]"
+        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px]"
         style={{ width: "100%", minHeight: "100vh", height: "100vh" }}
       >
         <div
-          className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
+          className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-[100] max-lg:transition-none transition-transform duration-300 ${
             isNavbarVisible
               ? "translate-y-0"
               : "-translate-y-full max-lg:translate-y-0"
@@ -220,7 +228,7 @@ function Hero() {
                 isExpertiseOpen ? "expertise-bg-open" : "expertise-bg-closed"
               }`}
             />
-            <div className="max-w-7xl mx-auto py-6 px-4 max-sm:px-4 relative z-[200]">
+            <div className="max-w-7xl mx-auto py-6 px-10 max-sm:px-4 relative z-[200]">
               <div
                 className={`flex items-center transition-all duration-300 max-lg:justify-between ${
                   isCollapsed ? "justify-center" : "justify-between"
@@ -620,9 +628,7 @@ function Hero() {
         />
 
         <div
-          className={`absolute top-0 left-0 w-full h-full z-[1] ${
-            isScrolled ? "rounded-bl-[60px] rounded-br-[60px]" : ""
-          }`}
+          className={`absolute top-0 left-0 w-full h-full z-[1]`}
           style={{
             background:
               "linear-gradient(90deg, rgba(217, 217, 217, 0.6) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)",
@@ -643,7 +649,7 @@ function Hero() {
           }}
         ></div>
 
-        <div className="relative z-10 flex flex-col h-full px-4 max-sm:px-10 max-w-7xl mx-auto pt-40 max-md:pt-14 max-lg:pt-20 max-sm:pt-4">
+        <div className="relative z-10 flex flex-col h-full px-10 max-sm:px-10 max-w-7xl mx-auto pt-40 max-md:pt-14 max-lg:pt-20 max-sm:pt-4">
           <div className="mb-6">
             <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
               <Link href="/" className="font-normal">
@@ -673,7 +679,7 @@ function Hero() {
       <style jsx>{`
         .navbar-container {
           position: relative;
-          z-index: 1000;
+          z-index: 10000;
           transform: translateZ(0);
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
@@ -744,7 +750,7 @@ function Hero() {
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
           pointer-events: none;
-          z-index: 1001;
+          z-index: 10001;
           background-color: transparent;
           margin: 0;
           padding: 0;

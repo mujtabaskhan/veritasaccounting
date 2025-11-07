@@ -9,10 +9,15 @@ export const metadata = {
 
 export default function ExpertisePage() {
   return (
-    <>
-      <Hero />
-      <ExpertiseSection />
-      <ContactSection hideHeading={false} />
-    </>
+    <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
+      <main
+        className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px]"
+        style={{ width: "100%", minHeight: "100vh" }}
+      >
+        <Hero />
+        <ExpertiseSection />
+        <ContactSection hideHeading={false} />
+      </main>
+    </div>
   );
 }

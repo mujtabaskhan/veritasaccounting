@@ -6,10 +6,19 @@ import Navbar from "@/components/Navbar";
 const Career = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <OpenPositions />
-      <ApplyNow />
+      <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
+        <main
+          className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px] overflow-hidden"
+          style={{ width: "100%", minHeight: "100vh" }}
+        >
+          <div className="relative z-[100]">
+            <Navbar />
+            <Hero />
+            <OpenPositions />
+            <ApplyNow />
+          </div>
+        </main>
+      </div>
     </>
   );
 };

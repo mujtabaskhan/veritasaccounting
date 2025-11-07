@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
-      className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-10 ${className}`}
+      className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-[10] ${className}`}
     >
       <Image
         src="/footer-bg.png"
