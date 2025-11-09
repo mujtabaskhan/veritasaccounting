@@ -16,6 +16,17 @@ const ApplyNow = () => {
   const [isCoverLetterDragging, setIsCoverLetterDragging] = useState(false);
   const cvInputRef = useRef<HTMLInputElement>(null);
   const coverLetterInputRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const services = [
     { value: "accounting", label: "Junior Accountant" },
@@ -126,9 +137,136 @@ const ApplyNow = () => {
     }
   };
 
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear status message when user starts typing
+    if (submitStatus.type) {
+      setSubmitStatus({ type: null, message: "" });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validate required fields
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Please fill in all required fields (Name, Email, and Message).",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please enter a valid email address.",
+      });
+      return;
+    }
+
+    // Validate files if uploaded
+    if (cvFile && !handleFileValidation(cvFile)) {
+      setSubmitStatus({
+        type: "error",
+        message: "CV/Resume must be a PDF, DOC, or DOCX file.",
+      });
+      return;
+    }
+
+    if (coverLetterFile && !handleFileValidation(coverLetterFile)) {
+      setSubmitStatus({
+        type: "error",
+        message: "Cover Letter must be a PDF, DOC, or DOCX file.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const positionLabel = selectedService
+        ? services.find((s) => s.value === selectedService)?.label
+        : undefined;
+
+      // Create FormData for file uploads
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name.trim());
+      formDataToSend.append("email", formData.email.trim());
+      formDataToSend.append("phone", formData.phone.trim());
+      formDataToSend.append("message", formData.message.trim());
+      if (positionLabel) {
+        formDataToSend.append("position", positionLabel);
+      }
+      if (cvFile) {
+        formDataToSend.append("cv", cvFile);
+      }
+      if (coverLetterFile) {
+        formDataToSend.append("coverLetter", coverLetterFile);
+      }
+
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to submit application");
+      }
+
+      // Success
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Thank you! Your application has been submitted successfully. We'll review it and get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setSelectedService("");
+      setCvFile(null);
+      setCoverLetterFile(null);
+      // Reset file inputs
+      if (cvInputRef.current) {
+        cvInputRef.current.value = "";
+      }
+      if (coverLetterInputRef.current) {
+        coverLetterInputRef.current.value = "";
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
-      className="pt-10 w-full bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
+      className="pt-10 w-full bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-20 rounded-bl-[60px] rounded-br-[60px]"
       style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -141,7 +279,21 @@ const ApplyNow = () => {
           Find your Career with Veritas Accounting & Tax Consultants
         </p>
 
-        <form>
+        <form onSubmit={handleSubmit}>
+          {submitStatus.type && (
+            <div
+              className={`mb-6 p-4 rounded-2xl ${
+                submitStatus.type === "success"
+                  ? "bg-green-50 border-2 border-green-500 text-green-700"
+                  : "bg-red-50 border-2 border-red-500 text-red-700"
+              }`}
+            >
+              <p className="text-base font-roboto max-sm:text-sm">
+                {submitStatus.message}
+              </p>
+            </div>
+          )}
+
           <div className="relative mb-[42px] max-sm:!mb-[22px]">
             <div className="relative" ref={dropdownRef}>
               <div
@@ -201,7 +353,11 @@ const ApplyNow = () => {
             </label>
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
               placeholder="Your Full Name here"
+              required
               className="w-full border-2 border-[#232061] rounded-full px-14 py-4 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none bg-white max-sm:px-6 max-sm:py-3 max-sm:!text-xs"
             />
           </div>
@@ -212,7 +368,11 @@ const ApplyNow = () => {
             </label>
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
               placeholder="Your Email address here"
+              required
               className="w-full border-2 border-[#232061] rounded-full px-14 py-4 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none bg-white max-sm:px-6 max-sm:py-3 max-sm:!text-xs"
             />
           </div>
@@ -223,6 +383,9 @@ const ApplyNow = () => {
             </label>
             <input
               type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
               placeholder="Your Phone number here"
               className="w-full border-2 border-[#232061] rounded-full px-14 py-4 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none bg-white max-sm:px-6 max-sm:py-3 max-sm:!text-xs"
             />
@@ -364,8 +527,12 @@ const ApplyNow = () => {
               Message
             </label>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
               placeholder="Type your brief message here"
               rows={6}
+              required
               className="w-full border-2 border-[#232061] rounded-3xl px-14 py-6 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none resize-none bg-white max-sm:px-6 max-sm:py-4 max-sm:!text-xs"
             />
           </div>
@@ -373,9 +540,10 @@ const ApplyNow = () => {
           <div className="flex justify-center pt-10 max-sm:pt-6">
             <button
               type="submit"
-              className="bg-[#232061] text-white text-[25px] font-semibold px-16 py-4 rounded-full hover:bg-opacity-90 transition-colors cursor-pointer max-sm:px-8 max-sm:py-3 max-sm:!text-sm"
+              disabled={isSubmitting}
+              className="bg-[#232061] text-white text-[25px] font-semibold px-16 py-4 rounded-full hover:bg-opacity-90 transition-colors cursor-pointer max-sm:px-8 max-sm:py-3 max-sm:!text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

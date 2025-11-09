@@ -4,7 +4,7 @@ import React from "react";
 
 const Terms = () => {
   return (
-    <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
+    <div className="w-full bg-[#232061] p-3 min-h-screen rounded-bl-[60px] rounded-br-[60px]">
       <main
         className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px] overflow-hidden"
         style={{ width: "100%", minHeight: "100vh" }}

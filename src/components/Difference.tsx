@@ -1,7 +1,7 @@
 import React from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
-export default function 0TheDifference() {
+export default function TheDifference() {
   return (
     <section
       className="w-full bg-white px-6 py-20"

@@ -11,6 +11,17 @@ export default function ContactSection({
   const [selectedService, setSelectedService] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const services = [
     { value: "accounting", label: "Accounting" },
@@ -25,6 +36,100 @@ export default function ContactSection({
   const handleServiceSelect = (service: { value: string; label: string }) => {
     setSelectedService(service.value);
     setIsOpen(false);
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear status message when user starts typing
+    if (submitStatus.type) {
+      setSubmitStatus({ type: null, message: "" });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validate required fields
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Please fill in all required fields (Name, Email, and Message).",
+      });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please enter a valid email address.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const serviceLabel = selectedService
+        ? services.find((s) => s.value === selectedService)?.label
+        : undefined;
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          message: formData.message.trim(),
+          service: serviceLabel,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      // Success
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setSelectedService("");
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -80,7 +185,21 @@ export default function ContactSection({
               </p>
             </div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
+              {submitStatus.type && (
+                <div
+                  className={`mb-6 p-4 rounded-2xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 border-2 border-green-500 text-green-700"
+                      : "bg-red-50 border-2 border-red-500 text-red-700"
+                  }`}
+                >
+                  <p className="text-base font-roboto max-sm:text-sm">
+                    {submitStatus.message}
+                  </p>
+                </div>
+              )}
+
               <div className="relative mb-[22px]">
                 <div className="relative" ref={dropdownRef}>
                   <div
@@ -141,7 +260,11 @@ export default function ContactSection({
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   placeholder="Your Full Name here"
+                  required
                   className="w-full border-2 border-[#232061] rounded-full px-8 py-4 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none bg-white max-sm:px-6 max-sm:py-3 max-sm:!text-xs"
                 />
               </div>
@@ -152,7 +275,11 @@ export default function ContactSection({
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   placeholder="Your Email address here"
+                  required
                   className="w-full border-2 border-[#232061] rounded-full px-8 py-4 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none bg-white max-sm:px-6 max-sm:py-3 max-sm:!text-xs"
                 />
               </div>
@@ -163,6 +290,9 @@ export default function ContactSection({
                 </label>
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   placeholder="Your Phone number here"
                   className="w-full border-2 border-[#232061] rounded-full px-8 py-4 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none bg-white max-sm:px-6 max-sm:py-3 max-sm:!text-xs"
                 />
@@ -173,8 +303,12 @@ export default function ContactSection({
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Type your brief message here"
                   rows={6}
+                  required
                   className="w-full border-2 border-[#232061] rounded-3xl px-8 py-6 text-xl text-[#232061] placeholder-[rgba(35,32,97,0.4)] outline-none resize-none bg-white max-sm:px-6 max-sm:py-4 max-sm:!text-xs"
                 />
               </div>
@@ -182,9 +316,10 @@ export default function ContactSection({
               <div className="flex justify-end pt-10 max-sm:pt-6 max-sm:!justify-center">
                 <button
                   type="submit"
-                  className="bg-[#232061] text-white text-[25px] font-semibold px-12 py-4 rounded-full hover:bg-opacity-90 transition-colors cursor-pointer max-sm:px-8 max-sm:py-3 max-sm:!text-sm"
+                  disabled={isSubmitting}
+                  className="bg-[#232061] text-white text-[25px] font-semibold px-12 py-4 rounded-full hover:bg-opacity-90 transition-colors cursor-pointer max-sm:px-8 max-sm:py-3 max-sm:!text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit
+                  {isSubmitting ? "Sending..." : "Submit"}
                 </button>
               </div>
             </form>

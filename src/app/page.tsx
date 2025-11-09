@@ -9,13 +9,13 @@ import GoogleMap from "@/components/GoogleMap";
 
 export default function Home() {
   return (
-    <main className="w-full bg-[#232061] p-3 pb-0 rounded-bl-[90px] rounded-br-[90px] overflow-x-hidden">
+    <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
       <ModernHero />
       <CPAHero />
       <Difference />
       <FAQ />
       <GoogleMap />
       <ContactSection hideHeading={false} />
-    </main>
+    </div>
   );
 }

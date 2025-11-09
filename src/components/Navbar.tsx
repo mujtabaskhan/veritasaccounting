@@ -160,7 +160,7 @@ const Navbar = () => {
   if (!isMounted) return null;
 
   return (
-    <div
+    <nav
       className={`max-lg:relative max-lg:bg-white max-lg:top-auto fixed top-0 left-0 right-0 z-50 max-lg:transition-none transition-transform duration-300 ${
         isNavbarVisible
           ? "translate-y-0"
@@ -226,7 +226,7 @@ const Navbar = () => {
               }`}
             >
               <Image
-                src={isExpertiseOpen ? "/logo-white.png" : "/logo.png"}
+                src={isExpertiseOpen ? "/logo-white.png" : "/logo.webp"}
                 alt="logo"
                 width={1000}
                 height={1000}
@@ -972,7 +972,7 @@ const Navbar = () => {
           }
         `}</style>
       </div>
-    </div>
+    </nav>
   );
 };
 

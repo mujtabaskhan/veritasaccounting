@@ -67,7 +67,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
+    <div className="w-full bg-[#232061] p-3 min-h-screen rounded-bl-[60px] rounded-br-[60px]">
       <main
         className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px] overflow-hidden"
         style={{ width: "100%", minHeight: "100vh" }}
@@ -88,7 +88,7 @@ const FAQ = () => {
               </nav>
             </div>
 
-            <div className="mb-[129px] max-sm:mb-[95px]">
+            <div className="mb-[129px] max-sm:mb-[65px]">
               <AnimateOnScroll delay={0}>
                 <h1 className="text-[#232061] font-semibold mb-9 text-[70px] max-sm:text-[30px] max-lg:text-[50px]">
                   Frequently Asked Questions <br className="max-sm:hidden" />{" "}

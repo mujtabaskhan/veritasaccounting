@@ -5,10 +5,10 @@ import Link from "next/link";
 const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
-      className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-[10] ${className}`}
+      className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-[10] ${className} relative`}
     >
       <Image
-        src="/footer-bg.png"
+        src="/footer-bg.webp"
         alt="footer-bg"
         width={1440}
         height={100}
@@ -21,7 +21,7 @@ const Footer = ({ className }: { className?: string }) => {
         <ChevronLeft className="w-4 h-4 rotate-90" />
         <span>Home</span>
       </Link>
-      <div className="flex items-end justify-start h-full relative z-10 pb-20 max-sm:pb-26 max-lg:pb-20">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#232061] via-[#232061]/90 to-transparent flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[500px]">
         <Link
           href="/"
           className="grid max-w-7xl mx-auto max-sm:!grid-cols-1 max-lg:flex max-lg:flex-col"

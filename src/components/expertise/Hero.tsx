@@ -175,7 +175,7 @@ function Hero() {
         className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px]"
         style={{ width: "100%", minHeight: "100vh", height: "100vh" }}
       >
-        <div
+        <nav
           className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-[100] max-lg:transition-none transition-transform duration-300 ${
             isNavbarVisible
               ? "translate-y-0"
@@ -615,7 +615,7 @@ function Hero() {
               </div>
             )}
           </div>
-        </div>
+        </nav>
 
         <Image
           src="/expertise-bg.png"

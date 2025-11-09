@@ -192,7 +192,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="w-full bg-[#232061] p-3 pb-0 min-h-screen rounded-bl-[90px] rounded-br-[90px]">
+    <div className="w-full bg-[#232061] p-3 min-h-screen rounded-bl-[60px] rounded-br-[60px]">
       <main
         className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px] overflow-hidden"
         style={{ width: "100%", minHeight: "100vh" }}
@@ -227,7 +227,7 @@ const Services = () => {
                   <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                     <div className="flex flex-col gap-3 max-w-3xl">
                       <AnimateOnScroll delay={0}>
-                        <h2 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
+                        <h2 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[60px] max-md:text-[50px] max-sm:text-[30px]">
                           {service.title === "Audit & Compliance Support" ? (
                             <>
                               <span className="whitespace-nowrap">
@@ -281,7 +281,7 @@ const Services = () => {
                     </Link>
                   </div>
 
-                  <div className="bg-[#F2F8FA] px-14 py-10 max-sm:px-6 max-sm:py-8 rounded-[50px] mt-[81px] max-sm:mt-[38px] grid grid-cols-2 gap-8 max-md:grid-cols-1 max-sm:gap-4">
+                  <div className="bg-[#F2F8FA] px-14 py-10 max-sm:px-6 max-sm:py-8 rounded-[50px] mt-[81px] max-sm:mt-[38px] grid grid-cols-2 gap-8 max-lg:grid-cols-1 max-sm:gap-4">
                     {service.services.map((serviceItem, index) => (
                       <div key={index} className="flex flex-col">
                         <div className="py-1 px-4 max-sm:px-2 text-xl max-sm:text-xs bg-[#E1EDF2] font-semibold rounded-[50px] mb-6 w-max text-[#232061]">
