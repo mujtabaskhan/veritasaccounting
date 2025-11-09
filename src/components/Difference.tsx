@@ -1,7 +1,7 @@
 import React from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
-export default function TheDifference() {
+export default function 0TheDifference() {
   return (
     <section
       className="w-full bg-white px-6 py-20"
@@ -14,7 +14,7 @@ export default function TheDifference() {
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
           <h3
-            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-[133px] max-sm:mb-[91px] font-light"
+            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-[133px] max-sm:mb-[91px] font-extralight"
             style={{
               background: "linear-gradient(90deg, #232061 0%, #1F89A3 100%)",
               backgroundClip: "text",
@@ -31,7 +31,7 @@ export default function TheDifference() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-sm:gap-8">
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={100}>
-              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-10">
+              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                 Precision You Can Count On
               </h3>
             </AnimateOnScroll>
@@ -43,7 +43,7 @@ export default function TheDifference() {
           </div>
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={200}>
-              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-10">
+              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                 Strategic Insight, Not Just Numbers
               </h3>
             </AnimateOnScroll>
@@ -55,7 +55,7 @@ export default function TheDifference() {
           </div>
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={300}>
-              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-10">
+              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                 Trusted Partners for Your Success
               </h3>
             </AnimateOnScroll>

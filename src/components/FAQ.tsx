@@ -40,17 +40,17 @@ export default function FAQ() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-[74px] max-sm:mb-[59px]">
           <AnimateOnScroll delay={0}>
-            <h2 className="block max-sm:hidden text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
+            <h2 className="block max-sm:hidden text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px] leading-[80px]">
               Frequently Asked Questions
             </h2>
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={0}>
-            <h2 className="hidden max-sm:block text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px]">
+            <h2 className="hidden max-sm:block text-[#232061] font-semibold mb-2 text-[40px] max-md:text-[30px] max-sm:text-[25px] leading-[25px]">
               FAQ
             </h2>
           </AnimateOnScroll>
-          <p className="text-[#232061] text-xl font-flex max-sm:text-[15px]">
+          <p className="text-[#232061] text-[20px] font-flex max-sm:text-[15px] leading-[30px] font-normal">
             Have questions about our bookkeeping services or bookkeeping
             accounting services? We&apos;ve compiled answers to the most common
             queries to help you better understand how Veritas Accounting can
@@ -70,7 +70,7 @@ export default function FAQ() {
                     openIndex === index ? "transparent" : "transparent",
                 }}
               >
-                <span className="text-left text-[22px] text-[#232061] font-roboto max-sm:text-xs">
+                <span className="text-left text-[30px] font-normal leading-[80px] text-[#232061] font-roboto max-sm:text-xs">
                   {item.question}
                 </span>
                 <svg
@@ -93,7 +93,7 @@ export default function FAQ() {
 
               {openIndex === index && (
                 <div className="px-12 py-6 mt-3 max-sm:px-8 max-sm:py-2">
-                  <p className="text-xl text-[#232061] font-roboto max-sm:text-xs">
+                  <p className="text-[20px] leading-[30px] font-normal text-[#232061] font-roboto max-sm:text-xs">
                     {item.answer}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function FAQ() {
         <div className="flex justify-end mt-[74px] max-sm:mt-[38px] pb-[100px] max-sm:pb-[86px]">
           <Link
             href={"/faq"}
-            className="px-5 py-1 rounded-full text-[25px] max-sm:text-[15px] max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#232061] text-white"
+            className="px-5 py-1 rounded-full text-[25px] max-sm:text-[15px] max-sm:px-3 leading-[10px] font-semibold inline-flex items-center gap-2 bg-[#232061] text-white"
           >
             Learn More
             <svg

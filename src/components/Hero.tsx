@@ -620,11 +620,11 @@ function ModernHero() {
 
           <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-24">
             <div className="w-full max-w-3xl text-[#232061] font-semibold">
-              <p className="text-[24px] max-sm:text-xl font-medium">
+              <p className="text-[32px] max-sm:text-xl font-normal leading-[80px]">
                 Welcome to
               </p>
 
-              <h1 className="text-[60px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[65px] mb-6">
+              <h1 className="text-[96px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[67px] mb-6 font-semibold">
                 Veritas <br />
                 Accounting
               </h1>
@@ -632,28 +632,28 @@ function ModernHero() {
               <div className="flex items-center gap-8 mb-6">
                 <div className="flex items-center">
                   <span
-                    className="text-7xl md:text-8xl"
-                    style={{ color: "#027C99", fontWeight: 300 }}
+                    className="text-[100px] md:text-8xl leading-[100px]"
+                    style={{ color: "#027C99", fontWeight: 400 }}
                   >
                     (
                   </span>
                   <div className="mx-4 font-medium">
-                    <p className="text-2xl max-sm:text-base leading-tight">
+                    <p className="text-[40px] max-sm:text-base leading-[40px]">
                       Simplifying
                     </p>
-                    <p className="text-2xl max-sm:text-base leading-tight">
+                    <p className="text-[40px] max-sm:text-base leading-[40px]">
                       Numbers
                     </p>
                   </div>
                   <span
-                    className="text-7xl md:text-8xl"
-                    style={{ color: "#027C99", fontWeight: 300 }}
+                    className="text-[100px] md:text-8xl leading-[100px]"
+                    style={{ color: "#027C99", fontWeight: 400 }}
                   >
                     )
                   </span>
                 </div>
 
-                <div className="text-2xl max-sm:text-base leading-tight">
+                <div className="text-[40px] max-sm:text-base leading-[40px]">
                   <p style={{ color: "#027C99", fontWeight: 500 }}>
                     Maximizing
                   </p>
@@ -673,7 +673,7 @@ function ModernHero() {
                       });
                     }
                   }}
-                  className="px-10 py-4 rounded-full font-bold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-lg"
+                  className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-[25px] leading-[10px]"
                   style={{
                     backgroundColor: "#232061",
                   }}
