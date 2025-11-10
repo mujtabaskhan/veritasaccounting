@@ -6,6 +6,13 @@ const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
       className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-[10] ${className} relative`}
+      style={{
+        WebkitTransform: "translateZ(0)",
+        transform: "translateZ(0)",
+        WebkitBackfaceVisibility: "hidden",
+        backfaceVisibility: "hidden",
+        willChange: "transform",
+      }}
     >
       {/* <div className="absolute top-0 left-0 right-0 bg-[#232061] flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[200px] rounded-bl-[60px] rounded-br-[60px]"></div> */}
 
@@ -24,8 +31,7 @@ const Footer = ({ className }: { className?: string }) => {
         <span>Home</span>
       </Link>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#232061] via-[#232061]/90 to-transparent flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[500px]">
-        <Link
-          href="/"
+        <div
           className="grid max-w-7xl mx-auto max-sm:!grid-cols-1 max-lg:flex max-lg:flex-col"
           style={{ gridTemplateColumns: "2fr 2.5fr" }}
         >
@@ -120,7 +126,7 @@ const Footer = ({ className }: { className?: string }) => {
               </div>
             </div>
           </div>
-        </Link>
+        </div>
         <div
           className="pt-5 absolute bottom-5 w-full max-sm:pt-4 max-sm:bottom-4 px-4"
           style={{ borderTop: "1px solid white" }}

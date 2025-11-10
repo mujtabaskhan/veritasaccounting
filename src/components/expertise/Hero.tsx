@@ -173,7 +173,16 @@ function Hero() {
     <>
       <div
         className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px]"
-        style={{ width: "100%", minHeight: "100vh", height: "100vh" }}
+        style={{
+          width: "100%",
+          minHeight: "100vh",
+          height: "100vh",
+          WebkitTransform: "translateZ(0)",
+          transform: "translateZ(0)",
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+          willChange: "transform",
+        }}
       >
         <nav
           className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-[100] max-lg:transition-none transition-transform duration-300 ${
@@ -628,7 +637,9 @@ function Hero() {
         />
 
         <div
-          className={`absolute top-0 left-0 w-full h-full z-[1]`}
+          className={`absolute top-0 left-0 w-full h-full z-[1] ${
+            isScrolled ? "rounded-bl-[60px] rounded-br-[60px]" : ""
+          }`}
           style={{
             background:
               "linear-gradient(90deg, rgba(217, 217, 217, 0.6) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%)",

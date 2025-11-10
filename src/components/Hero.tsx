@@ -173,7 +173,16 @@ function Hero() {
     <>
       <div
         className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px]"
-        style={{ width: "100%", minHeight: "100vh", height: "100vh" }}
+        style={{
+          width: "100%",
+          minHeight: "100vh",
+          height: "100vh",
+          WebkitTransform: "translateZ(0)",
+          transform: "translateZ(0)",
+          WebkitBackfaceVisibility: "hidden",
+          backfaceVisibility: "hidden",
+          willChange: "transform",
+        }}
       >
         <nav
           className={`max-lg:relative max-lg:top-auto fixed top-0 left-0 right-0 z-[100] max-lg:transition-none transition-transform duration-300 ${
@@ -695,9 +704,9 @@ function Hero() {
                 <path
                   d="M17.5 23.3334L23.3333 17.5M23.3333 17.5L17.5 11.6667M23.3333 17.5H11.6667M32.0833 17.5C32.0833 25.5542 25.5541 32.0834 17.5 32.0834C9.44584 32.0834 2.91666 25.5542 2.91666 17.5C2.91666 9.44587 9.44584 2.91669 17.5 2.91669C25.5541 2.91669 32.0833 9.44587 32.0833 17.5Z"
                   stroke="#96B3BF"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
@@ -706,6 +715,20 @@ function Hero() {
       </div>
 
       <style jsx>{`
+        /* iOS Safari sticky positioning fixes */
+        @supports (-webkit-touch-callout: none) {
+          /* iOS Safari specific fixes */
+          div[class*="sticky"] {
+            -webkit-transform: translateZ(0) !important;
+            transform: translateZ(0) !important;
+            -webkit-backface-visibility: hidden !important;
+            backface-visibility: hidden !important;
+            will-change: transform !important;
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+          }
+        }
+
         .navbar-container {
           position: relative;
           z-index: 10000;
