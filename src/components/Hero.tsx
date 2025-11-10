@@ -622,7 +622,7 @@ function Hero() {
           alt="hero-hero"
           width={1440}
           height={100}
-          className="w-full h-full object-cover absolute top-0 left-0 z-0"
+          className="w-full h-full object-cover absolute top-0 left-0 z-0 rounded-bl-[60px] rounded-br-[60px]"
         />
 
         <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-24">

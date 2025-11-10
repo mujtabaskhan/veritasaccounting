@@ -34,7 +34,7 @@ export default function FAQ() {
 
   return (
     <section
-      className="w-full bg-white pt-20 px-4 max-lg:pt-16 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0"
+      className="w-full bg-white pt-20 px-4 max-lg:pt-16 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0 relative z-10"
       style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto">

@@ -7,6 +7,8 @@ const Footer = ({ className }: { className?: string }) => {
     <footer
       className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-[10] ${className} relative`}
     >
+      {/* <div className="absolute top-0 left-0 right-0 bg-[#232061] flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[200px] rounded-bl-[60px] rounded-br-[60px]"></div> */}
+
       <Image
         src="/footer-bg.webp"
         alt="footer-bg"

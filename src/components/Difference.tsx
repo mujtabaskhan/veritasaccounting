@@ -4,7 +4,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export default function TheDifference() {
   return (
     <section
-      className="w-full bg-white px-6 py-20"
+      className="w-full bg-white px-6 py-20 relative z-10"
       style={{
         fontFamily: "Roboto Serif, serif",
         width: "100%",

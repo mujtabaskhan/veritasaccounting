@@ -1,22 +1,48 @@
 "use client";
 
 export default function GoogleMap() {
+  const businessName = "Veritas Accounting";
+  const address =
+    "1325 Eglinton Ave E Unit 230, Mississauga, ON L4W 4L9, Canada";
+  const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+    `${businessName}, ${address}`,
+  )}&output=embed&z=19&hl=en&iwloc=near`;
+
   return (
-    <section className="w-full bg-white" style={{ width: "100%" }}>
-      <div
-        className="w-full overflow-hidden shadow-lg"
-        style={{ width: "100%", height: "500px" }}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.6390840531067!2d-79.62292649999999!3d43.634870299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b389739eaaaab%3A0x9c88b16f61affb07!2s1325%20Eglinton%20Ave%20E%20Unit%20230%2C%20Mississauga%2C%20ON%20L4W%204L9%2C%20Canada!5e0!3m2!1sen!2s!4v1762096664151!5m2!1sen!2s"
-          width="100%"
-          height="500"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Location Map"
-        />
+    <section
+      className="w-full bg-white relative z-10"
+      style={{ width: "100%" }}
+    >
+      <div className="relative w-full">
+        <div className="absolute top-4 left-4 z-20 bg-white rounded-lg shadow-xl p-4 max-w-sm border-2 border-[#232061]">
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 mt-1">
+              <div className="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg text-[#232061] mb-1">
+                {businessName}
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed">{address}</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="w-full overflow-hidden shadow-lg rounded-lg"
+          style={{ width: "100%", height: "500px" }}
+        >
+          <iframe
+            src={mapEmbedUrl}
+            width="100%"
+            height="500"
+            style={{ border: 0, borderRadius: "8px" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Veritas Accounting Location Map"
+          />
+        </div>
       </div>
     </section>
   );
