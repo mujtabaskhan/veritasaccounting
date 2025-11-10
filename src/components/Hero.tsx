@@ -636,31 +636,31 @@ function Hero() {
               Accounting
             </h1>
 
-            <div className="flex items-center gap-8 mb-6">
+            <div className="flex items-center gap-8 mb-6 max-sm:gap-4">
               <div className="flex items-center">
                 <span
-                  className="text-[100px] md:text-8xl leading-[100px]"
+                  className="text-[100px] md:text-8xl leading-[100px] max-sm:text-5xl"
                   style={{ color: "#027C99", fontWeight: 400 }}
                 >
                   (
                 </span>
                 <div className="mx-4 font-medium">
-                  <p className="text-[40px] max-sm:text-base leading-[40px]">
+                  <p className="text-[40px] max-sm:text-base leading-[40px] max-sm:leading-normal">
                     Simplifying
                   </p>
-                  <p className="text-[40px] max-sm:text-base leading-[40px]">
+                  <p className="text-[40px] max-sm:text-base leading-[40px] max-sm:leading-normal">
                     Numbers
                   </p>
                 </div>
                 <span
-                  className="text-[100px] md:text-8xl leading-[100px]"
+                  className="text-[100px] md:text-8xl leading-[100px] max-sm:text-5xl"
                   style={{ color: "#027C99", fontWeight: 400 }}
                 >
                   )
                 </span>
               </div>
 
-              <div className="text-[40px] max-sm:text-base leading-[40px]">
+              <div className="text-[40px] max-sm:text-base leading-[40px] max-sm:leading-normal">
                 <p style={{ color: "#027C99", fontWeight: 500 }}>Maximizing</p>
                 <p style={{ color: "#027C99", fontWeight: 500 }}>Results</p>
               </div>
@@ -678,7 +678,7 @@ function Hero() {
                     });
                   }
                 }}
-                className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-[25px] leading-[10px]"
+                className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-[25px] leading-[10px] max-sm:text-base"
                 style={{
                   backgroundColor: "#232061",
                 }}

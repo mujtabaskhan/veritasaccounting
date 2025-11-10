@@ -70,7 +70,7 @@ export default function FAQ() {
                     openIndex === index ? "transparent" : "transparent",
                 }}
               >
-                <span className="text-left text-[30px] font-normal leading-[80px] text-[#232061] font-roboto max-sm:text-xs">
+                <span className="text-left text-[30px] max-md:text-xl font-normal leading-[80px] max-md:!leading-5 text-[#232061] font-roboto max-sm:text-sm max-sm:!leading-1">
                   {item.question}
                 </span>
                 <svg
@@ -79,7 +79,7 @@ export default function FAQ() {
                   viewBox="0 0 37 21"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`absolute right-8 transition-transform duration-300 max-sm:w-3 max-sm:h-2 ${
+                  className={`absolute right-8 transition-transform duration-300 max-md:h-5 max-md:w-5 max-sm:w-3 max-sm:h-2 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 >
