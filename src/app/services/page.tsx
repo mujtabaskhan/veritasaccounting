@@ -149,6 +149,29 @@ const Services = () => {
       ],
     },
     {
+      id: "administration",
+      title: "Business Administration",
+      description:
+        "Efficient administration is the backbone of every successful business. At Veritas Accounting, we offer reliable business administration services to help you stay organized, compliant, and focused on growth. From managing records to streamlining daily operations, we ensure your business runs smoothly and efficiently. Here's some of our business administration services mentioned below:",
+      services: [
+        {
+          title: "Incorporation Services",
+          description:
+            "Expert guidance to set up your business with the right structure, ensuring compliance and alignment with your long-term goals.",
+        },
+        {
+          title: "Business Registration",
+          description:
+            "Seamless handling of registrations and filings so your company can operate legally and confidently from day one.",
+        },
+        {
+          title: "Corporate Records & Maintenance",
+          description:
+            "Ongoing support with annual returns, minute books, and regulatory filings to keep your business in good standing year after year.",
+        },
+      ],
+    },
+    {
       id: "cfo-services",
       title: "CFO Services",
       description:

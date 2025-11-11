@@ -74,7 +74,7 @@ export default function ExpertiseSection() {
         title: "Business Administration",
         badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
         image: "/expertise-3.jpg",
-        url: "/services",
+        url: "/services#administration",
       },
     ],
     [],

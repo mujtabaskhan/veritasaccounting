@@ -510,7 +510,7 @@ function Hero() {
                               </Link>
                             ))}
                             <Link
-                              href="/services"
+                              href="/expertise"
                               onClick={closeMenu}
                               className="text-center font-medium py-2 px-4 rounded-[25px] bg-[#232061] text-white text-sm"
                             >
@@ -612,7 +612,7 @@ function Hero() {
                     </div>
                     <div className="flex justify-center pt-4 border-t border-white/10">
                       <Link
-                        href="/services"
+                        href="/expertise"
                         className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105"
                       >
                         <span>View More Services</span>
