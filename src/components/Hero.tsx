@@ -256,7 +256,7 @@ function Hero() {
                     alt="logo"
                     width={1000}
                     height={1000}
-                    className="w-[250px] h-max max-md:w-[200px] max-lg:w-[240px] transition-opacity duration-300"
+                    className="w-[300px] h-max max-md:w-[270px] max-lg:w-[250px] transition-opacity duration-300"
                   />
                 </Link>
 
