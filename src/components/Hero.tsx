@@ -237,7 +237,7 @@ function Hero() {
                 isExpertiseOpen ? "expertise-bg-open" : "expertise-bg-closed"
               }`}
             />
-            <div className="max-w-7xl mx-auto py-6 px-10 max-sm:px-4 relative z-[200]">
+            <div className="max-w-7xl mx-auto py-14 max-sm:pb-8 px-10 max-sm:px-4 relative z-[200]">
               <div
                 className={`flex items-center transition-all duration-300 max-lg:justify-between ${
                   isCollapsed ? "justify-center" : "justify-between"
@@ -414,6 +414,12 @@ function Hero() {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     className="transition-colors duration-300 cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/veritas_accounting/",
+                        "_blank",
+                      )
+                    }
                   >
                     <path
                       d="M21.1458 7.85425H21.1579M8.45829 2.41675H20.5416C23.8783 2.41675 26.5833 5.12169 26.5833 8.45841V20.5417C26.5833 23.8785 23.8783 26.5834 20.5416 26.5834H8.45829C5.12157 26.5834 2.41663 23.8785 2.41663 20.5417V8.45841C2.41663 5.12169 5.12157 2.41675 8.45829 2.41675ZM19.3333 13.7388C19.4824 14.7445 19.3106 15.7715 18.8424 16.6739C18.3742 17.5763 17.6333 18.308 16.7253 18.7651C15.8172 19.2222 14.7881 19.3813 13.7844 19.2198C12.7807 19.0582 11.8534 18.5843 11.1346 17.8655C10.4157 17.1466 9.9418 16.2194 9.78029 15.2157C9.61878 14.212 9.77787 13.1829 10.2349 12.2748C10.692 11.3667 11.4238 10.6259 12.3261 10.1576C13.2285 9.6894 14.2556 9.51763 15.2612 9.66675C16.287 9.81886 17.2367 10.2968 17.9699 11.0301C18.7032 11.7634 19.1812 12.713 19.3333 13.7388Z"
@@ -550,6 +556,12 @@ function Hero() {
                         width={20}
                         height={20}
                         className="cursor-pointer"
+                        onClick={() =>
+                          window.open(
+                            "https://www.instagram.com/veritas_accounting/",
+                            "_blank",
+                          )
+                        }
                       />
                     </div>
                   </div>
@@ -640,7 +652,7 @@ function Hero() {
               Welcome to
             </p>
 
-            <h1 className="text-[96px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[67px] mb-6 font-semibold">
+            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold">
               Veritas <br />
               Accounting
             </h1>
@@ -654,22 +666,22 @@ function Hero() {
                   (
                 </span>
                 <div className="mx-4 font-medium">
-                  <p className="text-[40px] max-sm:text-base leading-[40px] max-sm:leading-normal">
+                  <p className="text-[30px] max-sm:text-base leading-[30px] max-sm:leading-normal">
                     Simplifying
                   </p>
-                  <p className="text-[40px] max-sm:text-base leading-[40px] max-sm:leading-normal">
+                  <p className="text-[30px] max-sm:text-base leading-[30px] max-sm:leading-normal">
                     Numbers
                   </p>
                 </div>
                 <span
-                  className="text-[100px] md:text-8xl leading-[100px] max-sm:text-5xl"
+                  className="text-[80px] md:text-8xl leading-[80px] max-sm:text-5xl"
                   style={{ color: "#027C99", fontWeight: 400 }}
                 >
                   )
                 </span>
               </div>
 
-              <div className="text-[40px] max-sm:text-base leading-[40px] max-sm:leading-normal">
+              <div className="text-[30px] max-sm:text-base leading-[30px] max-sm:leading-normal">
                 <p style={{ color: "#027C99", fontWeight: 500 }}>Maximizing</p>
                 <p style={{ color: "#027C99", fontWeight: 500 }}>Results</p>
               </div>
@@ -687,7 +699,7 @@ function Hero() {
                     });
                   }
                 }}
-                className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-[25px] leading-[10px] max-sm:text-base"
+                className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-base leading-[10px] max-sm:text-base"
                 style={{
                   backgroundColor: "#232061",
                 }}
@@ -695,8 +707,8 @@ function Hero() {
                 Talk to an Expert
               </button>
               <svg
-                width="35"
-                height="35"
+                width="28"
+                height="28"
                 viewBox="0 0 35 35"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

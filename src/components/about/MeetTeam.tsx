@@ -23,8 +23,11 @@ export default function MeetTeam() {
   ];
 
   return (
-    <section className="w-full bg-white pb-[122px] px-4 max-xl:pb-24 max-lg:pb-20 max-md:pb-16 max-sm:!pb-[105px]" style={{ width: "100%" }}>
-      <div className="max-w-7xl mx-auto">
+    <section
+      className="w-full bg-white pb-[122px] max-xl:pb-24 max-lg:pb-20 max-md:pb-16 max-sm:!pb-[105px]"
+      style={{ width: "100%" }}
+    >
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
         <div className="text-center mb-[90px] max-sm:!mb-9">
           <AnimateOnScroll delay={0}>
             <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[40px] max-sm:!text-xl">
@@ -81,14 +84,16 @@ export default function MeetTeam() {
         <div></div>
       </div>
 
-      <p className="text-center text-[20px] text-[#232061] leading-[30px] font-flex max-w-4xl mx-auto mt-[131px] max-sm:leading-6 max-sm:!mt-[122px] max-sm:!text-xs">
-        Together, We Build Financial Clarity <br /> At Veritas Accounting, our
-        mission is simple, to bring honesty, precision, and insight to every
-        financial decision. With a team driven by expertise and integrity, we’re
-        here to guide your business toward lasting growth and peace of mind.
-        Your success is our purpose, and together, we create the clarity that
-        drives it.
-      </p>
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
+        <p className="text-center text-[20px] text-[#232061] leading-[30px] font-flex max-w-4xl mx-auto mt-[131px] max-sm:leading-6 max-sm:!mt-16 max-sm:!text-xs">
+          Together, We Build Financial Clarity <br /> At Veritas Accounting, our
+          mission is simple, to bring honesty, precision, and insight to every
+          financial decision. With a team driven by expertise and integrity,
+          we’re here to guide your business toward lasting growth and peace of
+          mind. Your success is our purpose, and together, we create the clarity
+          that drives it.
+        </p>
+      </div>
     </section>
   );
 }

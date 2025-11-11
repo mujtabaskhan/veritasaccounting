@@ -73,7 +73,7 @@ function ServicesSection() {
           ))}
 
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/19052260033"
             target="_blank"
             rel="noopener noreferrer"
           >

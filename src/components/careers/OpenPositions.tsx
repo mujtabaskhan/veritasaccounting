@@ -97,8 +97,11 @@ const OpenPositions = () => {
   ];
 
   return (
-    <section className="w-full bg-white px-4 pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[81px]" style={{ width: "100%" }}>
-      <div className="max-w-7xl mx-auto">
+    <section
+      className="w-full bg-white pb-[104px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[81px]"
+      style={{ width: "100%" }}
+    >
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
         <AnimateOnScroll delay={0}>
           <h3 className="text-[#232061] font-bold text-[30px] max-sm:!text-xl text-center mb-[47px]">
             Open Positions

@@ -2,9 +2,12 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-white pt-40 px-4 pb-[87px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-[111px]" style={{ width: "100%" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
+    <section
+      className="w-full bg-white pt-40 pb-[87px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-8 max-sm:!pb-[111px]"
+      style={{ width: "100%" }}
+    >
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
+        <div className="mb-14">
           <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
             <Link href="/" className="font-normal">
               Home

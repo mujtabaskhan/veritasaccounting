@@ -151,7 +151,7 @@ export default function ContactSection({
   return (
     <section
       id="contact-section"
-      className="w-full bg-white py-32 px-4 max-sm:px-10 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] relative z-[5]"
+      className="w-full bg-white py-32 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] relative z-[5] max-sm:pt-0"
       style={{
         width: "100%",
         position: "relative",
@@ -163,7 +163,7 @@ export default function ContactSection({
         backfaceVisibility: "hidden",
       }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
         {hideHeading && (
           <div className="text-center mb-[65px] max-sm:!mb-[81px]">
             <AnimateOnScroll delay={0}>

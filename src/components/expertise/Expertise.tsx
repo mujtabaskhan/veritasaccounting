@@ -82,8 +82,9 @@ export default function ExpertiseSection() {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
-    dragFree: true,
+    dragFree: false,
     containScroll: "trimSnaps",
+    slidesToScroll: 1,
   });
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -143,12 +144,12 @@ export default function ExpertiseSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-white py-20 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-[15] max-sm:px-10"
+      className="w-full bg-white py-20 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-[15]"
       style={{ width: "100%" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
         <div className="flex items-start justify-end mb-10 gap-8">
-          <div className="flex flex-row items-center gap-4 max-sm:gap-2 max-sm:mr-6">
+          <div className="flex flex-row items-center gap-4 max-sm:gap-2">
             <span className="hidden text-[#232061] text-sm pr-6 max-sm:block">
               Click the arrow to scroll next
             </span>
@@ -197,8 +198,8 @@ export default function ExpertiseSection() {
           </div>
         </div>
 
-        <div ref={emblaRef} className="overflow-hidden px-4 md:px-8">
-          <div className="flex gap-[30px] max-sm:gap-4 py-8 cursor-grab active:cursor-grabbing">
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex gap-[30px] max-sm:gap-4 max-[500px]:gap-4 py-8 cursor-grab active:cursor-grabbing">
             {expertiseCards.map((card, index) => (
               <div
                 key={card.id}
@@ -207,7 +208,7 @@ export default function ExpertiseSection() {
                 }}
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] transition-all duration-300 ease-in-out h-[600px] max-sm:h-[520px]"
+                className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] max-[500px]:min-w-0 max-[500px]:w-[calc(100vw-56px)] max-[500px]:max-w-none transition-all duration-300 ease-in-out h-[720px] max-sm:h-[540px]"
                 style={{
                   scrollSnapAlign: "start",
                   transform:
@@ -216,7 +217,7 @@ export default function ExpertiseSection() {
                 }}
               >
                 <AnimateOnScroll delay={0}>
-                  <h3 className="text-[#232061] font-bold mb-4 px-10 max-sm:px-6 text-[24px]">
+                  <h3 className="text-[#232061] font-bold mb-4 px-10 max-sm:px-6 text-[30px] max-sm:!text-2xl">
                     {card.title}
                   </h3>
                 </AnimateOnScroll>
@@ -225,7 +226,7 @@ export default function ExpertiseSection() {
                   {card.badges.map((badge) => (
                     <span
                       key={badge}
-                      className="w-max bg-[#E1EDF2] p-3 text-[#232061] font-semibold text-sm rounded-[50px] max-sm:text-xs max-sm:p-2"
+                      className="w-max bg-[#E1EDF2] p-5 text-[#232061] font-semibold text-base rounded-[50px] max-sm:text-xs max-sm:p-2"
                     >
                       {badge}
                     </span>
@@ -233,7 +234,7 @@ export default function ExpertiseSection() {
                 </div>
 
                 <div className="px-10 mt-3 max-sm:mt-2 max-sm:px-6">
-                  <span className="w-max bg-[#E1EDF2] p-4 text-[#232061] font-semibold text-xl rounded-[50px] max-sm:text-xs max-sm:p-2">
+                  <span className="w-max bg-[#E1EDF2] p-5 text-[#232061] font-semibold text-base rounded-[50px] max-sm:text-xs max-sm:p-2">
                     ...
                   </span>
                 </div>

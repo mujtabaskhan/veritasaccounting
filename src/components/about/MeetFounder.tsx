@@ -4,10 +4,10 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export default function MeetFounder() {
   return (
     <section
-      className="w-full bg-white pb-[220px] px-4 max-xl:pb-44 max-lg:pb-36 max-md:pb-28 max-sm:!pb-[127px]"
+      className="w-full bg-white pb-[220px] max-xl:pb-44 max-lg:pb-36 max-md:pb-28 max-sm:!pb-20"
       style={{ width: "100%" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
         <div className="flex justify-center gap-14 max-xl:gap-10 max-lg:text-center  max-sm:!gap-6 max-[420px]:flex-col max-[420px]:!items-center">
           <Image
             src="/omair.jpeg"

@@ -74,11 +74,11 @@ const FAQ = () => {
       >
         <Navbar />
         <section
-          className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 max-sm:pb-14"
+          className="w-full bg-white pt-40 max-lg:pt-14 max-sm:pt-8 pb-[50px]"
           style={{ width: "100%" }}
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-20 max-sm:mb-20">
+          <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
+            <div className="mb-14">
               <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
@@ -90,7 +90,7 @@ const FAQ = () => {
 
             <div className="mb-[129px] max-sm:mb-[65px]">
               <AnimateOnScroll delay={0}>
-                <h1 className="text-[#232061] font-semibold mb-9 text-[70px] max-sm:text-[30px] max-lg:text-[50px]">
+                <h1 className="text-[#232061] font-semibold mb-9 text-[60px] max-sm:text-[30px] max-lg:text-[40px]">
                   Frequently Asked Questions <br className="max-sm:hidden" />{" "}
                   <span className="font-light">by our Clients</span>
                 </h1>

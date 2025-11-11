@@ -199,11 +199,11 @@ const Services = () => {
       >
         <Navbar />
         <section
-          className="w-full bg-white pt-40 px-4 max-lg:pt-16 max-md:pt-12 max-sm:pt-10 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
+          className="w-full bg-white pt-40 max-lg:pt-16 max-md:pt-12 max-sm:pt-10 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
           style={{ width: "100%" }}
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-20 max-sm:mb-20">
+          <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
+            <div className="mb-14">
               <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
@@ -216,18 +216,14 @@ const Services = () => {
                 <span className="font-normal">Our Services</span>
               </nav>
             </div>
-            <div className="mb-12 max-sm:mb-8">
-              <h1 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[70px] max-md:text-[50px] max-sm:text-[30px]">
-                Our Services
-              </h1>
-            </div>
+
             <div className="flex flex-col gap-[225px] max-sm:gap-[87px] pb-[225px] max-sm:pb-[87px]">
               {servicesData.map((service) => (
                 <div key={service.id} id={service.id} className="scroll-mt-32">
                   <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                     <div className="flex flex-col gap-3 max-w-3xl">
                       <AnimateOnScroll delay={0}>
-                        <h2 className="text-[90px] font-semibold text-[#232061] mb-6 max-lg:text-[60px] max-md:text-[50px] max-sm:text-[30px]">
+                        <h2 className="text-[80px] font-semibold text-[#232061] mb-6 max-lg:text-[60px] max-md:text-[40px] max-sm:text-[30px]">
                           {service.title === "Audit & Compliance Support" ? (
                             <>
                               <span className="whitespace-nowrap">

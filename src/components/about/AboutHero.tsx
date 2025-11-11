@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function AboutHero() {
   return (
-    <section className="w-full bg-white pt-40 max-lg:pt-20 px-4 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-20 max-sm:mb-20">
+    <section className="w-full bg-white pt-40 max-lg:pt-20 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-16 max-sm:pt-8">
+      <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
+        <div className="mb-14">
           <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
             <Link href="/" className="font-normal">
               Home
@@ -14,7 +14,7 @@ export default function AboutHero() {
           </nav>
         </div>
 
-        <div className="text-center mb-11 max-sm:!mb-7">
+        <div className="text-center mb-11 max-sm:!mb-0">
           <h1 className="text-[70px] font-semibold text-[#232061] leading-[70px] mb-[45px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:!text-[30px] max-sm:!leading-[36px] max-sm:!mb-7">
             Who We Are
           </h1>

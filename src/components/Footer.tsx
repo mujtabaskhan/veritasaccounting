@@ -27,8 +27,8 @@ const Footer = ({ className }: { className?: string }) => {
         href="/"
         className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#232061] hover:bg-[#232061]/90 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105 absolute right-20 top-72 z-20 max-lg:bottom-32 max-lg:top-auto max-lg:right-20 h-max w-max max-lg:bg-white max-lg:text-[#232061] max-sm:px-4 max-sm:py-2 max-sm:right-10"
       >
+        <span>Top</span>
         <ChevronLeft className="w-4 h-4 rotate-90" />
-        <span>Home</span>
       </Link>
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#232061] via-[#232061]/90 to-transparent flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[500px]">
         <div
