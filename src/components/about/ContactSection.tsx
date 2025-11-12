@@ -151,7 +151,7 @@ export default function ContactSection({
   return (
     <section
       id="contact-section"
-      className="w-full bg-white py-32 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] relative z-[5] max-sm:pt-0"
+      className="w-full bg-white py-32 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-10 rounded-bl-[60px] rounded-br-[60px] relative z-[5]"
       style={{
         width: "100%",
         position: "relative",

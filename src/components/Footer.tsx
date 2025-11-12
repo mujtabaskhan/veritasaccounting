@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer = ({ className }: { className?: string }) => {
   return (
     <footer
-      className={`bg-white sticky -bottom-40 left-0 right-0 h-[950px] z-[10] ${className} relative`}
+      className={`bg-white sticky -bottom-40 left-0 right-0 h-screen z-[10] ${className} relative`}
       style={{
         WebkitTransform: "translateZ(0)",
         transform: "translateZ(0)",
@@ -14,8 +14,6 @@ const Footer = ({ className }: { className?: string }) => {
         willChange: "transform",
       }}
     >
-      {/* <div className="absolute top-0 left-0 right-0 bg-[#232061] flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[200px] rounded-bl-[60px] rounded-br-[60px]"></div> */}
-
       <Image
         src="/footer-bg.webp"
         alt="footer-bg"
@@ -74,7 +72,6 @@ const Footer = ({ className }: { className?: string }) => {
                 <Link href="/faq" className="underline">
                   FAQ
                 </Link>
-                
               </div>
             </div>
 
@@ -112,10 +109,14 @@ const Footer = ({ className }: { className?: string }) => {
                 Follow us
               </h3>
               <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
-                <Link href="https://www.instagram.com/veritas_accounting/" target="_blank" className="underline">
+                <Link
+                  href="https://www.instagram.com/veritas_accounting/"
+                  target="_blank"
+                  className="underline"
+                >
                   Instagram
                 </Link>
-                
+
                 <Link href="#" className="underline">
                   Linkedin
                 </Link>

@@ -34,6 +34,7 @@ export default function FAQ() {
 
   return (
     <section
+      id="faq-section"
       className="w-full bg-white pt-20 px-4 max-lg:pt-16 max-md:pt-12 max-md:pb-20 max-sm:pt-10 max-sm:!pb-0 relative z-10"
       style={{ width: "100%" }}
     >

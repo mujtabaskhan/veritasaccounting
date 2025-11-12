@@ -208,7 +208,7 @@ export default function ExpertiseSection() {
                 }}
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[480px] min-w-[450px] max-[500px]:min-w-0 max-[500px]:w-[calc(100vw-56px)] max-[500px]:max-w-none transition-all duration-300 ease-in-out h-[720px] max-sm:h-[540px]"
+                className="bg-[#027C990D] rounded-[50px] pt-6 flex flex-col relative flex-shrink-0 w-full max-w-[400px] min-w-[400px] max-[500px]:min-w-0 max-[500px]:w-[calc(100vw-56px)] max-[500px]:max-w-none transition-all duration-300 ease-in-out h-[600px] max-sm:h-[540px]"
                 style={{
                   scrollSnapAlign: "start",
                   transform:
@@ -217,7 +217,7 @@ export default function ExpertiseSection() {
                 }}
               >
                 <AnimateOnScroll delay={0}>
-                  <h3 className="text-[#232061] font-bold mb-4 px-10 max-sm:px-6 text-[30px] max-sm:!text-2xl">
+                  <h3 className="text-[#232061] font-bold mb-4 px-10 max-sm:px-6 text-2xl">
                     {card.title}
                   </h3>
                 </AnimateOnScroll>
@@ -226,7 +226,7 @@ export default function ExpertiseSection() {
                   {card.badges.map((badge) => (
                     <span
                       key={badge}
-                      className="w-max bg-[#E1EDF2] p-5 text-[#232061] font-semibold text-base rounded-[50px] max-sm:text-xs max-sm:p-2"
+                      className="w-max bg-[#E1EDF2] p-3 text-[#232061] font-semibold text-sm rounded-[50px] max-sm:text-xs max-sm:p-2"
                     >
                       {badge}
                     </span>
@@ -234,7 +234,7 @@ export default function ExpertiseSection() {
                 </div>
 
                 <div className="px-10 mt-3 max-sm:mt-2 max-sm:px-6">
-                  <span className="w-max bg-[#E1EDF2] p-5 text-[#232061] font-semibold text-base rounded-[50px] max-sm:text-xs max-sm:p-2">
+                  <span className="w-max bg-[#E1EDF2] p-3 text-[#232061] font-semibold text-sm rounded-[50px] max-sm:text-xs max-sm:p-2">
                     ...
                   </span>
                 </div>
@@ -289,7 +289,7 @@ export default function ExpertiseSection() {
             href={"/faq"}
             className="cursor-pointer z-[60] text-white flex items-center gap-3 bg-[#232061] px-4 py-2.5 rounded-[50px] text-2xl font-semibold max-sm:text-[15px] max-sm:py-1"
           >
-            Talk to an Expert
+            Frequently Asked Questions
           </Link>
 
           <svg
