@@ -80,7 +80,7 @@ function Hero() {
               Our <br /> <span className="font-semibold">Expertise</span>
             </h1>
 
-            <p className="text-white text-[20px] leading-[30px] max-w-4xl max-sm:text-xs mt-5 font-normal ">
+            <p className="text-white text-[20px] leading-[30px] max-w-4xl max-sm:text-xs mt-5 font-normal font-flex">
               At Veritas Accounting and Tax Consultants, we provide more than
               just numbers, we deliver clarity, confidence, and strategies to
               help your business grow. Whether you’re a small business owner,

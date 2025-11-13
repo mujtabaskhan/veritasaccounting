@@ -227,7 +227,7 @@ const Services = () => {
         >
           <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
             <div className="mb-14">
-              <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
+              <nav className="text-[#232061] text-[20px] leading-[40px] font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
                 </Link>{" "}
@@ -246,7 +246,7 @@ const Services = () => {
                   <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">
                     <div className="flex flex-col gap-3 max-w-3xl">
                       <AnimateOnScroll delay={0}>
-                        <h2 className="text-[80px] font-semibold text-[#232061] mb-6 max-lg:text-[60px] max-md:text-[40px] max-sm:text-[30px]">
+                        <h2 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                           {service.title === "Audit & Compliance Support" ? (
                             <>
                               <span className="whitespace-nowrap">
@@ -260,7 +260,7 @@ const Services = () => {
                           )}
                         </h2>
                       </AnimateOnScroll>
-                      <p className="text-[#232061] text-xl max-sm:text-xs max-lg:text-base max-md:text-sm">
+                      <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061]">
                         {service.description}
                       </p>
                     </div>
@@ -306,7 +306,7 @@ const Services = () => {
                         <div className="py-1 px-4 max-sm:px-2 text-xl max-sm:text-xs bg-[#E1EDF2] font-semibold rounded-[50px] mb-6 w-max text-[#232061]">
                           <span>{serviceItem.title}</span>
                         </div>
-                        <p className="font-flex text-[#232061] text-xl max-sm:text-xs">
+                        <p className="text-[#232061] text-[20px] font-flex max-sm:text-[15px] leading-[30px] font-normal">
                           {serviceItem.description}
                         </p>
                       </div>
