@@ -51,7 +51,7 @@ export default function ExpertiseSection() {
       {
         id: 4,
         title: "Audit & Compliance Support",
-        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        badges: ["Audit Support", ],
         image: "/expertise-3.jpg",
         url: "/services#compliance",
       },
@@ -65,14 +65,14 @@ export default function ExpertiseSection() {
       {
         id: 6,
         title: "Business Advisory",
-        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        badges: ["3 Years Experience", "Virtual Bookkeeping"],
         image: "/expertise-3.jpg",
         url: "/services#advisory",
       },
       {
         id: 7,
         title: "Business Administration",
-        badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        badges: ["3 Years Experience", "Virtual Bookkeeping"],
         image: "/expertise-3.jpg",
         url: "/services#administration",
       },
@@ -217,7 +217,7 @@ export default function ExpertiseSection() {
                 }}
               >
                 <AnimateOnScroll delay={0}>
-                  <h3 className="text-[#232061] font-bold mb-4 px-10 max-sm:px-6 text-2xl">
+                  <h3 className="text-[#232061] text-[40px] font-semibold mb-4 px-10 max-sm:px-6 text-2xl">
                     {card.title}
                   </h3>
                 </AnimateOnScroll>
@@ -226,7 +226,7 @@ export default function ExpertiseSection() {
                   {card.badges.map((badge) => (
                     <span
                       key={badge}
-                      className="w-max bg-[#E1EDF2] p-3 text-[#232061] font-semibold text-sm rounded-[50px] max-sm:text-xs max-sm:p-2"
+                      className="w-max bg-[#E1EDF2] p-3 text-[#232061] font-medium text-[15px] rounded-[50px] max-sm:text-xs max-sm:p-2"
                     >
                       {badge}
                     </span>
@@ -251,7 +251,7 @@ export default function ExpertiseSection() {
 
                 <Link
                   href={card.url}
-                  className="cursor-pointer z-[60] text-[#232061] flex items-center gap-3 bg-[#FFFFFFCC] px-4 py-3 rounded-[50px] text-2xl font-semibold absolute bottom-8 left-8 max-sm:text-[15px] max-sm:py-2"
+                  className="cursor-pointer z-[60] text-[#232061] flex items-center gap-3 bg-[#FFFFFFCC] px-4 py-3 rounded-[50px] text-[24px] font-semibold absolute bottom-8 left-8 max-sm:text-[15px] max-sm:py-2"
                 >
                   Read More
                   <svg
@@ -287,7 +287,7 @@ export default function ExpertiseSection() {
         <div className="flex items-center justify-center gap-3 mt-6">
           <Link
             href={"/faq"}
-            className="cursor-pointer z-[60] text-white flex items-center gap-3 bg-[#232061] px-4 py-2.5 rounded-[50px] text-2xl font-semibold max-sm:text-[15px] max-sm:py-1"
+            className="cursor-pointer z-[60] text-white flex items-center gap-3 bg-[#232061] px-4 py-2.5 rounded-[50px] text-[25px] font-semibold max-sm:text-[15px] max-sm:py-1"
           >
             Frequently Asked Questions
           </Link>

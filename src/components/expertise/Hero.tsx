@@ -67,7 +67,7 @@ function Hero() {
 
         <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-36">
           <div className="mb-12">
-            <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
+            <nav className="text-[#232061] text-[20px] font-flex max-sm:text-xs">
               <Link href="/" className="font-normal">
                 Home
               </Link>
@@ -76,11 +76,11 @@ function Hero() {
             </nav>
           </div>
           <div className="w-full">
-            <h1 className="text-[50px] max-md:text-[40px] max-sm:text-[30px] leading-[60px] text-[#232061] mb-6 max-xl:mb-3 max-sm:leading-[50px]">
+            <h1 className="text-[70px] max-md:text-[40px] max-sm:text-[30px] leading-[70px] text-[#232061] mb-15 max-xl:mb-3 max-sm:leading-[50px] font-normal">
               Our <br /> <span className="font-semibold">Expertise</span>
             </h1>
 
-            <p className="text-white text-base max-w-4xl max-sm:text-xs mt-5">
+            <p className="text-white text-[20px] leading-[30px] max-w-4xl max-sm:text-xs mt-5 font-normal ">
               At Veritas Accounting and Tax Consultants, we provide more than
               just numbers, we deliver clarity, confidence, and strategies to
               help your business grow. Whether you’re a small business owner,
@@ -102,7 +102,7 @@ function Hero() {
                   });
                 }
               }}
-              className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-base leading-[10px] max-sm:text-xs max-sm:py-3 max-sm:px-6 max-sm:leading-[20px] cursor-pointer"
+              className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-[25px] leading-[10px] max-sm:text-xs max-sm:py-3 max-sm:px-6 max-sm:leading-[20px] cursor-pointer"
               style={{
                 backgroundColor: "#232061",
               }}
