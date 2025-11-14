@@ -14,7 +14,7 @@ export default function TheDifference() {
       <div className="max-w-7xl mx-auto">
         <AnimateOnScroll delay={0}>
           <h3
-            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-[133px] max-sm:mb-[91px] font-extralight"
+            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-[60px] max-sm:mb-[91px] font-extralight"
             style={{
               background: "linear-gradient(90deg, #232061 0%, #1F89A3 100%)",
               backgroundClip: "text",

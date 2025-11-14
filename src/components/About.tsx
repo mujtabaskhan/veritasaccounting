@@ -16,7 +16,7 @@ function ServicesSection() {
 
   return (
     <section
-      className="w-full bg-white py-40 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-20 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10"
+      className="w-full bg-white py-15 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-20 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-10 max-sm:px-10"
       style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto">
