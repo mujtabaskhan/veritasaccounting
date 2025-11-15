@@ -3,12 +3,12 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section
-      className="w-full bg-white pt-40 pb-[87px] max-xl:pb-40 max-lg:pt-16 max-lg:pb-28 max-md:pt-12 max-md:pb-20 max-sm:pt-8 max-sm:!pb-[111px]"
+      className="w-full bg-white pb-[87px] max-xl:pb-40 max-lg:pb-28 max-md:pb-20 max-sm:!pb-[111px]"
       style={{ width: "100%" }}
     >
-      <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-12 max-lg:pt-8">
+      <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:!pt-0 max-sm:mt-0 max-sm:!pt-3">
         <div className="mb-12">
-          <nav className="text-[#232061] text-[15px] font-flex max-sm:text-xs">
+          <nav className="text-[#232061] text-xs font-flex max-sm:text-xs">
             <Link href="/" className="font-normal">
               Home
             </Link>
@@ -19,7 +19,7 @@ export default function Hero() {
 
         <div>
           <h1 className="text-[70px] font-normal text-[#232061] leading-[70px] mb-[45px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:!text-[30px] max-sm:!leading-[36px] max-sm:!mb-7">
-            Minitless Possibilities.
+            Minitless Possibilities,
             <br />
             <span className="font-black">Meaningful Work</span>
           </h1>

@@ -40,7 +40,7 @@ const Services = () => {
       id: "tax",
       title: "Tax Services",
       description:
-        "At Veritas Accounting and Tax Consultants, we provide more than just numbers — we deliver clarity, confidence, and strategies to help your business grow. Whether you're a small business owner, entrepreneur, or corporate client, our dedicated team offers tailored services designed to simplify your finances and maximize results. Explore our full range of services below:",
+        "At Veritas Accounting and Tax Consultants, we provide more than just numbers we deliver clarity, confidence, and strategies to help your business grow. Whether you're a small business owner, entrepreneur, or corporate client, our dedicated team offers tailored services designed to simplify your finances and maximize results. Explore our full range of services below:",
       services: [
         {
           title: "Corporate Tax Preparation & Filing",
@@ -68,7 +68,7 @@ const Services = () => {
       id: "payroll",
       title: "Payroll Services",
       description:
-        "Managing payroll can be time-consuming and complex — we make it simple. At Veritas Accounting, we handle every aspect of payroll processing with accuracy and compliance, ensuring your employees are paid on time and your business meets all government regulations. Here's some of our payroll services mentioned below:",
+        "Managing payroll can be time-consuming and complex we make it simple. At Veritas Accounting, we handle every aspect of payroll processing with accuracy and compliance, ensuring your employees are paid on time and your business meets all government regulations. Here's some of our payroll services mentioned below:",
       services: [
         {
           title: "Payroll Management",
@@ -222,12 +222,12 @@ const Services = () => {
       >
         <Navbar />
         <section
-          className="w-full bg-white pt-40 max-lg:pt-16 max-md:pt-12 max-sm:pt-10 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
+          className="w-full bg-white max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
           style={{ width: "100%" }}
         >
-          <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-12 max-lg:pt-8">
+          <div className="relative z-[100] max-w-7xl mx-auto px-14 max-sm:px-4 pt-52 max-lg:!pt-0 max-lg:-mt-5 max-sm:mt-0 max-sm:!pt-3">
             <div className="mb-12">
-              <nav className="text-[#232061] text-[15px] font-flex max-sm:text-xs">
+              <nav className="text-[#232061] text-xs font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
                 </Link>{" "}

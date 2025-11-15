@@ -65,16 +65,28 @@ export default function MeetTeam() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 mt-[114px] max-md:gap-6 max-lg:mt-6 max-sm:!gap-0 max-sm:!mt-[59px]">
-          <div></div>
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 max-md:gap-6 max-sm:!gap-0">
+          <div className="mt-[114px] max-lg:mt-6 max-sm:!mt-[59px]">
+            {" "}
+            <blockquote className="text-center text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0 max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[265px] max-sm:!mx-auto">
+              &quot;I believe every number has a purpose, and it’s my job to
+              make sure it guides the business with accuracy and clarity.&quot;
+            </blockquote>
+            <h3 className="text-center text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base">
+              Haseeb Ijaz
+            </h3>
+            <p className="text-center text-[20px] text-[#232061] max-sm:!text-xs">
+              Accountant
+            </p>
+          </div>
+          <div className="mt-[114px] max-lg:mt-6 max-sm:!mt-[59px]">
             {" "}
             <blockquote className="text-center text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0 max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[265px] max-sm:!mx-auto">
               &quot;Strong relationships are built on trust and communication,
               that’s the foundation of every great client experience.&quot;
             </blockquote>
             <h3 className="text-center text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base">
-              Ahmad Malik
+              Emily Chaudhry
             </h3>
             <p className="text-center text-[20px] text-[#232061] max-sm:!text-xs">
               Client Relationship Manager
@@ -85,7 +97,7 @@ export default function MeetTeam() {
       </div>
 
       <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
-        <p className="text-center text-[20px] text-[#232061] leading-[30px] font-flex max-w-4xl mx-auto mt-[131px] max-sm:leading-6 max-sm:!mt-16 max-sm:!text-xs">
+        <p className="text-center text-[20px] text-[#232061] leading-[30px] font-flex max-w-4xl mx-auto mt-[160px] max-sm:leading-6 max-sm:!mt-32 max-sm:!text-xs">
           Together, We Build Financial Clarity <br /> At Veritas Accounting, our
           mission is simple, to bring honesty, precision, and insight to every
           financial decision. With a team driven by expertise and integrity,

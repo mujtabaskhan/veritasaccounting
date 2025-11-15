@@ -182,7 +182,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] max-lg:transition-none transition-transform duration-300 max-lg:z-[10] ${
+        className={`fixed top-0 left-0 right-0 z-[100] max-lg:transition-none transition-transform duration-300 max-lg:z-[6] ${
           isNotHomeOrExpertise ? "max-lg:relative max-lg:bg-white" : ""
         } ${
           isNavbarVisible

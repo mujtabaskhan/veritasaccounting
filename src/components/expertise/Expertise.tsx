@@ -27,7 +27,7 @@ export default function ExpertiseSection() {
           "Financial Reporting & Analysis",
           "Dedicated Accounting Teams",
         ],
-        image: "/expertise-1.jpg",
+        image: "/expertise-1.webp",
         url: "/services#accounting",
       },
       {
@@ -38,42 +38,42 @@ export default function ExpertiseSection() {
           "GST/HST Returns & Filing",
           "Tax Planning & Strategy",
         ],
-        image: "/expertise-2.jpg",
+        image: "/expertise-2.webp",
         url: "/services#tax",
       },
       {
         id: 3,
         title: "Payroll Services",
         badges: ["Payroll Management", "Payroll Processing Guidance"],
-        image: "/expertise-3.jpg",
+        image: "/expertise-3.webp",
         url: "/services#payroll",
       },
       {
         id: 4,
         title: "Audit & Compliance Support",
-        badges: ["Audit Support", ],
-        image: "/expertise-3.jpg",
+        badges: ["Audit Support"],
+        image: "/expertise-4.webp",
         url: "/services#compliance",
       },
       {
         id: 5,
         title: "CFO Services",
         badges: ["3 Years Experience", "Virtual Bookkeeping", "On-Site"],
-        image: "/expertise-3.jpg",
+        image: "/expertise-5.webp",
         url: "/services#cfo-services",
       },
       {
         id: 6,
         title: "Business Advisory",
         badges: ["3 Years Experience", "Virtual Bookkeeping"],
-        image: "/expertise-3.jpg",
+        image: "/expertise-6.webp",
         url: "/services#advisory",
       },
       {
         id: 7,
         title: "Business Administration",
         badges: ["3 Years Experience", "Virtual Bookkeeping"],
-        image: "/expertise-3.jpg",
+        image: "/expertise-7.webp",
         url: "/services#administration",
       },
     ],
@@ -245,7 +245,12 @@ export default function ExpertiseSection() {
                     alt={card.title}
                     width={500}
                     height={500}
-                    className="w-full h-full object-cover rounded-[50px] opacity-30"
+                    className="w-full h-full object-cover object-top rounded-[50px] opacity-30"
+                    style={{
+                      width: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top",
+                    }}
                   />
                 </div>
 

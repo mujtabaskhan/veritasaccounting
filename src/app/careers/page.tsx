@@ -11,8 +11,8 @@ const Career = () => {
           className="w-full min-h-screen relative rounded-tl-[60px] rounded-tr-[60px] overflow-hidden"
           style={{ width: "100%", minHeight: "100vh" }}
         >
-          <div className="relative z-[100]">
-            <Navbar />
+          <Navbar />
+          <div className="relative z-[10] max-lg:z-[1]">
             <Hero />
             <OpenPositions />
             <ApplyNow />

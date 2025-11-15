@@ -23,12 +23,12 @@ const Footer = ({ className }: { className?: string }) => {
       />
       <Link
         href="#"
-        className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#232061] hover:bg-[#232061]/90 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105 absolute right-20 top-72 z-20 max-lg:bottom-32 max-lg:top-auto max-lg:right-20 h-max w-max max-lg:bg-white max-lg:text-[#232061] max-sm:px-4 max-sm:py-2 max-sm:right-10"
+        className="view-more-btn group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#232061] hover:bg-[#232061]/90 text-white font-medium transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:scale-105 absolute right-20 top-72 z-20 max-lg:bottom-32 max-lg:top-auto max-lg:right-20 h-max w-max max-lg:bg-white max-lg:text-[#232061] max-sm:px-4 max-sm:py-2 max-sm:right-4 max-sm:text-xs"
       >
         <span>Top</span>
         <ChevronLeft className="w-4 h-4 rotate-90" />
       </Link>
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#232061] via-[#232061]/90 to-transparent flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[500px]">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#232061] via-[#232061]/90 to-transparent flex items-end justify-start z-10 pb-20 max-sm:pb-26 max-lg:pb-20 h-[500px] max-sm:h-[600px]">
         <div
           className="grid max-w-7xl mx-auto max-sm:!grid-cols-1 max-lg:flex max-lg:flex-col"
           style={{ gridTemplateColumns: "2fr 2.5fr" }}
@@ -42,7 +42,7 @@ const Footer = ({ className }: { className?: string }) => {
               alt="logo"
               width={200}
               height={200}
-              className="h-max w-[300px] max-lg:backdrop-blur-sm"
+              className="h-max w-[300px]"
             />
             <p className="font-roboto text-white text-xs max-w-[350px] max-sm:text-center">
               We provide bookkeeping, corporate and personal tax filing, payroll
@@ -79,7 +79,7 @@ const Footer = ({ className }: { className?: string }) => {
               <h3 className="text-white text-[20px] max-sm:text-xs font-bold">
                 Services
               </h3>
-              <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
+              <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px] max-sm:gap-2">
                 <Link href="/services#accounting" className="underline">
                   Accounting
                 </Link>
@@ -108,7 +108,7 @@ const Footer = ({ className }: { className?: string }) => {
               <h3 className="text-white text-[20px] font-bold max-sm:text-xs">
                 Follow us
               </h3>
-              <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px]">
+              <div className="font-flex text-white text-[15px] flex flex-col gap-3 max-sm:text-[10px] max-sm:gap-2">
                 <Link
                   href="https://www.instagram.com/veritas_accounting/"
                   target="_blank"

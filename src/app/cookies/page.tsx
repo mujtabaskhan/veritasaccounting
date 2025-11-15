@@ -11,12 +11,12 @@ const Cookie = () => {
       >
         <Navbar />
         <section
-          className="w-full bg-white pt-40 max-lg:pt-14 max-sm:pt-8 pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-14"
+          className="w-full bg-white pb-[198px] max-xl:pb-40 max-lg:pb-20 max-md:pb-32 rounded-bl-[60px] rounded-br-[60px] max-sm:pb-14"
           style={{ width: "100%" }}
         >
-          <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
+          <div className="relative z-[10] max-lg:z-[1] max-w-7xl mx-auto px-14 max-sm:px-4 pt-52 max-lg:!pt-0 max-sm:mt-0 max-sm:!pt-3">
             <div className="mb-14">
-              <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
+              <nav className="text-[#232061] text-xs font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
                 </Link>
@@ -68,7 +68,7 @@ const Cookie = () => {
               <div>
                 <h3 className="font-bold">3. Functional Cookies</h3>
                 <p>
-                  These cookies remember your preferences—such as language,
+                  These cookies remember your preferences such as language,
                   location, or login details, to improve your browsing
                   experience.
                 </p>
