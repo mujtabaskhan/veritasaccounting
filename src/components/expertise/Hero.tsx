@@ -67,7 +67,7 @@ function Hero() {
 
         <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-36">
           <div className="mb-12">
-            <nav className="text-[#232061] text-[20px] font-flex max-sm:text-xs">
+            <nav className="text-[#232061] text-[15px] font-flex max-sm:text-xs">
               <Link href="/" className="font-normal">
                 Home
               </Link>

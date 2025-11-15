@@ -225,9 +225,9 @@ const Services = () => {
           className="w-full bg-white pt-40 max-lg:pt-16 max-md:pt-12 max-sm:pt-10 max-sm:!pb-0 rounded-bl-[60px] rounded-br-[60px]"
           style={{ width: "100%" }}
         >
-          <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
-            <div className="mb-14">
-              <nav className="text-[#232061] text-[20px] leading-[40px] font-flex max-sm:text-xs">
+          <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-12 max-lg:pt-8">
+            <div className="mb-12">
+              <nav className="text-[#232061] text-[15px] font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
                 </Link>{" "}

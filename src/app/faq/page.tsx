@@ -77,9 +77,9 @@ const FAQ = () => {
           className="w-full bg-white pt-40 max-lg:pt-14 max-sm:pt-8 pb-[50px]"
           style={{ width: "100%" }}
         >
-          <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
-            <div className="mb-14">
-              <nav className="text-[#232061] text-xl font-flex max-sm:text-xs">
+          <div className="relative z-10 flex flex-col h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-12 max-lg:pt-8">
+            <div className="mb-12">
+              <nav className="text-[#232061] text-[15px] font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
                 </Link>{" "}
@@ -124,9 +124,8 @@ const FAQ = () => {
                       viewBox="0 0 37 21"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`absolute right-8 transition-transform duration-300 max-sm:w-3 max-sm:h-2 ${
-                        openIndex === index ? "rotate-180" : ""
-                      }`}
+                      className={`absolute right-8 transition-transform duration-300 max-sm:w-3 max-sm:h-2 ${openIndex === index ? "rotate-180" : ""
+                        }`}
                     >
                       <path
                         d="M1.06055 1.06055L18.0605 18.0605L35.0605 1.06055"
