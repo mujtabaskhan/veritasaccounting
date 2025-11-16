@@ -72,7 +72,10 @@ export default function ExpertiseSection() {
       {
         id: 7,
         title: "Business Administration",
-        badges: ["Business Operations Management", "Back-Office Administration"],
+        badges: [
+          "Business Operations Management",
+          "Back-Office Administration",
+        ],
         image: "/expertise-7.webp",
         url: "/services#administration",
       },
@@ -270,9 +273,9 @@ export default function ExpertiseSection() {
                     <path
                       d="M17.9311 24.7035L24.7035 17.9311M24.7035 17.9311L17.9311 11.1586M24.7035 17.9311H11.1586M34.8621 17.9311C34.8621 27.2818 27.2818 34.8621 17.9311 34.8621C8.58029 34.8621 1 27.2818 1 17.9311C1 8.58029 8.58029 1 17.9311 1C27.2818 1 34.8621 8.58029 34.8621 17.9311Z"
                       stroke="#1E1E1E"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </Link>
@@ -307,9 +310,9 @@ export default function ExpertiseSection() {
             <path
               d="M17.5001 23.3333L23.3334 17.5M23.3334 17.5L17.5001 11.6666M23.3334 17.5H11.6667M32.0834 17.5C32.0834 25.5541 25.5542 32.0833 17.5001 32.0833C9.44593 32.0833 2.91675 25.5541 2.91675 17.5C2.91675 9.44581 9.44593 2.91663 17.5001 2.91663C25.5542 2.91663 32.0834 9.44581 32.0834 17.5Z"
               stroke="#8BB7C5"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>

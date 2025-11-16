@@ -230,7 +230,7 @@ export default function ContactSection({
                         <path
                           d="M0.746094 0.666016L13.2461 14.666L25.7461 0.666016"
                           stroke="#232061"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </div>

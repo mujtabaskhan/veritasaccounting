@@ -64,7 +64,7 @@ export default function About() {
 
         <div className="relative z-[10] max-lg:z-[1]">
           <div
-            className={`fixed top-[300px] right-0 max-lg:-right-[150px] max-sm:right-0 bottom-0 z-[90] pointer-events-none h-screen w-full transition-opacity duration-500 ${
+            className={`fixed top-[300px] -right-[350px] max-lg:-right-[150px] max-sm:right-0 bottom-0 z-[90] pointer-events-none h-screen w-full transition-opacity duration-500 ${
               isFooterVisible ? "opacity-0" : "opacity-100"
             }`}
           >

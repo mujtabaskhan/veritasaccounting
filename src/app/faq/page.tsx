@@ -131,7 +131,7 @@ const FAQ = () => {
                       <path
                         d="M1.06055 1.06055L18.0605 18.0605L35.0605 1.06055"
                         stroke="#232061"
-                        stroke-width="2"
+                        strokeWidth="2"
                       />
                     </svg>
                   </button>
