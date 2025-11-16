@@ -8,7 +8,7 @@ export default function MeetFounder() {
       style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
-        <div className="flex justify-center items-center gap-14 max-xl:gap-10 max-lg:text-center  max-sm:!gap-6 max-[420px]:flex-col max-[420px]:!items-center">
+        <div className="flex justify-center items-center gap-14 max-xl:gap-10 max-sm:!gap-6 max-sm:flex-col max-sm:text-center">
           <Image
             src="/Omair.webp"
             alt="Founder"
@@ -20,7 +20,7 @@ export default function MeetFounder() {
           <div className="flex flex-col gap-[61px] max-xl:gap-12 max-lg:gap-10 max-sm:gap-6 max-sm:items-center">
             <div>
               <AnimateOnScroll delay={0}>
-                <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px]  max-sm:!text-xl max-sm:!text-left max-sm:!leading-[20px]">
+                <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px]  max-sm:!text-xl max-sm:!leading-[20px] max-sm:text-center">
                   Meet our{" "}
                   <span
                     className="font-semibold italic max-sm:block max-sm:!not-italic text-transparent"
@@ -40,18 +40,18 @@ export default function MeetFounder() {
             </div>
 
             <div>
-              <h3 className="text-[50px] text-[#232061] leading-[50px] max-xl:text-[44px] max-xl:leading-[48px] max-lg:text-[38px] max-lg:leading-[42px] max-md:text-[32px] max-md:leading-9 max-sm:text-[28px] max-sm:!text-left max-sm:!text-xl max-sm:!leading-[20px] max-[420px]:!text-center">
+              <h3 className="text-[50px] text-[#232061] leading-[50px] max-xl:text-[44px] max-xl:leading-[48px] max-lg:text-[38px] max-lg:leading-[42px] max-md:text-[32px] max-md:leading-9 max-sm:text-[28px] max-sm:!text-xl max-sm:!leading-[20px]">
                 Omair Ahsan{" "}
-                <span className="text-xl italic font-semibold max-sm:!text-base max-[420px]:!block">
+                <span className="text-xl italic font-semibold max-sm:!text-base max-sm:block">
                   CEO/Founder
                 </span>
               </h3>
-              <p className="text-xl text-[#232061] italic max-sm:text-base max-sm:!text-left max-[420px]:!text-center">
+              <p className="text-xl text-[#232061] italic max-sm:text-base max-sm:text-center">
                 CPA, CGA
               </p>
             </div>
 
-            <p className="text-xl text-[#232061] leading-[30px] font-flex max-w-2xl max-lg:mx-auto max-sm:leading-6 max-sm:!text-xs max-sm:!text-left max-[420px]:!text-center">
+            <p className="text-xl text-[#232061] leading-[30px] font-flex max-w-2xl max-lg:mx-auto max-sm:leading-6 max-sm:!text-xs max-sm:text-center">
               As the founder and CEO of Veritas Accounting, Omair leads with a
               vision to simplify finance and empower businesses through trusted
               guidance. With years of experience in accounting and financial
