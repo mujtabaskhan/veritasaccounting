@@ -97,7 +97,7 @@ export default function MeetTeam() {
       </div>
 
       <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
-        <p className="text-center text-[20px] text-[#232061] leading-[30px] font-flex max-w-4xl mx-auto mt-[160px] max-sm:leading-6 max-sm:!mt-32 max-sm:!text-xs">
+        <p className="text-center text-[20px] text-[#232061] leading-[30px] font-flex max-w-4xl mx-auto mt-[200px] max-sm:leading-6 max-sm:!mt-32 max-sm:!text-xs">
           Together, We Build Financial Clarity <br /> At Veritas Accounting, our
           mission is simple, to bring honesty, precision, and insight to every
           financial decision. With a team driven by expertise and integrity,

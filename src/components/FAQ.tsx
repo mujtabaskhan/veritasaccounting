@@ -75,8 +75,8 @@ export default function FAQ() {
                   {item.question}
                 </span>
                 <svg
-                  width="27"
-                  height="15"
+                  width="25"
+                  height="13"
                   viewBox="0 0 37 21"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function FAQ() {
                   <path
                     d="M1.06055 1.06055L18.0605 18.0605L35.0605 1.06055"
                     stroke="#232061"
-                    stroke-width="1"
+                    stroke-width="2"
                   />
                 </svg>
               </button>

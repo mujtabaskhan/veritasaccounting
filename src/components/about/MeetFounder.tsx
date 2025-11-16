@@ -8,13 +8,13 @@ export default function MeetFounder() {
       style={{ width: "100%" }}
     >
       <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
-        <div className="flex justify-center gap-14 max-xl:gap-10 max-lg:text-center  max-sm:!gap-6 max-[420px]:flex-col max-[420px]:!items-center">
+        <div className="flex justify-center items-center gap-14 max-xl:gap-10 max-lg:text-center  max-sm:!gap-6 max-[420px]:flex-col max-[420px]:!items-center">
           <Image
-            src="/omair.jpeg"
+            src="/Omair.webp"
             alt="Founder"
             width={500}
-            height={500}
-            className="w-[500px] h-[500px] object-cover max-xl:w-[440px] max-xl:h-[440px] max-lg:w-80 max-lg:h-80 max-sm:!w-[204px] max-sm:!h-[246px]"
+            height={800}
+            className="w-[500px] h-[800px] object-cover max-xl:w-[440px] max-xl:h-[440px] max-lg:w-80 max-lg:h-80 max-sm:!w-[204px] max-sm:!h-[246px]"
           />
 
           <div className="flex flex-col gap-[61px] max-xl:gap-12 max-lg:gap-10 max-sm:gap-6 max-sm:items-center">

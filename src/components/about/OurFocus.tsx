@@ -24,14 +24,11 @@ export default function OurFocus() {
 
           <div className="space-y-4 -mb-40 font-light max-xl:-mb-28 max-lg:-mb-16 max-md:mb-0 max-sm:!space-y-0">
             <p className="text-xl text-[#232061] leading-[30px] font-flex max-sm:leading-6 max-lg:text-center max-sm:!text-xs">
-              We simplify accounting through clarity, transparency, and
-              integrity
+              At Veritas Accounting and Tax Consultants, our focus is to empower corporate and business clients with clarity, confidence, and sustainable growth. We are dedicated to being a trusted partner in corporate tax planning, tax management, and financial planning, providing tailored strategies that drive
             </p>
-            <p className="text-xl text-[#232061] leading-[30px] font-flex max-sm:leading-6 max-lg:text-center max-sm:!text-xs">
-              giving you time to focus on what matters most:
-            </p>
+
             <p className="text-[40px] text-[#232061] leading-[50px] font-flex max-lg:text-[32px] max-lg:leading-[42px] max-lg:text-center max-sm:text-[28px] max-sm:leading-8 max-sm:!text-xl max-sm:!mt-4">
-              growing your business.
+              long-term success in today&apos;s competitive environment.
             </p>
           </div>
         </div>

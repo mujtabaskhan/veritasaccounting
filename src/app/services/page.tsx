@@ -68,7 +68,7 @@ const Services = () => {
       id: "payroll",
       title: "Payroll Services",
       description:
-        "Managing payroll can be time-consuming and complex we make it simple. At Veritas Accounting, we handle every aspect of payroll processing with accuracy and compliance, ensuring your employees are paid on time and your business meets all government regulations. Here's some of our payroll services mentioned below:",
+        "Managing payroll can be time consuming and complex we make it simple. At Veritas Accounting, we handle every aspect of payroll processing with accuracy and compliance, ensuring your employees are paid on time and your business meets all government regulations. Here's some of our payroll services mentioned below:",
       services: [
         {
           title: "Payroll Management",
@@ -180,7 +180,7 @@ const Services = () => {
         {
           title: "Virtual CFO Support",
           description:
-            "Executive-level financial leadership tailored to your business needs. We act as your outsourced CFO, providing strategic insights, financial planning, and decision support without the cost of a full-time executive.",
+            "Executive level financial leadership tailored to your business needs. We act as your outsourced CFO, providing strategic insights, financial planning, and decision support without the cost of a full-time executive.",
         },
         {
           title: "Growth & Funding Strategy",
@@ -195,7 +195,7 @@ const Services = () => {
         {
           title: "Long-Term Financial Planning",
           description:
-            "Big-picture financial oversight, including corporate tax planning, cash flow forecasting, and risk management, to secure your company's future.",
+            "Big picture financial oversight, including corporate tax planning, cash flow forecasting, and risk management, to secure your company's future.",
         },
       ],
     },
@@ -226,7 +226,7 @@ const Services = () => {
           style={{ width: "100%" }}
         >
           <div className="relative z-[100] max-w-7xl mx-auto px-14 max-sm:px-4 pt-52 max-lg:!pt-0 max-lg:-mt-5 max-sm:mt-0 max-sm:!pt-3">
-            <div className="mb-12">
+            <div className="mb-32">
               <nav className="text-[#232061] text-xs font-flex max-sm:text-xs">
                 <Link href="/" className="font-normal">
                   Home
@@ -240,7 +240,7 @@ const Services = () => {
               </nav>
             </div>
 
-            <div className="flex flex-col gap-[225px] max-sm:gap-[87px] pb-[225px] max-sm:pb-[87px]">
+            <div className="flex flex-col gap-[195px] max-sm:gap-[87px] pb-[225px] max-sm:pb-[87px]">
               {servicesData.map((service) => (
                 <div key={service.id} id={service.id} className="scroll-mt-32">
                   <div className="flex items-center justify-between max-sm:flex-col flex-wrap gap-3">

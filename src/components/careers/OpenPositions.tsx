@@ -118,7 +118,7 @@ const OpenPositions = () => {
             >
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div className="flex flex-col gap-[19px] max-sm:!gap-1.5">
-                  <h2 className="text-[#232061] text-[40px] max-lg:text-[30px] font-bold max-sm:!text-xl">
+                  <h2 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                     {position.title}
                   </h2>
                   <div className="flex gap-[22px] max-lg:gap-4 max-sm:!gap-2">

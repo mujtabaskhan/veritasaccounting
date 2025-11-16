@@ -165,7 +165,7 @@ export default function ContactSection({
     >
       <div className="max-w-7xl mx-auto px-14 max-sm:px-4">
         {hideHeading && (
-          <div className="text-center mb-[65px] max-sm:!mb-[81px]">
+          <div className="text-center mb-[185px] max-sm:!mb-[81px]">
             <AnimateOnScroll delay={0}>
               <h2 className="text-[70px] font-normal text-[#232061] leading-[70px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:text-[36px] max-sm:!text-xl max-sm:!leading-[20px] max-sm:!text-center">
                 Curious about what we <br />

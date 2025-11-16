@@ -18,20 +18,15 @@ export default function Hero() {
         </div>
 
         <div>
-          <h1 className="text-[70px] font-normal text-[#232061] leading-[70px] mb-[45px] max-xl:text-[60px] max-xl:leading-[64px] max-lg:text-[52px] max-lg:leading-[56px] max-md:text-[44px] max-md:leading-[48px] max-sm:!text-[30px] max-sm:!leading-[36px] max-sm:!mb-7">
-            Minitless Possibilities,
+          <h1 className="text-[70px] max-md:text-[40px] max-sm:text-[30px] leading-[70px] text-[#232061] mb-15 max-xl:mb-3 max-sm:leading-[50px] font-normal">
+            Limitless Possibilities,
             <br />
-            <span className="font-black">Meaningful Work</span>
+            <span className="font-semibold">Meaningful Work</span>
           </h1>
 
           <div className="max-w-4xl">
             <p className="text-xl text-[#232061] leading-[30px] font-flex max-sm:leading-6 max-sm:!text-xs">
-              At Veritas Accounting and Tax Consultants, we provide more than
-              just numbers, we deliver clarity, confidence, and strategies to
-              help your business grow. Whether you’re a small business owner,
-              entrepreneur, or corporate client, our dedicated team offers
-              tailored services designed to simplify your finances and maximize
-              results.
+              Join a team that values integrity, innovation, and growth. At Veritas Accounting and Tax Consultants, we empower our people to simplify complexity, create clarity, and help businesses succeed while growing their own professional expertise every step of the way.
             </p>
           </div>
         </div>
