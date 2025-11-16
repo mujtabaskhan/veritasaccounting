@@ -58,7 +58,7 @@ export default function ExpertiseSection() {
       {
         id: 5,
         title: "CFO Services",
-        badges: ["9 Years Experience", "Virtual Bookkeeping", "On-Site"],
+        badges: ["Outsourced CFO Solutions", "Virtual CFO Services"],
         image: "/expertise-5.webp",
         url: "/services#cfo-services",
       },
