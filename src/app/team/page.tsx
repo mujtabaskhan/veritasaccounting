@@ -64,7 +64,7 @@ export default function About() {
 
         <div className="relative z-[10] max-lg:z-[1]">
           <div
-            className={`fixed top-[300px] -right-[350px] max-lg:-right-[150px] max-sm:right-0 bottom-0 z-[90] pointer-events-none h-screen w-full transition-opacity duration-500 ${
+            className={`fixed top-[600px] max-sm:top-[300px] -right-[300px] max-lg:-right-[50px] max-sm:right-0 bottom-0 z-[90] pointer-events-none h-screen w-full transition-opacity duration-500 ${
               isFooterVisible ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -72,7 +72,7 @@ export default function About() {
               src="/bg-logo.svg"
               alt="background logo"
               fill
-              className="object-center scale-[2]"
+              className="object-center scale-[3] max-sm:scale-[2]"
               priority
             />
           </div>
