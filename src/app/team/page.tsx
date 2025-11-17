@@ -64,17 +64,22 @@ export default function About() {
 
         <div className="relative z-[10] max-lg:z-[1]">
           <div
-            className={`fixed top-[600px] max-sm:top-[300px] -right-[300px] max-lg:-right-[50px] max-sm:right-0 bottom-0 z-[90] pointer-events-none h-screen w-full transition-opacity duration-500 ${
+            className={`fixed top-[600px] max-sm:top-[300px] bottom-0 z-[90] pointer-events-none h-screen w-full max-w-7xl transition-opacity duration-500 ${
               isFooterVisible ? "opacity-0" : "opacity-100"
             }`}
+            style={{
+              right: "max(calc((100vw - 1280px) / 2), 0px)",
+            }}
           >
-            <Image
-              src="/bg-logo.svg"
-              alt="background logo"
-              fill
-              className="object-center scale-[3] max-sm:scale-[2]"
-              priority
-            />
+            <div className="relative h-full w-full">
+              <Image
+                src="/bg-logo.svg"
+                alt="background logo"
+                fill
+                className="object-contain object-right origin-right scale-[2.5] max-lg:scale-[2] max-sm:scale-[1.5] transition-transform duration-500"
+                priority
+              />
+            </div>
           </div>
 
           <AboutHero />
