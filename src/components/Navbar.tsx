@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import Image from "next/image";
@@ -16,9 +17,11 @@ const Navbar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const scrollPositionRef = useRef<number>(0);
   const lastScrollYRef = useRef<number>(0);
+  const wasScrolledBeforeExpertiseRef = useRef<boolean>(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,13 +41,64 @@ const Navbar = () => {
       clearTimeout(leaveTimeoutRef.current);
       leaveTimeoutRef.current = null;
     }
+    console.log(
+      "[Expertise Enter] isScrolled:",
+      isScrolled,
+      "Setting expertise to true",
+    );
     setIsExpertiseOpen(true);
   };
 
-  const handleExpertiseLeave = () => {
+  const handleExpertiseLeave = (e: React.MouseEvent) => {
+    // Check where the mouse is moving to
+    const relatedTarget = e.relatedTarget as HTMLElement;
+
+    // If no related target (moving completely outside), close expertise
+    if (!relatedTarget) {
+      const delay = wasScrolledBeforeExpertiseRef.current ? 400 : 300;
+      leaveTimeoutRef.current = setTimeout(() => {
+        setIsExpertiseOpen(false);
+      }, delay);
+      return;
+    }
+
+    // Check if moving to expertise-related areas (keep open)
+    const isMovingToExpertiseArea =
+      relatedTarget.closest(".expertise-content") ||
+      relatedTarget.closest('[href="/expertise"]');
+
+    if (isMovingToExpertiseArea) {
+      // Don't close if moving to expertise content or expertise link
+      if (leaveTimeoutRef.current) {
+        clearTimeout(leaveTimeoutRef.current);
+        leaveTimeoutRef.current = null;
+      }
+      return;
+    }
+
+    // Check if moving to other nav links (close smoothly)
+    const isMovingToOtherNavLink =
+      relatedTarget.closest(".nav-link") &&
+      !relatedTarget.closest('[href="/expertise"]');
+
+    if (isMovingToOtherNavLink) {
+      // Close when moving to other links, but with a delay for smoothness
+      const delay = wasScrolledBeforeExpertiseRef.current ? 300 : 200;
+      if (leaveTimeoutRef.current) {
+        clearTimeout(leaveTimeoutRef.current);
+      }
+      leaveTimeoutRef.current = setTimeout(() => {
+        setIsExpertiseOpen(false);
+      }, delay);
+      return;
+    }
+
+    // Close expertise when moving away from navbar area
+    // Use longer delay when scrolled to allow smoother transitions
+    const delay = wasScrolledBeforeExpertiseRef.current ? 400 : 300;
     leaveTimeoutRef.current = setTimeout(() => {
       setIsExpertiseOpen(false);
-    }, 200);
+    }, delay);
   };
 
   useEffect(() => {
@@ -52,6 +106,16 @@ const Navbar = () => {
       // Store current scroll position BEFORE any changes
       const currentScroll = window.scrollY;
       scrollPositionRef.current = currentScroll;
+      // Store whether we were scrolled before expertise opened
+      wasScrolledBeforeExpertiseRef.current = isScrolled;
+      console.log(
+        "[Expertise Open Effect] scrollY:",
+        currentScroll,
+        "isScrolled:",
+        isScrolled,
+        "storing wasScrolled:",
+        isScrolled,
+      );
 
       // Calculate scrollbar width to prevent layout shift
       const scrollbarWidth =
@@ -71,22 +135,31 @@ const Navbar = () => {
       // Restore body scroll smoothly
       const scrollY = scrollPositionRef.current;
 
-      // Remove fixed positioning first
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
-      document.body.style.transition = "";
-      document.documentElement.style.scrollBehavior = "";
+      // Use requestAnimationFrame for smoother restoration
+      requestAnimationFrame(() => {
+        // Remove fixed positioning
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+        document.body.style.paddingRight = "";
+        document.body.style.transition = "";
+        document.documentElement.style.scrollBehavior = "";
 
-      // Restore scroll position after a brief delay to ensure layout is updated
-      setTimeout(() => {
-        window.scrollTo({
-          top: scrollY,
-          behavior: "auto",
+        // Restore scroll position after layout is updated
+        requestAnimationFrame(() => {
+          window.scrollTo({
+            top: scrollY,
+            behavior: "auto",
+          });
+
+          // Reset the stored scroll state after scroll is restored
+          // Use a small delay to ensure scroll handler runs first
+          setTimeout(() => {
+            wasScrolledBeforeExpertiseRef.current = false;
+          }, 100);
         });
-      }, 0);
+      });
     }
 
     // Cleanup on unmount
@@ -103,22 +176,55 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
+      // If expertise is open, don't update isScrolled (preserve the state from before expertise opened)
+      if (isExpertiseOpen) {
+        // Keep the stored scroll state
+        setIsScrolled(wasScrolledBeforeExpertiseRef.current);
+        console.log(
+          "[Scroll Handler] Expertise open - preserving scroll state:",
+          wasScrolledBeforeExpertiseRef.current,
+        );
+        return;
+      }
+
       // Disable scroll animations on screens below 1024px (max-lg)
       if (window.innerWidth < 1024) {
+        const scrolled = window.scrollY > 50;
         setIsNavbarVisible(true);
         setIsCollapsed(false);
-        setIsScrolled(window.scrollY > 50);
+        setIsScrolled(scrolled);
+        console.log(
+          "[Scroll Handler Mobile] scrollY:",
+          window.scrollY,
+          "isScrolled:",
+          scrolled,
+        );
         return;
       }
 
       const currentScrollY = window.scrollY;
       const scrollDifference = currentScrollY - lastScrollYRef.current;
+      const scrolled = currentScrollY > 50;
 
-      setIsScrolled(currentScrollY > 50);
+      setIsScrolled(scrolled);
+      console.log(
+        "[Scroll Handler] scrollY:",
+        currentScrollY,
+        "isScrolled:",
+        scrolled,
+        "isExpertiseOpen:",
+        isExpertiseOpen,
+      );
 
       // If at top, show full navbar
       if (currentScrollY < 50) {
@@ -165,7 +271,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isExpertiseOpen]);
 
   const expertiseItems = [
     { label: "Accounting", href: "/services#accounting" },
@@ -177,7 +283,54 @@ const Navbar = () => {
     { label: "CFO Services", href: "/services#cfo-services" },
   ];
 
-  console.log(isScrolled && isExpertiseOpen);
+  // Simplified logic: if scrolled, always hide (except logo on mobile)
+  // Use hidden class + width/opacity for better hiding
+  const logoClassName = isScrolled
+    ? "transition-all duration-300 overflow-hidden w-0 opacity-0 pointer-events-none max-lg:w-auto max-lg:opacity-100 max-lg:pointer-events-auto"
+    : "transition-all duration-300 overflow-hidden w-auto opacity-100 pointer-events-auto";
+
+  const socialLinksClassName = isScrolled
+    ? "max-lg:hidden flex gap-10 items-center transition-all duration-300 overflow-hidden w-0 opacity-0 pointer-events-none"
+    : "max-lg:hidden flex gap-10 items-center transition-all duration-300 overflow-hidden w-auto opacity-100 pointer-events-auto";
+
+  // Use wasScrolledBeforeExpertiseRef to prevent glitching when expertise closes
+  // This ensures logo/social stay hidden during the closing transition
+  const isActuallyScrolled =
+    isScrolled || wasScrolledBeforeExpertiseRef.current;
+  const shouldHideLogo = isActuallyScrolled && !isMobile;
+  const shouldHideSocial = isActuallyScrolled;
+  const logoForceHideClass = shouldHideLogo ? "force-hide-logo" : "";
+  const socialForceHideClass = shouldHideSocial ? "force-hide-social" : "";
+
+  console.log("=== Navbar Debug ===");
+  console.log("isScrolled:", isScrolled);
+  console.log("isExpertiseOpen:", isExpertiseOpen);
+  console.log("isCollapsed:", isCollapsed);
+  console.log("isMobile:", isMobile);
+  console.log(
+    "window.scrollY:",
+    typeof window !== "undefined" ? window.scrollY : "N/A",
+  );
+  console.log(
+    "shouldHideLogo:",
+    shouldHideLogo,
+    "→ force-hide class:",
+    logoForceHideClass,
+  );
+  console.log(
+    "shouldHideSocial:",
+    shouldHideSocial,
+    "→ force-hide class:",
+    socialForceHideClass,
+  );
+  console.log(
+    "Full logo className:",
+    `${logoClassName} ${logoForceHideClass}`.trim(),
+  );
+  console.log(
+    "Full social className:",
+    `${socialLinksClassName} ${socialForceHideClass}`.trim(),
+  );
 
   return (
     <>
@@ -245,24 +398,14 @@ const Navbar = () => {
               className={`flex items-center transition-all duration-300 max-lg:justify-between ${
                 isScrolled && !isExpertiseOpen
                   ? "justify-center"
-                  : isCollapsed && isExpertiseOpen && !isScrolled
-                  ? "justify-between"
-                  : isExpertiseOpen && isScrolled
+                  : isScrolled && isExpertiseOpen
                   ? "justify-center"
                   : "justify-between"
               }`}
             >
               <Link
                 href="/"
-                className={`transition-all duration-300 overflow-hidden ${
-                  isScrolled && !isExpertiseOpen
-                    ? "w-0 opacity-0 max-lg:w-auto max-lg:opacity-100 "
-                    : isCollapsed && isExpertiseOpen && isScrolled
-                    ? "w-auto opacity-100 max-lg:w-auto pointer-events-none"
-                    : isExpertiseOpen && isScrolled
-                    ? "w-0 opacity-0"
-                    : "w-auto opacity-100 pointer-events-auto"
-                }`}
+                className={`${logoClassName} ${logoForceHideClass}`.trim()}
               >
                 <div className="relative w-[300px] h-[80px] max-md:w-[270px] max-md:h-[72px] max-lg:w-[250px] max-lg:h-[67px]">
                   <Image
@@ -292,17 +435,17 @@ const Navbar = () => {
               >
                 <Link
                   href="/"
-                  className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
                     isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
                       : "hover:bg-[#232061] hover:text-white"
                   }`}
                 >
-                  <span className="relative inline-block">
-                    <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
+                  <span className="relative inline-block overflow-hidden">
+                    <span className="inline-block transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full">
                       Home
                     </span>
-                    <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
+                    <span className="absolute inset-0 inline-block transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                       Home
                     </span>
                   </span>
@@ -315,17 +458,17 @@ const Navbar = () => {
                 >
                   <Link
                     href="/expertise"
-                    className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
+                    className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
                       isExpertiseOpen
                         ? "hover:bg-white/20 hover:text-white"
                         : "hover:bg-[#232061] hover:text-white"
                     }`}
                   >
-                    <span className="relative inline-block">
-                      <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
+                    <span className="relative inline-block overflow-hidden">
+                      <span className="inline-block transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full">
                         Expertise
                       </span>
-                      <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
+                      <span className="absolute inset-0 inline-block transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                         Expertise
                       </span>
                     </span>
@@ -334,17 +477,17 @@ const Navbar = () => {
 
                 <Link
                   href="/careers"
-                  className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
                     isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
                       : "hover:bg-[#232061] hover:text-white"
                   }`}
                 >
-                  <span className="relative inline-block">
-                    <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
+                  <span className="relative inline-block overflow-hidden">
+                    <span className="inline-block transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full">
                       Careers
                     </span>
-                    <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
+                    <span className="absolute inset-0 inline-block transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                       Careers
                     </span>
                   </span>
@@ -352,17 +495,17 @@ const Navbar = () => {
 
                 <Link
                   href="/team"
-                  className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
                     isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
                       : "hover:bg-[#232061] hover:text-white"
                   }`}
                 >
-                  <span className="relative inline-block">
-                    <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
+                  <span className="relative inline-block overflow-hidden">
+                    <span className="inline-block transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full">
                       Team
                     </span>
-                    <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
+                    <span className="absolute inset-0 inline-block transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                       Team
                     </span>
                   </span>
@@ -370,17 +513,17 @@ const Navbar = () => {
 
                 <Link
                   href="/faq"
-                  className={`nav-link relative group inline-block h-max px-3 py-1 hover:rounded-full ${
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
                     isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
                       : "hover:bg-[#232061] hover:text-white"
                   }`}
                 >
-                  <span className="relative inline-block">
-                    <span className="inline-block transition-all duration-400 ease-in-out group-hover:opacity-0 group-hover:-translate-y-full">
+                  <span className="relative inline-block overflow-hidden">
+                    <span className="inline-block transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full">
                       FAQ
                     </span>
-                    <span className="absolute inset-0 inline-block transition-all duration-400 ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
+                    <span className="absolute inset-0 inline-block transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                       FAQ
                     </span>
                   </span>
@@ -388,15 +531,7 @@ const Navbar = () => {
               </div>
 
               <div
-                className={`max-lg:hidden flex gap-10 items-center transition-all duration-300 overflow-hidden ${
-                  isScrolled && !isExpertiseOpen
-                    ? "w-0 opacity-0"
-                    : isCollapsed && isExpertiseOpen && !isScrolled
-                    ? "w-auto opacity-100 pointer-events-none"
-                    : isExpertiseOpen && isScrolled
-                    ? "w-0 opacity-0"
-                    : "w-auto opacity-100 pointer-events-auto"
-                }`}
+                className={`${socialLinksClassName} ${socialForceHideClass}`.trim()}
               >
                 <svg
                   width="18"
@@ -697,6 +832,21 @@ const Navbar = () => {
           background: white;
         }
 
+        /* When expertise is open, override collapsed styles */
+        .navbar-expanded.navbar-collapsed .navbar-bg {
+          background: rgba(255, 255, 255, 0.1) !important;
+          color: white !important;
+          border-color: white !important;
+        }
+
+        .navbar-expanded.navbar-collapsed .navbar-bg .nav-link {
+          color: white !important;
+        }
+
+        .navbar-expanded.navbar-collapsed .navbar-bg .nav-link > span > span {
+          color: white !important;
+        }
+
         .expertise-bg {
           position: absolute;
           top: -20px;
@@ -944,6 +1094,8 @@ const Navbar = () => {
           position: relative;
           z-index: 1;
           color: inherit;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
 
         .navbar-expanded .nav-link {
@@ -955,7 +1107,7 @@ const Navbar = () => {
         }
 
         .nav-link > span {
-          overflow: visible !important;
+          overflow: hidden !important;
           display: block;
           position: relative;
         }
@@ -964,6 +1116,11 @@ const Navbar = () => {
           overflow: visible !important;
           white-space: nowrap;
           display: block;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+          will-change: opacity, transform;
         }
 
         .nav-link > span > span:first-child,
@@ -974,7 +1131,7 @@ const Navbar = () => {
         .nav-link:hover {
           background-color: #232061;
           color: white;
-          transform: scale(1.03);
+          transform: scale(1.03) translateZ(0);
           z-index: 10;
         }
 
@@ -1049,6 +1206,25 @@ const Navbar = () => {
 
         .mobile-expertise-dropdown::-webkit-scrollbar-thumb:hover {
           background-color: rgba(35, 32, 97, 0.5);
+        }
+
+        /* Force hide logo and social links when scrolled */
+        .force-hide-logo {
+          display: none !important;
+          visibility: hidden !important;
+          width: 0 !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+          overflow: hidden !important;
+        }
+
+        .force-hide-social {
+          display: none !important;
+          visibility: hidden !important;
+          width: 0 !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+          overflow: hidden !important;
         }
       `}</style>
     </>
