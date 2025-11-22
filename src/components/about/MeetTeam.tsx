@@ -15,8 +15,8 @@ export default function MeetTeam() {
         "Good tax planning isn't just about saving money, it's about creating confidence and clarity for the future.",
     },
     {
-      name: "Sam Davids",
-      title: "Senior Business Advisor",
+      name: "Niaz Khan",
+      title: "Accountant",
       quote:
         "Every business has potential. My role is to uncover it and turn insights into lasting success.",
     },
