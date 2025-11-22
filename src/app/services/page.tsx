@@ -40,7 +40,7 @@ const Services = () => {
       id: "tax",
       title: "Tax Services",
       description:
-        "At Veritas Accounting and Tax Consultants, we provide more than just numbers we deliver clarity, confidence, and strategies to help your business grow. Whether you're a small business owner, entrepreneur, or corporate client, our dedicated team offers tailored services designed to simplify your finances and maximize results. Explore our full range of services below:",
+        "Our tax services are designed to remove complexity and ensure full compliance while maximizing your financial outcomes. Whether you're filing as an individual, managing corporate tax obligations, or seeking long-term tax strategies, our team provides accurate guidance tailored to your unique situation. We help you stay compliant, reduce liabilities, and plan confidently for the future.",
       services: [
         {
           title: "Corporate Tax Preparation & Filing",

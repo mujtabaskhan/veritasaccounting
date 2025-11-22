@@ -13,52 +13,67 @@ const FAQ = () => {
     {
       question: "What services do you offer?",
       answer:
-        "We provide bookkeeping, corporate and personal tax filing, payroll management, financial reporting, business advisory, and virtual CFO services.",
-    },
-    {
-      question: "Who do you work with?",
-      answer:
-        "We primarily serve small to medium-sized businesses, startups, and self-employed professionals across Canada.",
-    },
-    {
-      question: "How do I get started?",
-      answer:
-        "Simply fill out our online form or contact us directly. Our team will review your needs and schedule a quick consultation.",
-    },
-    {
-      question: "Do you offer virtual or remote services?",
-      answer:
-        "Yes, we offer fully remote accounting and tax services, allowing you to collaborate with us from anywhere in Canada.",
+        "We provide a full range of accounting, tax, and financial management solutions tailored to support businesses and individuals with accuracy and reliability. Our services include: Bookkeeping (monthly, quarterly, annual), Corporate tax filing, Personal tax filing, Payroll management, Financial reporting & analysis, Business advisory, Virtual CFO services, Dedicated accounting teams (outsourced finance department), CRA, corporate, payroll & HST audit support, and Business incorporation & compliance.",
     },
     {
       question: "How much do your services cost?",
       answer:
-        "Pricing depends on the scope and complexity of your needs. We provide customized quotes after your consultation.",
+        "Our pricing is customized based on your unique needs to ensure fairness, transparency, and value. Fees depend on: The type and complexity of service, Size and structure of your business, Transaction volume and reporting frequency, Additional services requested (payroll, advisory, CFO), and Dedicated accounting team requirements. Customized quotes are provided after a consultation.",
     },
     {
-      question: "Are my financial records secure with you?",
+      question: "How long does onboarding take and what is the process?",
       answer:
-        "Absolutely. We use encrypted systems and secure portals to ensure your data and documents remain fully protected here with us at Veritas Accounting.",
+        "We follow a structured onboarding process to ensure a smooth transition and accurate setup of your financial systems. The typical steps include: Needs assessment and initial review, Document collection, Cleanup or migration of prior records, Software and workflow setup, Assigning a dedicated team, and Establishing reporting schedule.",
     },
     {
-      question: "Do you handle CRA audits or correspondence?",
+      question: "Do you work with clients outside the GTA?",
       answer:
-        "Yes, we can assist with CRA communication, audit support, and tax compliance to ensure your business stays on track.",
+        "Yes — our fully digital and paperless workflow allows us to work seamlessly with clients regardless of location. We support: Clients across Ontario, Clients across multiple Canadian provinces, and Fully remote operations through secure cloud-based systems.",
     },
     {
-      question: "Can you help with business incorporation or registration?",
+      question: "Do you handle CRA or other audits?",
       answer:
-        "Yes, we assist clients with business setup, incorporation, and choosing the right structure for tax efficiency.",
+        "We provide professional representation and support during a wide range of audits to ensure compliance and reduce stress. Our audit assistance includes: CRA audits, Corporate tax audits, Payroll audits, HST/GST audits, Third-party and industry-required financial audits, and Support with communication, documentation, and compliance.",
     },
     {
-      question: "What's the turnaround time for tax filings?",
+      question: "Which industries do you serve?",
       answer:
-        "Turnaround time varies by complexity, but most returns are completed within 1-2 weeks once all documents are received.",
+        "We work with clients across diverse sectors, giving us insight into industry-specific requirements and challenges. We serve: Construction & contracting, Education & private schools (including Montessori), Healthcare professionals, Hospitality & restaurants, IT & consultants, Legal practices & law firms, Manufacturing & small-scale production, Mortgage & real estate professionals, Non-profit organizations, Professional services & contractors, Trading & small commerce, and Transportation, logistics & trucking.",
+    },
+    {
+      question: "How secure is my financial data?",
+      answer:
+        "We maintain strict security protocols to protect your information at every step. Our security practices include: Encrypted data transmission, Secure cloud storage, Strict access controls, Regular backups, Confidentiality protocols, and Compliant accounting platforms.",
+    },
+    {
+      question: "Do you work with individuals as well as corporate clients?",
+      answer:
+        "Yes — we support a wide range of clients with tailored solutions to fit different financial needs and complexities. Our clients include: Individuals, Sole proprietors, Professionals, Small and medium-sized businesses, Corporations, Non-profits, and Owner-managed businesses.",
+    },
+    {
+      question: "Can you assist with business incorporation and compliance?",
+      answer:
+        "We guide new and growing businesses through the setup and compliance process to ensure everything is structured correctly from day one. Our support includes: Incorporation setup, Federal and provincial registrations, Share structure setup, Business number and tax account setup, Initial filings, and Ongoing compliance.",
+    },
+    {
+      question: "How do I get started?",
+      answer:
+        "Getting started is easy — simply reach out and we'll guide you through the next steps. Here's how to begin: Fill out our consultation request form, Share a brief overview of your needs, Book a discovery call with our team, and Receive a customized service plan and quote. Most inquiries receive a response within 1–2 business days.",
+    },
+    {
+      question: "Do you offer virtual or remote services?",
+      answer:
+        "Yes — our firm operates on a modern, paperless, cloud-based model that supports fully virtual delivery. We use: 100% paperless workflow, Secure online portals for document sharing, Remote meetings and consultations, and Accessibility for clients across Canada.",
+    },
+    {
+      question: "Are my financial records safe with you?",
+      answer:
+        "Absolutely — protecting your financial information is a top priority. Our safeguards include: Encrypted data storage and transfers, Strict access permissions, Secure cloud-based accounting systems, Routine data backups, and Compliance with industry privacy standards.",
     },
     {
       question: "How can I contact your team?",
       answer:
-        "You can reach us via our website contact form, email, or by phone during business hours.",
+        "You can reach us through multiple convenient channels: Submit a request through our website contact form, Email our support team directly, Call us for immediate assistance. Expect replies within 1–2 business days.",
     },
   ];
 
@@ -97,7 +112,7 @@ const FAQ = () => {
               </AnimateOnScroll>
               <p className="text-[#232061] text-xl font-flex max-w-4xl max-sm:text-xs">
                 We understand that choosing the right accounting partner can be
-                confusing. That’s why we’ve answered some of the most common
+                confusing. That's why we've answered some of the most common
                 questions our clients ask, to help you make informed, confident
                 decisions about your business and finances.
               </p>
