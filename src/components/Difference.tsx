@@ -31,7 +31,7 @@ export default function TheDifference() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-sm:gap-8">
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={100}>
-              <h3 className="text-[40px] text-justify max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
+              <h3 className="text-[40px] text-center max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                 Precision You Can Count On
               </h3>
             </AnimateOnScroll>
@@ -55,7 +55,7 @@ export default function TheDifference() {
           </div>
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={300}>
-              <h3 className="text-[40px] text-justify max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
+              <h3 className="text-[40px] text-center max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
                 Trusted Partners for Your Success
               </h3>
             </AnimateOnScroll>
