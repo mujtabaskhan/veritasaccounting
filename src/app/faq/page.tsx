@@ -112,7 +112,7 @@ const FAQ = () => {
               </AnimateOnScroll>
               <p className="text-[#232061] text-xl font-flex max-w-4xl max-sm:text-xs">
                 We understand that choosing the right accounting partner can be
-                confusing. That's why we've answered some of the most common
+                confusing. That&apos;s why we&apos;ve answered some of the most common
                 questions our clients ask, to help you make informed, confident
                 decisions about your business and finances.
               </p>
