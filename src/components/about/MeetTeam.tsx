@@ -96,8 +96,7 @@ export default function MeetTeam() {
             {" "}
             <blockquote className="text-left max-lg:text-center text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0 max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[265px] max-sm:!mx-auto">
               &quot;Provides strategic advisory for growth, budgeting, and
-              financial planning, helping clients make informed decisions and
-              plan for the future.&quot;
+              financial planning, helping clients make informed decisions.&quot;
             </blockquote>
             <h3 className="text-left max-lg:text-center text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base">
               Sam Davids
