@@ -76,7 +76,7 @@ export default function About() {
                 src="/bg-logo.svg"
                 alt="background logo"
                 fill
-                className="object-contain object-right origin-right scale-[2.5] max-lg:scale-[2] max-sm:scale-[1.5] transition-transform duration-500"
+                className="object-contain object-right origin-right scale-[3] max-lg:scale-[2] max-sm:scale-[1.5] transition-transform duration-500"
                 priority
               />
             </div>

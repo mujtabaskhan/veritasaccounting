@@ -31,11 +31,11 @@ export default function TheDifference() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-sm:gap-8">
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={100}>
-              <h3 className="text-[40px] text-justify max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px] max-md:text-center max-md:leading-[40px]">
+              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px] text-center max-md:leading-[40px]">
                 Precision You Can Count On
               </h3>
             </AnimateOnScroll>
-            <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061] max-md:text-justify">
+            <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061] text-center">
               Every number tells a story, we make sure yours is accurate,
               compliant, and clear. Our meticulous attention to detail ensures
               your books, taxes, and audits are done right every time.
@@ -43,11 +43,11 @@ export default function TheDifference() {
           </div>
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={200}>
-              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px] max-md:text-center max-md:leading-[40px]">
+              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px] text-center max-md:leading-[40px]">
                 Strategic Insight, Not Just Numbers
               </h3>
             </AnimateOnScroll>
-            <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061] max-md:text-justify">
+            <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061] text-center">
               We go beyond bookkeeping. Our team translates financial data into
               actionable strategies that help you make confident business
               decisions, improve cash flow, and plan for sustainable growth.
@@ -55,11 +55,11 @@ export default function TheDifference() {
           </div>
           <div className="flex flex-col gap-[42px] max-sm:gap-[27px]">
             <AnimateOnScroll delay={300}>
-              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px] max-md:text-center max-md:leading-[40px]">
+              <h3 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px] text-center max-md:leading-[40px]">
                 Trusted Partners for Your Success
               </h3>
             </AnimateOnScroll>
-            <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061] max-md:text-justify">
+            <p className="text-xl max-lg:text-base max-sm:text-[15px] text-[#232061] text-center">
               From startups to established enterprises, businesses across Canada
               trust us for dependable, transparent, and personalized service. We
               treat your business like our own, with honesty, clarity, and
