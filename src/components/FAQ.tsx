@@ -52,8 +52,7 @@ export default function FAQ() {
             </h2>
           </AnimateOnScroll>
           <p className="text-[#232061] text-[20px] font-flex max-sm:text-[15px] leading-[30px] font-normal">
-            Have questions about our bookkeeping services or bookkeeping
-            accounting services? We&apos;ve compiled answers to the most common
+            Have questions about our accounting services? We&apos;ve compiled answers to the most common
             queries to help you better understand how Veritas Accounting can
             streamline your financial processes.
           </p>
