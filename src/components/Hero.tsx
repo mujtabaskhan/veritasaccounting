@@ -32,9 +32,8 @@ function Hero() {
               Welcome to
             </p>
 
-            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold">
-              Veritas <br />
-              Accounting
+            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold max-sm:backdrop-blur-sm">
+              Veritas <br /> Accounting
             </h1>
 
             <div className="flex items-center gap-8 mb-6 max-sm:gap-4">

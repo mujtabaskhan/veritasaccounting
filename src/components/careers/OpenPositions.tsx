@@ -118,14 +118,14 @@ const OpenPositions = () => {
             >
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <div className="flex flex-col gap-[19px] max-sm:!gap-1.5">
-                  <h2 className="text-[40px] max-lg:text-[30px] max-sm:text-[25px] text-[#232061] font-bold leading-[50px]">
+                  <h2 className="text-[30px] max-sm:!text-xl text-[#232061] font-bold leading-[50px]">
                     {position.title}
                   </h2>
                   <div className="flex gap-[22px] max-lg:gap-4 max-sm:!gap-2">
                     {position.badges.map((badge, badgeIndex) => (
                       <span
                         key={badgeIndex}
-                        className="bg-[#E1EDF2] rounded-[50px] px-6 py-3 text-[#232061] text-xl font-medium max-sm:!text-[10px] max-sm:!px-3 max-lg:text-base max-md:text-sm max-md:p-3"
+                        className="bg-[#E1EDF2] rounded-[50px] px-6 py-3 text-[#232061] text-base font-medium max-sm:!text-[10px] max-sm:!px-3 max-lg:text-base max-md:text-sm max-md:p-3"
                       >
                         {badge}
                       </span>
