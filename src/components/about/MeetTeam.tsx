@@ -42,7 +42,7 @@ export default function MeetTeam() {
             <div key={index} className="text-center">
               <blockquote
                 className={`${
-                  index === 1 ? "text-center" : "text-left max-lg:text-center"
+                  index === 1 ? "text-center" : "text-center max-lg:text-center"
                 } text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0  max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[244px] max-sm:!mx-auto`}
               >
                 &quot;{member.quote}&quot;
@@ -50,14 +50,14 @@ export default function MeetTeam() {
 
               <h3
                 className={`${
-                  index === 1 ? "text-center" : "text-left max-lg:text-center"
+                  index === 1 ? "text-center" : "text-center max-lg:text-center"
                 } text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base`}
               >
                 {member.name}
               </h3>
               <p
                 className={`${
-                  index === 1 ? "text-center" : "text-left max-lg:text-center"
+                  index === 1 ? "text-center" : "text-center max-lg:text-center"
                 } text-[20px] text-[#232061] max-sm:!text-xs`}
               >
                 {member.title}
@@ -65,17 +65,17 @@ export default function MeetTeam() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 max-lg:gap-6 max-sm:!gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 max-lg:gap-6 max-sm:!gap-0">
           <div className="mt-[114px] max-lg:mt-6 max-sm:!mt-[59px]">
             {" "}
-            <blockquote className="text-left max-lg:text-center text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0 max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[265px] max-sm:!mx-auto">
+            <blockquote className="text-center max-lg:text-center text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0 max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[265px] max-sm:!mx-auto">
               &quot;I believe every number has a purpose, and it’s my job to
               make sure it guides the business with accuracy and clarity.&quot;
             </blockquote>
-            <h3 className="text-left max-lg:text-center text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base">
+            <h3 className="text-center max-lg:text-center text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base">
               Haseeb Ijaz
             </h3>
-            <p className="text-left max-lg:text-center text-[20px] text-[#232061] max-sm:!text-xs">
+            <p className="text-center max-lg:text-center text-[20px] text-[#232061] max-sm:!text-xs">
               Accountant
             </p>
           </div>
@@ -92,19 +92,7 @@ export default function MeetTeam() {
               Client Relationship Manager
             </p>
           </div>
-          <div className="mt-[114px] max-lg:mt-6 max-sm:!mt-[59px]">
-            {" "}
-            <blockquote className="text-left max-lg:text-center text-[25px] text-[#232061] italic leading-[40px] min-h-[160px] max-lg:min-h-[40px] mb-[43px] max-lg:mb-5 max-sm:leading-7 max-sm:min-h-0 max-sm:!text-xs max-sm:!mb-[14px] max-sm:!w-[265px] max-sm:!mx-auto">
-              &quot;Provides strategic advisory for growth, budgeting, and
-              financial planning, helping clients make informed decisions.&quot;
-            </blockquote>
-            <h3 className="text-left max-lg:text-center text-[30px] text-[#232061] leading-[50px] max-sm:text-[22px] max-sm:leading-8 max-sm:!text-base">
-              Sam Davids
-            </h3>
-            <p className="text-left max-lg:text-center text-[20px] text-[#232061] max-sm:!text-xs">
-              Senior Business Advisor
-            </p>
-          </div>
+         
         </div>
         <div></div>
       </div>
