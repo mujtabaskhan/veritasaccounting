@@ -6,25 +6,25 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqItems = [
-    {
+   {
       question: "What services do you offer?",
       answer:
-        "We provide bookkeeping, corporate and personal tax filing, payroll management, financial reporting, business advisory, and virtual CFO services.",
+        "We provide a full range of accounting, tax, and financial management solutions tailored to support businesses and individuals with accuracy and reliability. Our services include: Bookkeeping (monthly, quarterly, annual), Corporate tax filing, Personal tax filing, Payroll management, Financial reporting & analysis, Business advisory, Virtual CFO services, Dedicated accounting teams (outsourced finance department), CRA, corporate, payroll & HST audit support, and Business incorporation & compliance.",
     },
     {
-      question: "Who do you work with?",
+      question: "Which industries do you serve?",
       answer:
-        "We primarily serve small to medium-sized businesses, startups, and self-employed professionals across Canada.",
-    },
-    {
-      question: "How do I get started?",
-      answer:
-        "Simply fill out our online form or contact us directly. Our team will review your needs and schedule a quick consultation.",
+        "We work with clients across diverse sectors, giving us insight into industry-specific requirements and challenges. We serve: Construction & contracting, Education & private schools (including Montessori), Healthcare professionals, Hospitality & restaurants, IT & consultants, Legal practices & law firms, Manufacturing & small-scale production, Mortgage & real estate professionals, Non-profit organizations, Professional services & contractors, Trading & small commerce, and Transportation, logistics & trucking.",
     },
     {
       question: "Do you offer virtual or remote services?",
       answer:
-        "Yes, we offer comprehensive virtual and remote services to clients across Canada. All our services can be delivered remotely, including bookkeeping, tax preparation, payroll management, and financial advisory services.",
+        "Yes — our firm operates on a modern, paperless, cloud-based model that supports fully virtual delivery. We use: 100% paperless workflow, Secure online portals for document sharing, Remote meetings and consultations, and Accessibility for clients across Canada.",
+    },
+    {
+      question: "Do you handle CRA or other audits?",
+      answer:
+        "We provide professional representation and support during a wide range of audits to ensure compliance and reduce stress. Our audit assistance includes: CRA audits, Corporate tax audits, Payroll audits, HST/GST audits, Third-party and industry-required financial audits, and Support with communication, documentation, and compliance.",
     },
   ];
 
