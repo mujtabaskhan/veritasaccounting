@@ -30,8 +30,11 @@ export default function AboutHero() {
                 we deliver clarity
               </span>
             </p>
-            <p className="text-xl text-[#232061] leading-[30px] font-flex max-sm:text-base max-sm:leading-6">
-              confidence, and strategies to help your business grow. Whether you&apos;re a small business owner, entrepreneur, or corporate client, our dedicated team offers tailored services designed to simplify your finances and maximize results.
+            <p className="text-xl text-[#232061] leading-[30px] font-flex max-sm:text-xs max-sm:leading-6">
+              confidence, and strategies to help your business grow. Whether
+              you&apos;re a small business owner, entrepreneur, or corporate
+              client, our dedicated team offers tailored services designed to
+              simplify your finances and maximize results.
             </p>
           </div>
         </div>
