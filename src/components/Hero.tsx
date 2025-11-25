@@ -26,13 +26,13 @@ function Hero() {
           className="w-full h-full object-cover absolute top-0 left-0 z-0 rounded-bl-[60px] rounded-br-[60px]"
         />
 
-        <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-24">
+        <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-lg:pt-24 max-sm:pt-64">
           <div className="w-full max-w-3xl text-[#232061] font-semibold">
             <p className="text-[32px] max-sm:text-xl font-normal leading-[80px]">
               Welcome to
             </p>
 
-            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold max-sm:backdrop-blur-sm">
+            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold cloudy-text">
               Veritas <br /> Accounting
             </h1>
 

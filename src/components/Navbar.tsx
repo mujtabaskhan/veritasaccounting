@@ -41,11 +41,7 @@ const Navbar = () => {
       clearTimeout(leaveTimeoutRef.current);
       leaveTimeoutRef.current = null;
     }
-    console.log(
-      "[Expertise Enter] isScrolled:",
-      isScrolled,
-      "Setting expertise to true",
-    );
+
     setIsExpertiseOpen(true);
   };
 
@@ -108,14 +104,6 @@ const Navbar = () => {
       scrollPositionRef.current = currentScroll;
       // Store whether we were scrolled before expertise opened
       wasScrolledBeforeExpertiseRef.current = isScrolled;
-      console.log(
-        "[Expertise Open Effect] scrollY:",
-        currentScroll,
-        "isScrolled:",
-        isScrolled,
-        "storing wasScrolled:",
-        isScrolled,
-      );
 
       // Calculate scrollbar width to prevent layout shift
       const scrollbarWidth =
@@ -190,10 +178,7 @@ const Navbar = () => {
       if (isExpertiseOpen) {
         // Keep the stored scroll state
         setIsScrolled(wasScrolledBeforeExpertiseRef.current);
-        console.log(
-          "[Scroll Handler] Expertise open - preserving scroll state:",
-          wasScrolledBeforeExpertiseRef.current,
-        );
+
         return;
       }
 
@@ -203,12 +188,7 @@ const Navbar = () => {
         setIsNavbarVisible(true);
         setIsCollapsed(false);
         setIsScrolled(scrolled);
-        console.log(
-          "[Scroll Handler Mobile] scrollY:",
-          window.scrollY,
-          "isScrolled:",
-          scrolled,
-        );
+
         return;
       }
 
@@ -217,14 +197,6 @@ const Navbar = () => {
       const scrolled = currentScrollY > 50;
 
       setIsScrolled(scrolled);
-      console.log(
-        "[Scroll Handler] scrollY:",
-        currentScrollY,
-        "isScrolled:",
-        scrolled,
-        "isExpertiseOpen:",
-        isExpertiseOpen,
-      );
 
       // If at top, show full navbar
       if (currentScrollY < 50) {
@@ -301,36 +273,6 @@ const Navbar = () => {
   const shouldHideSocial = isActuallyScrolled;
   const logoForceHideClass = shouldHideLogo ? "force-hide-logo" : "";
   const socialForceHideClass = shouldHideSocial ? "force-hide-social" : "";
-
-  console.log("=== Navbar Debug ===");
-  console.log("isScrolled:", isScrolled);
-  console.log("isExpertiseOpen:", isExpertiseOpen);
-  console.log("isCollapsed:", isCollapsed);
-  console.log("isMobile:", isMobile);
-  console.log(
-    "window.scrollY:",
-    typeof window !== "undefined" ? window.scrollY : "N/A",
-  );
-  console.log(
-    "shouldHideLogo:",
-    shouldHideLogo,
-    "→ force-hide class:",
-    logoForceHideClass,
-  );
-  console.log(
-    "shouldHideSocial:",
-    shouldHideSocial,
-    "→ force-hide class:",
-    socialForceHideClass,
-  );
-  console.log(
-    "Full logo className:",
-    `${logoClassName} ${logoForceHideClass}`.trim(),
-  );
-  console.log(
-    "Full social className:",
-    `${socialLinksClassName} ${socialForceHideClass}`.trim(),
-  );
 
   return (
     <>

@@ -53,3 +53,27 @@ body {
     text-shadow: 0 2px 4px rgba(222, 222, 222, 0.25);
   }
 }
+
+@media screen and (max-width: 640px) {
+  .cloudy-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cloudy-text::before {
+    content: "";
+    position: absolute;
+    inset: -20px; /* how wide the cloud spreads */
+    background: radial-gradient(
+      circle at center,
+      rgba(222, 222, 222, 0.65) 0%,
+      rgba(222, 222, 222, 0.25) 45%,
+      rgba(222, 222, 222, 0.1) 70%,
+      rgba(222, 222, 222, 0) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: -1;
+    filter: blur(10px); /* softer cloud */
+  }
+}
