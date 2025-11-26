@@ -6,11 +6,9 @@ function Hero() {
   return (
     <>
       <div
-        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px]"
+        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px] max-xs:!h-[900px]"
         style={{
           width: "100%",
-          minHeight: "100vh",
-          height: "100vh",
           WebkitTransform: "translateZ(0)",
           transform: "translateZ(0)",
           WebkitBackfaceVisibility: "hidden",
@@ -26,7 +24,7 @@ function Hero() {
           className="w-full h-full object-cover absolute top-0 left-0 z-0 rounded-bl-[60px] rounded-br-[60px] max-xs:!h-[1000px]"
         />
 
-        <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-[210px]">
+        <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-0 max-xs:!-mt-[60px]">
           <div className="w-full max-w-3xl text-[#232061] font-semibold">
             <p
               className="text-[32px] max-sm:text-xl font-normal leading-[80px] max-xs:!leading-normal
@@ -35,7 +33,7 @@ function Hero() {
               Welcome to
             </p>
 
-            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold cloudy-text max-xs:!leading-[35px]">
+            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold cloudy-text max-xs:!leading-[33px]">
               Veritas <br /> Accounting
             </h1>
 
