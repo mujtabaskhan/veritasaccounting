@@ -26,10 +26,7 @@ function Hero() {
 
         <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-0 max-xs:!-mt-[60px]">
           <div className="w-full max-w-3xl text-[#232061] font-semibold">
-            <p
-              className="text-[32px] max-sm:text-xl font-normal leading-[80px] max-xs:!leading-normal
-            "
-            >
+            <p className="text-[32px] max-sm:text-xl font-normal leading-[80px] max-xs:!leading-normal max-xs:relative max-xs:z-1 max-xs:mb-3">
               Welcome to
             </p>
 
