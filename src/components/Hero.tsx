@@ -1,10 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 function Hero() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <>
+    <div className="relative" style={{ zIndex: isScrolled ? 200 : 0 }}>
       <div
         className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px] max-xs:!h-[900px]"
         style={{
@@ -24,17 +35,17 @@ function Hero() {
           className="w-full h-full object-cover absolute top-0 left-0 z-0 rounded-bl-[60px] rounded-br-[60px] max-xs:!h-[1000px]"
         />
 
-        <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-0 max-xs:!-mt-[60px]">
+        <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-0 max-xs:-mt-[80px]">
           <div className="w-full max-w-3xl text-[#232061] font-semibold">
-            <p className="text-[32px] max-sm:text-xl font-normal leading-[80px] max-xs:!leading-normal max-xs:relative max-xs:z-1 max-xs:mb-3">
+            <p className="text-[32px] max-sm:text-xl font-normal leading-[80px] max-xs:!leading-normal">
               Welcome to
             </p>
 
-            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold cloudy-text max-xs:!leading-[33px]">
+            <h1 className="text-[70px] max-lg:text-[55px] max-md:text-[50px] max-sm:text-[48px] leading-[45px] mb-6 font-semibold max-xs:!leading-[33px]">
               Veritas <br /> Accounting
             </h1>
 
-            <div className="flex items-center gap-8 mb-6 max-sm:gap-4 max-xs:mt-16">
+            <div className="flex items-center gap-8 mb-6 max-sm:gap-2 max-xs:mt-16">
               <div className="flex items-center">
                 <span
                   className="text-[100px] md:text-8xl leading-[100px] max-sm:text-5xl"
@@ -43,10 +54,10 @@ function Hero() {
                   (
                 </span>
                 <div className="mx-4 font-medium">
-                  <p className="text-[30px] max-sm:text-base leading-[30px] max-sm:leading-normal">
+                  <p className="text-[30px] max-sm:text-lg leading-[30px] max-sm:leading-normal">
                     Simplifying
                   </p>
-                  <p className="text-[30px] max-sm:text-base leading-[30px] max-sm:leading-normal">
+                  <p className="text-[30px] max-sm:text-lg leading-[30px] max-sm:leading-normal">
                     Numbers
                   </p>
                 </div>
@@ -64,7 +75,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 max-xs:justify-center">
+            <div className="flex items-center gap-3 max-xs:hidden">
               <button
                 onClick={() => {
                   const contactSection =
@@ -102,7 +113,41 @@ function Hero() {
           </div>
         </div>
       </div>
-    </>
+      <div className="hidden max-xs:flex z-10 items-center gap-3 max-xs:absolute max-xs:bottom-[100px] max-xs:left-1/2 max-xs:-translate-x-1/2">
+        <button
+          onClick={() => {
+            const contactSection = document.getElementById("contact-section");
+            if (contactSection) {
+              contactSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
+          className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-base leading-[10px] max-sm:text-xs max-sm:py-3 max-sm:px-6 max-sm:leading-[20px] cursor-pointer"
+          style={{
+            backgroundColor: "#232061",
+          }}
+        >
+          Talk to an Expert
+        </button>
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 35 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.5 23.3334L23.3333 17.5M23.3333 17.5L17.5 11.6667M23.3333 17.5H11.6667M32.0833 17.5C32.0833 25.5542 25.5541 32.0834 17.5 32.0834C9.44584 32.0834 2.91666 25.5542 2.91666 17.5C2.91666 9.44587 9.44584 2.91669 17.5 2.91669C25.5541 2.91669 32.0833 9.44587 32.0833 17.5Z"
+            stroke="#96B3BF"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
   );
 }
 
