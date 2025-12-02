@@ -3,10 +3,8 @@
 export default function GoogleMap() {
   const businessName = "Veritas Accounting";
   const address =
-    "1325 Eglinton Ave E Unit 230, Mississauga, ON L4W 4L9, Canada";
-  const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-    `${businessName}, ${address}`,
-  )}&output=embed&z=19&hl=en&iwloc=near`;
+    "1290 Eglinton Ave E, Suite 4, Mississauga ON L4W 1K8, Canada";
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.69511285689!2d-79.6223306!3d43.6337043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b38975529d0fd%3A0x54445ba7828719!2s1290%20Eglinton%20Ave%20E%20%234%2C%20Mississauga%2C%20ON%20L4W%201K8%2C%20Canada!5e0!3m2!1sen!2s!4v1764702158695!5m2!1sen!2s";
 
   return (
     <section
