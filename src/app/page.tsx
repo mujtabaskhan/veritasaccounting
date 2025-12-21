@@ -7,6 +7,7 @@ import CPAHero from "@/components/About";
 import ContactSection from "@/components/about/ContactSection";
 import GoogleMap from "@/components/GoogleMap";
 import Navbar from "@/components/Navbar";
+import MeetFounderHome from "@/components/MeetFounderHome";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ModernHero />
         <Difference />
         <CPAHero />
+        <MeetFounderHome />
         <FAQ />
         <GoogleMap />
         <ContactSection hideHeading={false} />

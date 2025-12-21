@@ -1,5 +1,6 @@
 import React from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import Image from "next/image";
 
 export default function TheDifference() {
   return (
@@ -11,22 +12,34 @@ export default function TheDifference() {
         minHeight: "auto",
       }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <AnimateOnScroll delay={0}>
-          <h3
-            className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-12 font-extralight"
-            style={{
-              background: "linear-gradient(90deg, #232061 0%, #1F89A3 100%)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              color: "transparent",
-            }}
-          >
-            The <span className="font-semibold italic">Difference</span>
-            <span className="block -mt-3"> We Deliver</span>
+          <h3 className="text-center text-[80px] max-sm:text-[40px] max-lg:text-[50px] mb-12 font-light text-[#232061]">
+            The{" "}
+            <span
+              className="font-semibold italic"
+              style={{
+                background: "linear-gradient(90deg, #232061 0%, #1F89A3 100%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                color: "transparent",
+              }}
+            >
+              {" "}
+              Difference
+            </span>
+            <span className="block -mt-3 text-[#232061]"> We Deliver</span>
           </h3>
         </AnimateOnScroll>
+
+        <Image
+          src="/Veritias.png"
+          alt="Veritas-Logo"
+          width={1000}
+          height={1000}
+          className="absolute top-0 left-20 z-1 h-[145px] w-[145px] max-sm:left-0"
+        />
 
         <div className="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-8">
           <div className="difference-card flex items-center justify-start flex-col gap-[16px]">

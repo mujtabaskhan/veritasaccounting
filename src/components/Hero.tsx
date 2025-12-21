@@ -25,7 +25,7 @@ function Hero() {
         />
 
         <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-0 max-xs:-mt-[20px]">
-          <div className="w-full max-w-3xl text-[#232061] font-semibold">
+          <div className="w-full text-[#232061] font-semibold">
             <p className="text-[32px] max-sm:text-xl font-normal leading-[80px] max-xs:!leading-normal">
               Welcome to
             </p>
@@ -34,70 +34,72 @@ function Hero() {
               Veritas <br /> Accounting
             </h1>
 
-            <div className="flex items-center gap-8 mb-6 max-sm:gap-2 max-xs:mt-16">
-              <div className="flex items-center">
-                <span
-                  className="text-[100px] md:text-8xl leading-[100px] max-sm:text-5xl"
-                  style={{ color: "#027C99", fontWeight: 400 }}
-                >
-                  (
-                </span>
-                <div className="mx-4 font-medium">
-                  <p className="text-[30px] max-sm:text-lg leading-[30px] max-sm:leading-normal">
-                    Simplifying
-                  </p>
-                  <p className="text-[30px] max-sm:text-lg leading-[30px] max-sm:leading-normal">
-                    Numbers
-                  </p>
+            <div className="flex items-center justify-between mt-10 max-xs:mt-16 w-full max-sm:flex-col max-sm:items-start max-sm:gap-6">
+              <div className="flex items-center gap-8 max-sm:gap-2">
+                <div className="flex items-center">
+                  <span
+                    className="text-[80px] md:text-8xl leading-[100px] max-sm:text-5xl"
+                    style={{ color: "#027C99", fontWeight: 400 }}
+                  >
+                    (
+                  </span>
+                  <div className="mx-4  text-[#027C99] font-normal">
+                    <p className="text-[30px] max-sm:text-lg leading-[50px] max-sm:leading-normal">
+                      Simplifying
+                    </p>
+                    <p className="text-[30px] max-sm:text-lg leading-[50px] max-sm:leading-normal">
+                      Numbers
+                    </p>
+                  </div>
+                  <span
+                    className="text-[80px] md:text-8xl leading-[100px] max-sm:text-5xl"
+                    style={{ color: "#027C99", fontWeight: 400 }}
+                  >
+                    )
+                  </span>
                 </div>
-                <span
-                  className="text-[80px] md:text-8xl leading-[80px] max-sm:text-5xl"
-                  style={{ color: "#027C99", fontWeight: 400 }}
+
+                <div className="text-[30px] max-sm:text-base leading-[50px] max-sm:leading-normal font-extrabold">
+                  <p style={{ color: "#232061" }}>Maximizing</p>
+                  <p style={{ color: "#232061" }}>Results</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 max-xs:hidden">
+                <button
+                  onClick={() => {
+                    const contactSection =
+                      document.getElementById("contact-section");
+                    if (contactSection) {
+                      contactSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
+                  className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-base leading-[10px] max-sm:text-xs max-sm:py-3 max-sm:px-6 max-sm:leading-[20px] cursor-pointer"
+                  style={{
+                    backgroundColor: "#232061",
+                  }}
                 >
-                  )
-                </span>
+                  Talk to an Expert
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 22L22 12M22 12L12 2M22 12L2 12"
+                      stroke="white"
+                      stroke-width="1.42857"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
               </div>
-
-              <div className="text-[30px] max-sm:text-base leading-[30px] max-sm:leading-normal">
-                <p style={{ color: "#027C99", fontWeight: 500 }}>Maximizing</p>
-                <p style={{ color: "#027C99", fontWeight: 500 }}>Results</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 max-xs:hidden">
-              <button
-                onClick={() => {
-                  const contactSection =
-                    document.getElementById("contact-section");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                }}
-                className="px-10 py-4 rounded-full font-semibold text-white transition-all inline-flex items-center gap-3 hover:opacity-90 text-base leading-[10px] max-sm:text-xs max-sm:py-3 max-sm:px-6 max-sm:leading-[20px] cursor-pointer"
-                style={{
-                  backgroundColor: "#232061",
-                }}
-              >
-                Talk to an Expert
-              </button>
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.5 23.3334L23.3333 17.5M23.3333 17.5L17.5 11.6667M23.3333 17.5H11.6667M32.0833 17.5C32.0833 25.5542 25.5541 32.0834 17.5 32.0834C9.44584 32.0834 2.91666 25.5542 2.91666 17.5C2.91666 9.44587 9.44584 2.91669 17.5 2.91669C25.5541 2.91669 32.0833 9.44587 32.0833 17.5Z"
-                  stroke="#96B3BF"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
             </div>
           </div>
         </div>
@@ -118,22 +120,22 @@ function Hero() {
             }}
           >
             Talk to an Expert
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M12 22L22 12M22 12L12 2M22 12L2 12"
+                stroke="white"
+                stroke-width="1.42857"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </button>
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 35 35"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.5 23.3334L23.3333 17.5M23.3333 17.5L17.5 11.6667M23.3333 17.5H11.6667M32.0833 17.5C32.0833 25.5542 25.5541 32.0834 17.5 32.0834C9.44584 32.0834 2.91666 25.5542 2.91666 17.5C2.91666 9.44587 9.44584 2.91669 17.5 2.91669C25.5541 2.91669 32.0833 9.44587 32.0833 17.5Z"
-              stroke="#96B3BF"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
         </div>
       </div>
     </>

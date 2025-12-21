@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 
 function ServicesSection() {
@@ -11,7 +12,7 @@ function ServicesSection() {
   const servicesRow2 = [
     { name: "Advisory", href: "/services#advisory" },
     { name: "CFO Services", href: "/services#cfo-services" },
-    { name: "Learn More", href: "/expertise" },
+    { name: "See All", href: "/expertise" },
   ];
 
   return (
@@ -19,60 +20,76 @@ function ServicesSection() {
       className="w-full bg-white py-15 px-4 max-xl:py-16 max-lg:py-14 max-md:py-12 max-sm:py-20 rounded-tl-[60px] rounded-tr-[60px] -mt-14 relative z-[6] max-sm:px-10"
       style={{ width: "100%" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative">
+        <div className="relative max-w-3xl mx-auto mb-12">
+          <p className="text-center text-2xl max-sm:text-[15px] leading-relaxed font-normal text-[#232061]">
+            Helping businesses grow with integrity, clarity, precision, and
+            proactive financial guidance.
+          </p>
+        </div>
+
+        <Image
+          src="/Veritias.png"
+          alt="Veritas-Logo"
+          width={1000}
+          height={1000}
+          className="absolute top-0 right-20 z-1 h-[145px] w-[145px] rotate-45 max-sm:right-0"
+        />
+
         <div className="flex flex-wrap justify-center gap-4 mb-4">
           {servicesRow1.map((service) => (
             <Link
               key={service.name}
               href={service.href}
-              className="px-5 py-2 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold bg-[#E1EDF2] text-[#232061] hover:bg-[#D0E3EA] transition-colors cursor-pointer"
+              className="px-5 py-3 rounded-full text-[20px] max-sm:text-xs max-sm:px-3 font-semibold bg-[#B8DDE5] text-[#232061] hover:bg-[#D0E3EA] transition-colors cursor-pointer"
             >
               {service.name}
             </Link>
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-[119px] max-sm:mb-[94px]">
+        <div className="flex flex-wrap justify-center gap-4">
           {servicesRow2.map((service) => (
             <Link
               href={service.href}
               key={service.name}
-              className="px-5 py-1 rounded-full text-[30px] max-sm:text-xs max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#E1EDF2] text-[#232061] hover:bg-[#D0E3EA] transition-colors"
+              className="px-5 py-3 rounded-full text-[20px] max-sm:text-xs max-sm:px-3 font-semibold inline-flex items-center gap-2 bg-[#E1EDF2] text-[#232061] hover:bg-[#D0E3EA] transition-colors"
               style={
-                service.name === "Learn More"
+                service.name === "See All"
                   ? {
-                      backgroundColor: "#232061",
-                      color: "white",
+                      backgroundColor: "transparent",
+                      color: "#232061",
+                      border: "2px solid #232061",
                     }
                   : {
-                      backgroundColor: "#E1EDF2",
+                      backgroundColor: "#B8DDE5",
                       color: "#232061",
                     }
               }
             >
               {service.name}
-              {service.name === "Learn More" && (
+              {service.name === "See All" && (
                 <svg
-                  width="35"
-                  height="35"
-                  viewBox="0 0 35 35"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="max-sm:w-4 max-sm:h-4"
+                  className="max-sm:w-3 max-sm:h-3"
                 >
                   <path
-                    d="M17.5 23.3333L23.3333 17.5M23.3333 17.5L17.5 11.6666M23.3333 17.5H11.6667M32.0833 17.5C32.0833 25.5541 25.5542 32.0833 17.5 32.0833C9.44585 32.0833 2.91667 25.5541 2.91667 17.5C2.91667 9.44581 9.44585 2.91663 17.5 2.91663C25.5542 2.91663 32.0833 9.44581 32.0833 17.5Z"
-                    stroke="#F3F3F3"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    d="M12 22L22 12M22 12L12 2M22 12L2 12"
+                    stroke="#232061"
+                    stroke-width="1.42857"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   />
                 </svg>
               )}
             </Link>
           ))}
 
-          <a
+          {/* <a
             href="https://wa.me/19052260033"
             target="_blank"
             rel="noopener noreferrer"
@@ -90,14 +107,7 @@ function ServicesSection() {
                 fill="#25D366"
               />
             </svg>
-          </a>
-        </div>
-
-        <div className="relative max-w-3xl mx-auto">
-          <p className="text-center text-2xl max-sm:text-[15px] leading-relaxed font-normal text-[#232061]">
-            Helping businesses grow with integrity, clarity, precision, and
-            proactive financial guidance.
-          </p>
+          </a> */}
         </div>
       </div>
     </section>

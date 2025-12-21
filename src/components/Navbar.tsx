@@ -255,6 +255,14 @@ const Navbar = () => {
     { label: "CFO Services", href: "/services#cfo-services" },
   ];
 
+  // Check if a nav link is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
   // Simplified logic: if scrolled, always hide (except logo on mobile)
   // Use hidden class + width/opacity for better hiding
   const logoClassName = isScrolled
@@ -362,12 +370,12 @@ const Navbar = () => {
               </Link>
 
               <div
-                className={`navbar-bg max-lg:hidden flex items-center gap-6 px-4 py-3 rounded-[50px] text-[15px] transition-all duration-300 ${
+                className={`navbar-bg max-lg:hidden flex items-center gap-6 px-4 py-3 rounded-[50px] text-[15px] transition-all duration-300 border border-[#027C99] ${
                   isExpertiseOpen
                     ? "text-white border-white bg-white/10"
                     : isScrolled
-                    ? "text-[#232061] border-[#232061] bg-white/80"
-                    : "text-[#232061] border-[#232061] bg-[#FFFFFF4D]"
+                    ? "text-[#232061] bg-white/80"
+                    : "text-[#232061] bg-[#FFFFFF4D]"
                 }`}
                 style={{
                   border: `1px soliid ${
@@ -377,10 +385,14 @@ const Navbar = () => {
               >
                 <Link
                   href="/"
-                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
-                    isExpertiseOpen
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center rounded-full ${
+                    isActive("/")
+                      ? isExpertiseOpen
+                        ? "bg-white/20 text-white"
+                        : "bg-[#027C99] text-white"
+                      : isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
-                      : "hover:bg-[#232061] hover:text-white"
+                      : "hover:bg-[#027C99] hover:text-white"
                   }`}
                 >
                   <span className="relative inline-block overflow-hidden">
@@ -400,18 +412,48 @@ const Navbar = () => {
                 >
                   <Link
                     href="/expertise"
-                    className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
-                      isExpertiseOpen
+                    className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center rounded-full ${
+                      isActive("/expertise") || pathname.startsWith("/services")
+                        ? isExpertiseOpen
+                          ? "bg-white/20 text-white"
+                          : "bg-[#027C99] text-white"
+                        : isExpertiseOpen
                         ? "hover:bg-white/20 hover:text-white"
-                        : "hover:bg-[#232061] hover:text-white"
+                        : "hover:bg-[#027C99] hover:text-white"
                     }`}
                   >
                     <span className="relative inline-block overflow-hidden">
-                      <span className="inline-block transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full">
-                        Expertise
+                      <span className="transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-full flex items-center gap-2">
+                        Expertise{" "}
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="-mt-1"
+                        >
+                          <path
+                            d="M10.5477 4.43302L11.4392 5.32537L6.58042 10.1858C6.50257 10.2641 6.40999 10.3263 6.30801 10.3687C6.20604 10.4112 6.09668 10.433 5.98622 10.433C5.87577 10.433 5.76641 10.4112 5.66443 10.3687C5.56246 10.3263 5.46988 10.2641 5.39202 10.1858L0.530762 5.32537L1.42227 4.43386L5.98496 8.99571L10.5477 4.43302Z"
+                            fill={isExpertiseOpen ? "#FFFFFF" : "#232061"}
+                          />
+                        </svg>
                       </span>
-                      <span className="absolute inset-0 inline-block transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
+                      <span className="absolute inset-0 transition-all duration-300 ease-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 flex items-center gap-2">
                         Expertise
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="-mt-1"
+                        >
+                          <path
+                            d="M10.5477 4.43302L11.4392 5.32537L6.58042 10.1858C6.50257 10.2641 6.40999 10.3263 6.30801 10.3687C6.20604 10.4112 6.09668 10.433 5.98622 10.433C5.87577 10.433 5.76641 10.4112 5.66443 10.3687C5.56246 10.3263 5.46988 10.2641 5.39202 10.1858L0.530762 5.32537L1.42227 4.43386L5.98496 8.99571L10.5477 4.43302Z"
+                            fill={isExpertiseOpen ? "#FFFFFF" : "#232061"}
+                          />
+                        </svg>
                       </span>
                     </span>
                   </Link>
@@ -419,10 +461,14 @@ const Navbar = () => {
 
                 <Link
                   href="/careers"
-                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
-                    isExpertiseOpen
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center rounded-full ${
+                    isActive("/careers")
+                      ? isExpertiseOpen
+                        ? "bg-white/20 text-white"
+                        : "bg-[#027C99] text-white"
+                      : isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
-                      : "hover:bg-[#232061] hover:text-white"
+                      : "hover:bg-[#027C99] hover:text-white"
                   }`}
                 >
                   <span className="relative inline-block overflow-hidden">
@@ -437,10 +483,14 @@ const Navbar = () => {
 
                 <Link
                   href="/team"
-                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
-                    isExpertiseOpen
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center rounded-full ${
+                    isActive("/team")
+                      ? isExpertiseOpen
+                        ? "bg-white/20 text-white"
+                        : "bg-[#027C99] text-white"
+                      : isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
-                      : "hover:bg-[#232061] hover:text-white"
+                      : "hover:bg-[#027C99] hover:text-white"
                   }`}
                 >
                   <span className="relative inline-block overflow-hidden">
@@ -455,10 +505,14 @@ const Navbar = () => {
 
                 <Link
                   href="/faq"
-                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center ${
-                    isExpertiseOpen
+                  className={`nav-link relative group h-max px-3 py-1 hover:rounded-full flex items-center justify-center rounded-full ${
+                    isActive("/faq")
+                      ? isExpertiseOpen
+                        ? "bg-white/20 text-white"
+                        : "bg-[#027C99] text-white"
+                      : isExpertiseOpen
                       ? "hover:bg-white/20 hover:text-white"
-                      : "hover:bg-[#232061] hover:text-white"
+                      : "hover:bg-[#027C99] hover:text-white"
                   }`}
                 >
                   <span className="relative inline-block overflow-hidden">
@@ -564,14 +618,23 @@ const Navbar = () => {
                     <Link
                       href="/"
                       onClick={closeMenu}
-                      className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
+                      className={`text-center font-normal py-3 px-4 rounded-[35px] text-base ${
+                        isActive("/")
+                          ? "bg-[#027C99] text-white"
+                          : "text-[#232061] bg-[#F6F6F6]"
+                      }`}
                     >
                       Home
                     </Link>
                     <div className="flex flex-col">
                       <button
                         onClick={toggleMobileExpertise}
-                        className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base flex items-center justify-center gap-2"
+                        className={`text-center font-normal py-3 px-4 rounded-[35px] text-base flex items-center justify-center gap-2 ${
+                          isActive("/expertise") ||
+                          pathname.startsWith("/services")
+                            ? "bg-[#027C99] text-white"
+                            : "text-[#232061] bg-[#F6F6F6]"
+                        }`}
                       >
                         Expertise
                         <svg
@@ -621,21 +684,33 @@ const Navbar = () => {
                     <Link
                       href="/careers"
                       onClick={closeMenu}
-                      className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
+                      className={`text-center font-normal py-3 px-4 rounded-[35px] text-base ${
+                        isActive("/careers")
+                          ? "bg-[#027C99] text-white"
+                          : "text-[#232061] bg-[#F6F6F6]"
+                      }`}
                     >
                       Careers
                     </Link>
                     <Link
                       href="/team"
                       onClick={closeMenu}
-                      className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
+                      className={`text-center font-normal py-3 px-4 rounded-[35px] text-base ${
+                        isActive("/team")
+                          ? "bg-[#027C99] text-white"
+                          : "text-[#232061] bg-[#F6F6F6]"
+                      }`}
                     >
                       Team
                     </Link>
                     <Link
                       href="/faq"
                       onClick={closeMenu}
-                      className="text-center text-[#232061] font-normal py-3 px-4 rounded-[35px] bg-[#F6F6F6] text-base"
+                      className={`text-center font-normal py-3 px-4 rounded-[35px] text-base ${
+                        isActive("/faq")
+                          ? "bg-[#027C99] text-white"
+                          : "text-[#232061] bg-[#F6F6F6]"
+                      }`}
                     >
                       FAQ
                     </Link>
