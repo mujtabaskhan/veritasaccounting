@@ -6,7 +6,7 @@ function Hero() {
   return (
     <>
       <div
-        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] rounded-tl-[60px] rounded-tr-[60px] max-xs:!h-[90vh]"
+        className="w-full min-h-screen h-screen overflow-hidden pb-[200px] sticky top-0 z-[5] max-xs:!h-[90vh]"
         style={{
           width: "100%",
           WebkitTransform: "translateZ(0)",
@@ -21,7 +21,7 @@ function Hero() {
           alt="hero-hero"
           width={1440}
           height={100}
-          className="w-full h-full object-cover absolute top-0 left-0 z-0 rounded-bl-[60px] rounded-br-[60px] max-xs:!h-[1000px]"
+          className="w-full h-full object-cover absolute top-0 left-0 z-0 max-xs:!h-[1000px]"
         />
 
         <div className="relative z-10 flex items-center h-full px-8 max-sm:px-10 max-w-7xl mx-auto pt-52 max-sm:pt-64 max-xs:!pt-0 max-xs:-mt-[20px]">

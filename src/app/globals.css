@@ -77,3 +77,10 @@ body {
     filter: blur(10px); /* softer cloud */
   }
 }
+
+.difference-card {
+  box-shadow: 0px 3px 8px 0px #96b3bf4d;
+  border-radius: 32px;
+  border: 1px solid #2320611a;
+  padding: 20px;
+}

@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="w-full bg-[#232061] p-3 min-h-screen rounded-bl-[60px] rounded-br-[60px]">
+      <div className="w-full min-h-screen rounded-bl-[60px] rounded-br-[60px]">
         <ModernHero />
-        <CPAHero />
         <Difference />
+        <CPAHero />
         <FAQ />
         <GoogleMap />
         <ContactSection hideHeading={false} />

@@ -370,8 +370,8 @@ const Navbar = () => {
                     : "text-[#232061] border-[#232061] bg-[#FFFFFF4D]"
                 }`}
                 style={{
-                  border: `1px solid ${
-                    isExpertiseOpen ? "#FFFFFF" : "#232061"
+                  border: `1px soliid ${
+                    isExpertiseOpen ? "#FFFFFF" : "#027C99"
                   }`,
                 }}
               >
