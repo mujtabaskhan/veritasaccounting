@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --breakpoint-xs: 500px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: "Roboto Serif", serif;
+  --font-flex: "Roboto Flex", sans-serif;
+  --font-roboto: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  color: var(--foreground);
+  /* font-family: "Roboto Serif", Arial, Helvetica, sans-serif; */
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .heading-mobile-shadow {
+    text-shadow: 0 2px 4px rgba(222, 222, 222, 0.25);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cloudy-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cloudy-text::before {
+    content: "";
+    position: absolute;
+    inset: -20px; /* how wide the cloud spreads */
+    background: radial-gradient(
+      circle at center,
+      rgba(222, 222, 222, 0.65) 0%,
+      rgba(222, 222, 222, 0.25) 45%,
+      rgba(222, 222, 222, 0.1) 70%,
+      rgba(222, 222, 222, 0) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: -1;
+    filter: blur(10px); /* softer cloud */
+  }
+}
+
+.difference-card {
+  box-shadow: 0px 3px 8px 0px #96b3bf4d;
+  border-radius: 32px;
+  border: 1px solid #2320611a;
+  padding: 32px 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .difference-card {
+    padding: 32px 24px;
+  }
+}
+
+.difference-card:hover {
+  box-shadow: 0px 4px 16px 0px #96b3bf99;
+}
+
+.font-roboto {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.contact-card {
+  background: #ffffff;
+  box-shadow: 0px 3px 8px 0px #96b3bf4d;
+  border: 1px solid #2320611a;
+  border-radius: 32px;
+}
+
+.cloudy-text {
+  position: relative;
+  z-index: 1;
+}
+
+.cloudy-text::before {
+  content: "";
+  position: absolute;
+  inset: -30px -60px -30px -10px; /* how wide the cloud spreads */
+  background: radial-gradient(
+    circle at 60% 50%,
+    rgba(222, 222, 222, 0.9) 0%,
+    rgba(222, 222, 222, 0.5) 45%,
+    rgba(222, 222, 222, 0.2) 70%,
+    rgba(222, 222, 222, 0) 100%
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  z-index: -1;
+  filter: blur(15px); /* softer cloud */
+}
